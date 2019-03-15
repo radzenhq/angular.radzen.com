@@ -1,0 +1,57 @@
+<rz-content #content1 container="main">
+  <rz-heading #pageTitle size="H1" [style]="{'display': 'inline', 'float': 'none'}" text="SplitButton">
+  </rz-heading>
+  <rz-link #link0 path="https://github.com/akorchev/angular.radzen.com/blob/master/meta/pages/split-splitbutton.json" text="[source code]">
+  </rz-link>
+  <rz-heading #heading0 size="H4" text="This page demonstrates SplitButton component.">
+  </rz-heading>
+  <rz-card #card0 [style]="{'height': '600px'}">
+    <div class="row">
+      <div class="col-md-6">
+        <rz-heading #heading2 size="H3" text="SplitButton with text">
+        </rz-heading>
+        <rz-splitbutton #button0 [style]="{'marginBottom': '20px'}" text="SplitButton" (click)="button0Click($event)">
+          <rz-splitbutton-item icon="3d_rotation" text="Item 1" value="1">
+          </rz-splitbutton-item>
+          <rz-splitbutton-item icon="accessibility" text="Item 2" value="2">
+          </rz-splitbutton-item>
+          <rz-splitbutton-item icon="accessible" text="Item 3" value="3">
+          </rz-splitbutton-item>
+        </rz-splitbutton>
+        <rz-heading #heading3 size="H3" text="SplitButton with text and icon">
+        </rz-heading>
+        <rz-splitbutton #button1 icon="account_circle" [style]="{'marginBottom': '20px'}" text="SplitButton" (click)="button1Click($event)">
+          <rz-splitbutton-item icon="3d_rotation" text="Item 1" value="1">
+          </rz-splitbutton-item>
+          <rz-splitbutton-item icon="accessibility" text="Item 2" value="2">
+          </rz-splitbutton-item>
+          <rz-splitbutton-item icon="accessible" text="Item 3" value="3">
+          </rz-splitbutton-item>
+        </rz-splitbutton>
+        <rz-heading #heading4 size="H3" text="SplitButton with icon">
+        </rz-heading>
+        <rz-splitbutton #button2 icon="account_circle" [style]="{'marginBottom': '20px'}" text=" " (click)="button2Click($event)">
+          <rz-splitbutton-item icon="3d_rotation" text="Item 1" value="1">
+          </rz-splitbutton-item>
+          <rz-splitbutton-item icon="accessibility" text="Item 2" value="2">
+          </rz-splitbutton-item>
+          <rz-splitbutton-item icon="accessible" text="Item 3" value="3">
+          </rz-splitbutton-item>
+        </rz-splitbutton>
+      </div>
+      <div class="col-md-6">
+        <rz-heading #heading1 size="H3" text="Events">
+        </rz-heading>
+        <rz-card #card1 [style]="{'height': '500px'}">
+          <rz-html #html0>
+            <div style="overflow:auto;height:100%">
+              <div *ngFor="let event of events?.reverse()">
+                  {{ event }} clicked
+              </div>
+            </div>
+          </rz-html>
+        </rz-card>
+      </div>
+    </div>
+  </rz-card>
+</rz-content>

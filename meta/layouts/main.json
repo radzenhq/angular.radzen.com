@@ -47,6 +47,243 @@
     {
       "components": [
         {
+          "items": [
+            {
+              "items": [
+                {
+                  "path": "menu",
+                  "text": "Menu"
+                },
+                {
+                  "path": "panel-menu",
+                  "text": "PanelMenu"
+                }
+              ],
+              "text": "Layout"
+            },
+            {
+              "icon": "",
+              "items": [
+                {
+                  "path": "button",
+                  "text": "Button"
+                },
+                {
+                  "path": "google-map",
+                  "text": "GoogleMap"
+                },
+                {
+                  "path": "gravatar",
+                  "text": "Gravatar"
+                },
+                {
+                  "path": "icon",
+                  "text": "Icon"
+                },
+                {
+                  "path": "image",
+                  "text": "Image"
+                },
+                {
+                  "path": "link",
+                  "text": "Link"
+                },
+                {
+                  "path": "login",
+                  "text": "Login"
+                },
+                {
+                  "path": "progress-bar",
+                  "text": "ProgressBar"
+                },
+                {
+                  "path": "split-button",
+                  "text": "SplitButton"
+                },
+                {
+                  "path": "upload",
+                  "text": "Upload"
+                }
+              ],
+              "text": "General"
+            },
+            {
+              "items": [
+                {
+                  "path": "accordion",
+                  "text": "Accordion"
+                },
+                {
+                  "path": "card",
+                  "text": "Card"
+                },
+                {
+                  "path": "fieldset",
+                  "text": "Fieldset"
+                },
+                {
+                  "path": "panel",
+                  "text": "Panel"
+                },
+                {
+                  "path": "steps",
+                  "text": "Steps"
+                },
+                {
+                  "path": "tabs",
+                  "text": "Tabs"
+                }
+              ],
+              "text": "Containers"
+            },
+            {
+              "items": [
+                {
+                  "path": "auto-complete",
+                  "text": "AutoComplete"
+                },
+                {
+                  "path": "check-box",
+                  "text": "CheckBox"
+                },
+                {
+                  "path": "check-box-list",
+                  "text": "CheckBoxList"
+                },
+                {
+                  "path": "date-picker",
+                  "text": "DatePicker"
+                },
+                {
+                  "path": "drop-down",
+                  "text": "DropDown"
+                },
+                {
+                  "path": "drop-down-data-grid",
+                  "text": "DropDownDataGrid"
+                },
+                {
+                  "path": "file-input",
+                  "text": "FileInput"
+                },
+                {
+                  "path": "form",
+                  "text": "Form"
+                },
+                {
+                  "path": "label",
+                  "text": "Label"
+                },
+                {
+                  "path": "list-box",
+                  "text": "ListBox"
+                },
+                {
+                  "path": "mask",
+                  "text": "Mask"
+                },
+                {
+                  "path": "numeric",
+                  "text": "Numeric"
+                },
+                {
+                  "path": "password",
+                  "text": "Password"
+                },
+                {
+                  "path": "radio-button-list",
+                  "text": "RadioButtonList"
+                },
+                {
+                  "path": "rating",
+                  "text": "Rating"
+                },
+                {
+                  "path": "select-bar",
+                  "text": "SelectBar"
+                },
+                {
+                  "path": "slider",
+                  "text": "Slider"
+                },
+                {
+                  "path": "template-form",
+                  "text": "TemplateForm"
+                },
+                {
+                  "path": "text-area",
+                  "text": "TextArea"
+                },
+                {
+                  "path": "text-box",
+                  "text": "TextBox"
+                }
+              ],
+              "text": "Forms"
+            },
+            {
+              "items": [
+                {
+                  "path": "data-grid",
+                  "text": "DataGrid"
+                },
+                {
+                  "path": "data-list",
+                  "text": "DataList"
+                },
+                {
+                  "path": "pick-list",
+                  "text": "PickList"
+                },
+                {
+                  "path": "scheduler",
+                  "text": "Scheduler"
+                },
+                {
+                  "path": "tree",
+                  "text": "Tree"
+                },
+                {
+                  "path": "tree-grid",
+                  "text": "TreeGrid"
+                }
+              ],
+              "text": "Data"
+            },
+            {
+              "items": [
+                {
+                  "path": "area-chart",
+                  "text": "AreaChart"
+                },
+                {
+                  "path": "bar-chart",
+                  "text": "BarChart"
+                },
+                {
+                  "path": "donut-chart",
+                  "text": "DonutChart"
+                },
+                {
+                  "path": "gauge",
+                  "text": "Gauge"
+                },
+                {
+                  "path": "line-chart",
+                  "text": "LineChart"
+                },
+                {
+                  "path": "pie-chart",
+                  "text": "PieChart"
+                },
+                {
+                  "path": "sparkline",
+                  "text": "Sparkline"
+                }
+              ],
+              "text": "Charts"
+            }
+          ],
           "name": "panelmenu0",
           "style": {
             "height": "100%"

@@ -1,19 +1,217 @@
 {
-  "name": "SplitButton",
-  "access": "Everybody",
-  "layout": "Main",
+  "access": [
+    "Everybody"
+  ],
   "components": [
     {
-      "type": "content",
-      "container": "main",
       "components": [
         {
-          "type": "heading",
-          "size": "H1",
           "name": "pageTitle",
-          "text": "SplitButton"
+          "size": "H1",
+          "style": {
+            "display": "inline",
+            "float": "none"
+          },
+          "text": "SplitButton",
+          "type": "heading"
+        },
+        {
+          "icon": "",
+          "name": "link0",
+          "path": "https://github.com/akorchev/angular.radzen.com/blob/master/meta/pages/split-splitbutton.json",
+          "text": "[source code]",
+          "type": "link"
+        },
+        {
+          "name": "heading0",
+          "size": "H4",
+          "text": "This page demonstrates SplitButton component.",
+          "type": "heading"
+        },
+        {
+          "components": [
+            {
+              "components": [
+                {
+                  "class": "col-md-6",
+                  "components": [
+                    {
+                      "name": "heading2",
+                      "size": "H3",
+                      "text": "SplitButton with text",
+                      "type": "heading"
+                    },
+                    {
+                      "events": {
+                        "click": [
+                          {
+                            "code": "${events.push('SplitButton with text')}",
+                            "type": "execute"
+                          }
+                        ]
+                      },
+                      "items": [
+                        {
+                          "icon": "3d_rotation",
+                          "text": "Item 1",
+                          "value": "1"
+                        },
+                        {
+                          "icon": "accessibility",
+                          "text": "Item 2",
+                          "value": "2"
+                        },
+                        {
+                          "icon": "accessible",
+                          "text": "Item 3",
+                          "value": "3"
+                        }
+                      ],
+                      "name": "button0",
+                      "style": {
+                        "marginBottom": "20px"
+                      },
+                      "text": "SplitButton",
+                      "type": "splitbutton"
+                    },
+                    {
+                      "name": "heading3",
+                      "size": "H3",
+                      "text": "SplitButton with text and icon",
+                      "type": "heading"
+                    },
+                    {
+                      "events": {
+                        "click": [
+                          {
+                            "code": "${events.push('SplitButton with text and icon')}",
+                            "type": "execute"
+                          }
+                        ]
+                      },
+                      "icon": "account_circle",
+                      "items": [
+                        {
+                          "icon": "3d_rotation",
+                          "text": "Item 1",
+                          "value": "1"
+                        },
+                        {
+                          "icon": "accessibility",
+                          "text": "Item 2",
+                          "value": "2"
+                        },
+                        {
+                          "icon": "accessible",
+                          "text": "Item 3",
+                          "value": "3"
+                        }
+                      ],
+                      "name": "button1",
+                      "style": {
+                        "marginBottom": "20px"
+                      },
+                      "text": "SplitButton",
+                      "type": "splitbutton"
+                    },
+                    {
+                      "name": "heading4",
+                      "size": "H3",
+                      "text": "SplitButton with icon",
+                      "type": "heading"
+                    },
+                    {
+                      "events": {
+                        "click": [
+                          {
+                            "code": "${events.push('SplitButton with icon')}",
+                            "type": "execute"
+                          }
+                        ]
+                      },
+                      "icon": "account_circle",
+                      "items": [
+                        {
+                          "icon": "3d_rotation",
+                          "text": "Item 1",
+                          "value": "1"
+                        },
+                        {
+                          "icon": "accessibility",
+                          "text": "Item 2",
+                          "value": "2"
+                        },
+                        {
+                          "icon": "accessible",
+                          "text": "Item 3",
+                          "value": "3"
+                        }
+                      ],
+                      "name": "button2",
+                      "style": {
+                        "marginBottom": "20px"
+                      },
+                      "text": " ",
+                      "type": "splitbutton"
+                    }
+                  ],
+                  "name": "col0",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-6",
+                  "components": [
+                    {
+                      "name": "heading1",
+                      "size": "H3",
+                      "text": "Events",
+                      "type": "heading"
+                    },
+                    {
+                      "components": [
+                        {
+                          "content": "<div style=\"overflow:auto;height:100%\">\n  <div *ngFor=\"let event of events?.reverse()\">\n      {{ event }} clicked\n  </div>\n</div>",
+                          "name": "html0",
+                          "type": "html"
+                        }
+                      ],
+                      "name": "card1",
+                      "style": {
+                        "height": "500px"
+                      },
+                      "type": "card",
+                      "visible": true
+                    }
+                  ],
+                  "name": "col1",
+                  "type": "col"
+                }
+              ],
+              "name": "row0",
+              "type": "row"
+            }
+          ],
+          "name": "card0",
+          "style": {
+            "height": "600px"
+          },
+          "type": "card",
+          "visible": true
         }
-      ]
+      ],
+      "container": "main",
+      "type": "content"
     }
-  ]
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "events",
+        "type": "set",
+        "value": "[]"
+      }
+    ]
+  },
+  "layout": "Main",
+  "name": "SplitButton"
 }

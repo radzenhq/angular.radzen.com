@@ -1,19 +1,340 @@
 {
-  "name": "Button",
-  "access": "Everybody",
-  "layout": "Main",
+  "access": [
+    "Everybody"
+  ],
   "components": [
     {
-      "type": "content",
-      "container": "main",
       "components": [
         {
-          "type": "heading",
-          "size": "H1",
           "name": "pageTitle",
-          "text": "Button"
+          "size": "H1",
+          "style": {
+            "display": "inline",
+            "float": "none"
+          },
+          "text": "Button",
+          "type": "heading"
+        },
+        {
+          "icon": "",
+          "name": "link0",
+          "path": "https://github.com/akorchev/angular.radzen.com/blob/master/meta/pages/button.json",
+          "text": "[source code]",
+          "type": "link"
+        },
+        {
+          "name": "heading0",
+          "size": "H4",
+          "text": "This page demonstrates Button component.",
+          "type": "heading"
+        },
+        {
+          "components": [
+            {
+              "components": [
+                {
+                  "class": "col-md-6",
+                  "components": [
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-6",
+                          "components": [
+                            {
+                              "name": "heading2",
+                              "size": "H3",
+                              "text": "Button with text",
+                              "type": "heading"
+                            },
+                            {
+                              "events": {
+                                "click": [
+                                  {
+                                    "code": "${events.push('Button with text')}",
+                                    "type": "execute"
+                                  }
+                                ]
+                              },
+                              "name": "button0",
+                              "style": {
+                                "marginBottom": "20px",
+                                "width": "150px"
+                              },
+                              "text": "Button",
+                              "type": "button"
+                            },
+                            {
+                              "name": "heading3",
+                              "size": "H3",
+                              "text": "Button with text and icon",
+                              "type": "heading"
+                            },
+                            {
+                              "events": {
+                                "click": [
+                                  {
+                                    "code": "${events.push('Button with text and icon')}",
+                                    "type": "execute"
+                                  }
+                                ]
+                              },
+                              "icon": "account_circle",
+                              "name": "button1",
+                              "style": {
+                                "marginBottom": "20px",
+                                "width": "150px"
+                              },
+                              "text": "Button",
+                              "type": "button"
+                            },
+                            {
+                              "name": "heading4",
+                              "size": "H3",
+                              "text": "Button with icon",
+                              "type": "heading"
+                            },
+                            {
+                              "events": {
+                                "click": [
+                                  {
+                                    "code": "${events.push('Button with icon')}",
+                                    "type": "execute"
+                                  }
+                                ]
+                              },
+                              "icon": "account_circle",
+                              "name": "button2",
+                              "style": {
+                                "marginBottom": "20px"
+                              },
+                              "text": "",
+                              "type": "button"
+                            },
+                            {
+                              "name": "heading5",
+                              "size": "H3",
+                              "text": "Button with secondary style",
+                              "type": "heading"
+                            },
+                            {
+                              "buttonStyle": "secondary",
+                              "events": {
+                                "click": [
+                                  {
+                                    "code": "${events.push('Button with secondary style')}",
+                                    "type": "execute"
+                                  }
+                                ]
+                              },
+                              "icon": "",
+                              "name": "button3",
+                              "style": {
+                                "marginBottom": "20px",
+                                "width": "150px"
+                              },
+                              "text": "Button",
+                              "type": "button"
+                            },
+                            {
+                              "name": "heading6",
+                              "size": "H3",
+                              "text": "Button with light style",
+                              "type": "heading"
+                            },
+                            {
+                              "buttonStyle": "light",
+                              "events": {
+                                "click": [
+                                  {
+                                    "code": "${events.push('Button with light style')}",
+                                    "type": "execute"
+                                  }
+                                ]
+                              },
+                              "icon": "",
+                              "name": "button4",
+                              "style": {
+                                "marginBottom": "20px",
+                                "width": "150px"
+                              },
+                              "text": "Button",
+                              "type": "button"
+                            }
+                          ],
+                          "name": "col2",
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-6",
+                          "components": [
+                            {
+                              "name": "heading7",
+                              "size": "H3",
+                              "text": "Button with success style",
+                              "type": "heading"
+                            },
+                            {
+                              "buttonStyle": "success",
+                              "events": {
+                                "click": [
+                                  {
+                                    "code": "${events.push('Button with success style')}",
+                                    "type": "execute"
+                                  }
+                                ]
+                              },
+                              "icon": "",
+                              "name": "button5",
+                              "style": {
+                                "marginBottom": "20px",
+                                "width": "150px"
+                              },
+                              "text": "Button",
+                              "type": "button"
+                            },
+                            {
+                              "name": "heading8",
+                              "size": "H3",
+                              "text": "Button with danger style",
+                              "type": "heading"
+                            },
+                            {
+                              "buttonStyle": "danger",
+                              "events": {
+                                "click": [
+                                  {
+                                    "code": "${events.push('Button with danger style')}",
+                                    "type": "execute"
+                                  }
+                                ]
+                              },
+                              "icon": "",
+                              "name": "button6",
+                              "style": {
+                                "marginBottom": "20px",
+                                "width": "150px"
+                              },
+                              "text": "Button",
+                              "type": "button"
+                            },
+                            {
+                              "name": "heading9",
+                              "size": "H3",
+                              "text": "Button with warning style",
+                              "type": "heading"
+                            },
+                            {
+                              "buttonStyle": "warning",
+                              "events": {
+                                "click": [
+                                  {
+                                    "code": "${events.push('Button with warning style')}",
+                                    "type": "execute"
+                                  }
+                                ]
+                              },
+                              "icon": "",
+                              "name": "button7",
+                              "size": "md",
+                              "style": {
+                                "marginBottom": "20px",
+                                "width": "150px"
+                              },
+                              "text": "Button",
+                              "type": "button"
+                            },
+                            {
+                              "name": "heading10",
+                              "size": "H3",
+                              "text": "Button with info style",
+                              "type": "heading"
+                            },
+                            {
+                              "buttonStyle": "info",
+                              "events": {
+                                "click": [
+                                  {
+                                    "code": "${events.push('Button with info style')}",
+                                    "type": "execute"
+                                  }
+                                ]
+                              },
+                              "icon": "",
+                              "name": "button8",
+                              "size": "md",
+                              "style": {
+                                "marginBottom": "20px",
+                                "width": "150px"
+                              },
+                              "text": "Button",
+                              "type": "button"
+                            }
+                          ],
+                          "name": "col3",
+                          "type": "col"
+                        }
+                      ],
+                      "name": "row1",
+                      "type": "row"
+                    }
+                  ],
+                  "name": "col0",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-6",
+                  "components": [
+                    {
+                      "name": "heading1",
+                      "size": "H3",
+                      "text": "Events",
+                      "type": "heading"
+                    },
+                    {
+                      "components": [
+                        {
+                          "content": "<div style=\"overflow:auto;height:100%\">\n  <div *ngFor=\"let event of events?.reverse()\">\n      {{ event }} clicked\n  </div>\n</div>",
+                          "name": "html0",
+                          "type": "html"
+                        }
+                      ],
+                      "name": "card1",
+                      "style": {
+                        "height": "500px"
+                      },
+                      "type": "card",
+                      "visible": true
+                    }
+                  ],
+                  "name": "col1",
+                  "type": "col"
+                }
+              ],
+              "name": "row0",
+              "type": "row"
+            }
+          ],
+          "name": "card0",
+          "style": {
+            "height": "600px"
+          },
+          "type": "card",
+          "visible": true
         }
-      ]
+      ],
+      "container": "main",
+      "type": "content"
     }
-  ]
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "events",
+        "type": "set",
+        "value": "[]"
+      }
+    ]
+  },
+  "layout": "Main",
+  "name": "Button"
 }
