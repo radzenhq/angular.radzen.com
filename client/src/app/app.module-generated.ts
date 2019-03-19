@@ -24,6 +24,7 @@ import { HtmlModule } from '@radzen/angular/dist/html';
 import { SplitButtonModule } from '@radzen/angular/dist/splitbutton';
 import { IconModule } from '@radzen/angular/dist/icon';
 import { ImageModule } from '@radzen/angular/dist/image';
+import { LoginModule } from '@radzen/angular/dist/login';
 import { GravatarModule } from '@radzen/angular/dist/gravatar';
 import { GoogleMapModule } from '@radzen/angular/dist/googlemap';
 import { SharedModule } from '@radzen/angular/dist/shared';
@@ -190,6 +191,7 @@ export const AppImports = [
   SplitButtonModule,
   IconModule,
   ImageModule,
+  LoginModule,
   GravatarModule,
   GoogleMapModule,
   SharedModule,

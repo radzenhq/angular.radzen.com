@@ -12,6 +12,10 @@ import { DialogService, DIALOG_PARAMETERS, DialogRef } from '@radzen/angular/dis
 import { NotificationService } from '@radzen/angular/dist/notification';
 import { ContentComponent } from '@radzen/angular/dist/content';
 import { HeadingComponent } from '@radzen/angular/dist/heading';
+import { LinkComponent } from '@radzen/angular/dist/link';
+import { CardComponent } from '@radzen/angular/dist/card';
+import { LoginComponent } from '@radzen/angular/dist/login';
+import { HtmlComponent } from '@radzen/angular/dist/html';
 
 import { ConfigService } from '../config.service';
 
@@ -20,6 +24,16 @@ export class LoginGenerated implements AfterViewInit, OnInit, OnDestroy {
   // Components
   @ViewChild('content1') content1: ContentComponent;
   @ViewChild('pageTitle') pageTitle: HeadingComponent;
+  @ViewChild('link0') link0: LinkComponent;
+  @ViewChild('heading0') heading0: HeadingComponent;
+  @ViewChild('card0') card0: CardComponent;
+  @ViewChild('heading3') heading3: HeadingComponent;
+  @ViewChild('login0') login0: LoginComponent;
+  @ViewChild('heading2') heading2: HeadingComponent;
+  @ViewChild('login1') login1: LoginComponent;
+  @ViewChild('heading1') heading1: HeadingComponent;
+  @ViewChild('card1') card1: CardComponent;
+  @ViewChild('html0') html0: HtmlComponent;
 
   router: Router;
 
@@ -42,6 +56,7 @@ export class LoginGenerated implements AfterViewInit, OnInit, OnDestroy {
   _location: Location;
 
   _subscription: Subscription;
+  events: any;
   parameters: any;
 
   constructor(private injector: Injector) {
@@ -77,6 +92,7 @@ export class LoginGenerated implements AfterViewInit, OnInit, OnDestroy {
       } else {
         this.parameters = parameters;
       }
+      this.load();
       this.cd.detectChanges();
     });
   }
@@ -85,4 +101,24 @@ export class LoginGenerated implements AfterViewInit, OnInit, OnDestroy {
     this._subscription.unsubscribe();
   }
 
+
+  load() {
+    this.events = [];
+  }
+
+  login0Login(event: any) {
+    this.events.push('Login with registration allowed Login button clicked: ' + JSON.stringify(event))
+  }
+
+  login0Register(event: any) {
+    this.events.push('Login with registration allowed Register button clicked')
+  }
+
+  login0ResetPassword(event: any) {
+    this.events.push('Login with registration allowed Forgot Password button clicked: ' + JSON.stringify(event))
+  }
+
+  login1Login(event: any) {
+    this.events.push('Login without registration and password reset Login button clicked' + JSON.stringify(event))
+  }
 }
