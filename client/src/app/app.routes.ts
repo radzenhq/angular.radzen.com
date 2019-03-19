@@ -52,8 +52,6 @@ import { LineChartComponent } from './line-chart/line-chart.component';
 import { PieChartComponent } from './pie-chart/pie-chart.component';
 import { SparklineComponent } from './sparkline/sparkline.component';
 import { GaugeComponent } from './gauge/gauge.component';
-import { MenuComponent } from './menu/menu.component';
-import { PanelMenuComponent } from './panel-menu/panel-menu.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/button', pathMatch: 'full' },
@@ -256,14 +254,6 @@ export const routes: Routes = [
       {
         path: 'gauge',
         component: GaugeComponent
-      },
-      {
-        path: 'menu',
-        component: MenuComponent
-      },
-      {
-        path: 'panel-menu',
-        component: PanelMenuComponent
       },
     ]
   },

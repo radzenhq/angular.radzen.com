@@ -49,19 +49,6 @@
         {
           "items": [
             {
-              "items": [
-                {
-                  "path": "menu",
-                  "text": "Menu"
-                },
-                {
-                  "path": "panel-menu",
-                  "text": "PanelMenu"
-                }
-              ],
-              "text": "Layout"
-            },
-            {
               "icon": "",
               "items": [
                 {

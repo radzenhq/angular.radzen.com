@@ -60,9 +60,7 @@
     "LineChart",
     "PieChart",
     "Sparkline",
-    "Gauge",
-    "Menu",
-    "PanelMenu"
+    "Gauge"
   ],
   "pages": [
     "Button",
@@ -113,9 +111,7 @@
     "LineChart",
     "PieChart",
     "Sparkline",
-    "Gauge",
-    "Menu",
-    "PanelMenu"
+    "Gauge"
   ],
   "port": 8000,
   "serverLang": "cs",

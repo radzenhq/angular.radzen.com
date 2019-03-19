@@ -22,6 +22,7 @@ import { LinkModule } from '@radzen/angular/dist/link';
 import { ButtonModule } from '@radzen/angular/dist/button';
 import { HtmlModule } from '@radzen/angular/dist/html';
 import { SplitButtonModule } from '@radzen/angular/dist/splitbutton';
+import { GoogleMapModule } from '@radzen/angular/dist/googlemap';
 import { SharedModule } from '@radzen/angular/dist/shared';
 import { NotificationModule } from '@radzen/angular/dist/notification';
 import { DialogModule } from '@radzen/angular/dist/dialog';
@@ -80,8 +81,6 @@ import { LineChartComponent } from './line-chart/line-chart.component';
 import { PieChartComponent } from './pie-chart/pie-chart.component';
 import { SparklineComponent } from './sparkline/sparkline.component';
 import { GaugeComponent } from './gauge/gauge.component';
-import { MenuComponent } from './menu/menu.component';
-import { PanelMenuComponent } from './panel-menu/panel-menu.component';
 import { LoginLayoutComponent } from './login-layout/login-layout.component';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
 
@@ -136,8 +135,6 @@ export const PageDeclarations = [
   PieChartComponent,
   SparklineComponent,
   GaugeComponent,
-  MenuComponent,
-  PanelMenuComponent,
 ];
 
 export const LayoutDeclarations = [
@@ -186,6 +183,7 @@ export const AppImports = [
   ButtonModule,
   HtmlModule,
   SplitButtonModule,
+  GoogleMapModule,
   SharedModule,
   NotificationModule,
   DialogModule,

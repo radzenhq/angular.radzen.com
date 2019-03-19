@@ -1,19 +1,143 @@
 {
-  "name": "GoogleMap",
-  "access": "Everybody",
-  "layout": "Main",
+  "access": [
+    "Everybody"
+  ],
   "components": [
     {
-      "type": "content",
-      "container": "main",
       "components": [
         {
-          "type": "heading",
-          "size": "H1",
           "name": "pageTitle",
-          "text": "GoogleMap"
+          "size": "H1",
+          "style": {
+            "display": "inline",
+            "float": "none"
+          },
+          "text": "GoogleMap",
+          "type": "heading"
+        },
+        {
+          "icon": "",
+          "name": "link0",
+          "path": "https://github.com/akorchev/angular.radzen.com/blob/master/meta/pages/menu.json",
+          "text": "[source code]",
+          "type": "link"
+        },
+        {
+          "name": "heading0",
+          "size": "H4",
+          "text": "This page demonstrates GoogleMap component.",
+          "type": "heading"
+        },
+        {
+          "components": [
+            {
+              "components": [
+                {
+                  "class": "col-md-6",
+                  "components": [
+                    {
+                      "apiKey": "AIzaSyAJLieBqU3cH3BA3OxUlKDYjpv7Bh6dHbY",
+                      "center": {
+                        "lat": 49,
+                        "lng": 3
+                      },
+                      "events": {
+                        "mapClick": [
+                          {
+                            "code": "${events.push('Map clicked at point: ' + JSON.stringify(event))}",
+                            "type": "execute"
+                          }
+                        ],
+                        "markerClick": [
+                          {
+                            "code": "${events.push('Map marker clicked: ' + JSON.stringify({title: event.marker.title, position: event.marker.position}))}",
+                            "type": "execute"
+                          }
+                        ]
+                      },
+                      "markers": [
+                        {
+                          "label": "Paris",
+                          "position": {
+                            "lat": 48.83,
+                            "lng": 2.33
+                          },
+                          "title": "Paris"
+                        },
+                        {
+                          "label": "Rome",
+                          "position": {
+                            "lat": 41,
+                            "lng": 12
+                          },
+                          "title": "Rome"
+                        }
+                      ],
+                      "name": "googlemap0",
+                      "style": {
+                        "height": "100%"
+                      },
+                      "type": "googlemap",
+                      "zoom": 2
+                    }
+                  ],
+                  "name": "col0",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-6",
+                  "components": [
+                    {
+                      "name": "heading1",
+                      "size": "H3",
+                      "text": "Events",
+                      "type": "heading"
+                    },
+                    {
+                      "components": [
+                        {
+                          "content": "<div style=\"overflow:auto;height:100%\">\n  <div *ngFor=\"let event of events?.reverse()\">\n      {{ event }}\n  </div>\n</div>",
+                          "name": "html0",
+                          "type": "html"
+                        }
+                      ],
+                      "name": "card1",
+                      "style": {
+                        "height": "500px"
+                      },
+                      "type": "card",
+                      "visible": true
+                    }
+                  ],
+                  "name": "col1",
+                  "type": "col"
+                }
+              ],
+              "name": "row0",
+              "type": "row"
+            }
+          ],
+          "name": "card0",
+          "style": {
+            "height": "600px"
+          },
+          "type": "card",
+          "visible": true
         }
-      ]
+      ],
+      "container": "main",
+      "type": "content"
     }
-  ]
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "events",
+        "type": "set",
+        "value": "[]"
+      }
+    ]
+  },
+  "layout": "Main",
+  "name": "GoogleMap"
 }
