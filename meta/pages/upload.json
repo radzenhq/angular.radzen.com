@@ -1,19 +1,159 @@
 {
-  "name": "Upload",
-  "access": "Everybody",
-  "layout": "Main",
+  "access": [
+    "Everybody"
+  ],
   "components": [
     {
-      "type": "content",
-      "container": "main",
       "components": [
         {
-          "type": "heading",
-          "size": "H1",
           "name": "pageTitle",
-          "text": "Upload"
+          "size": "H1",
+          "style": {
+            "display": "inline",
+            "float": "none"
+          },
+          "text": "Upload",
+          "type": "heading"
+        },
+        {
+          "icon": "",
+          "name": "link0",
+          "path": "https://github.com/akorchev/angular.radzen.com/blob/master/meta/pages/upload.json",
+          "text": "[source code]",
+          "type": "link"
+        },
+        {
+          "name": "heading0",
+          "size": "H4",
+          "text": "This page demonstrates Upload component.",
+          "type": "heading"
+        },
+        {
+          "components": [
+            {
+              "components": [
+                {
+                  "class": "col-md-6",
+                  "components": [
+                    {
+                      "name": "heading3",
+                      "size": "H3",
+                      "style": {
+                        "marginTop": "20px"
+                      },
+                      "text": "Single file upload",
+                      "type": "heading"
+                    },
+                    {
+                      "events": {
+                        "beforeSend": [],
+                        "beforeUpload": [],
+                        "cancel": [],
+                        "clear": [
+                          {
+                            "code": "${events.push('Single file upload Clear')}",
+                            "type": "execute"
+                          }
+                        ],
+                        "error": [],
+                        "upload": [
+                          {
+                            "code": "${events.push('Single file upload Upload: ' + JSON.stringify(event))}",
+                            "type": "execute"
+                          }
+                        ]
+                      },
+                      "name": "upload0",
+                      "type": "upload"
+                    },
+                    {
+                      "name": "heading2",
+                      "size": "H3",
+                      "style": {
+                        "marginTop": "20px"
+                      },
+                      "text": "Multiple file upload with 100KB max file size only images",
+                      "type": "heading"
+                    },
+                    {
+                      "accept": "image/*",
+                      "events": {
+                        "clear": [
+                          {
+                            "code": "${events.push('Multiple file upload Clear')}",
+                            "type": "execute"
+                          }
+                        ],
+                        "upload": [
+                          {
+                            "code": "${events.push('Multiple file upload Upload: ' + JSON.stringify(event))}",
+                            "type": "execute"
+                          }
+                        ]
+                      },
+                      "maxFileSize": 100000,
+                      "multiple": true,
+                      "name": "upload1",
+                      "type": "upload"
+                    }
+                  ],
+                  "name": "col0",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-6",
+                  "components": [
+                    {
+                      "name": "heading1",
+                      "size": "H3",
+                      "text": "Events",
+                      "type": "heading"
+                    },
+                    {
+                      "components": [
+                        {
+                          "content": "<div style=\"overflow:auto;height:100%\">\n  <div *ngFor=\"let event of events?.reverse()\">\n      {{ event }}\n  </div>\n</div>",
+                          "name": "html0",
+                          "type": "html"
+                        }
+                      ],
+                      "name": "card1",
+                      "style": {
+                        "height": "500px"
+                      },
+                      "type": "card",
+                      "visible": true
+                    }
+                  ],
+                  "name": "col1",
+                  "type": "col"
+                }
+              ],
+              "name": "row0",
+              "type": "row"
+            }
+          ],
+          "name": "card0",
+          "style": {
+            "height": "600px"
+          },
+          "type": "card",
+          "visible": true
         }
-      ]
+      ],
+      "container": "main",
+      "type": "content"
     }
-  ]
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "events",
+        "type": "set",
+        "value": "[]"
+      }
+    ]
+  },
+  "layout": "Main",
+  "name": "Upload"
 }

@@ -26,6 +26,7 @@ import { IconModule } from '@radzen/angular/dist/icon';
 import { ImageModule } from '@radzen/angular/dist/image';
 import { ProgressBarModule } from '@radzen/angular/dist/progressbar';
 import { LoginModule } from '@radzen/angular/dist/login';
+import { UploadModule } from '@radzen/angular/dist/upload';
 import { GravatarModule } from '@radzen/angular/dist/gravatar';
 import { GoogleMapModule } from '@radzen/angular/dist/googlemap';
 import { SharedModule } from '@radzen/angular/dist/shared';
@@ -194,6 +195,7 @@ export const AppImports = [
   ImageModule,
   ProgressBarModule,
   LoginModule,
+  UploadModule,
   GravatarModule,
   GoogleMapModule,
   SharedModule,
