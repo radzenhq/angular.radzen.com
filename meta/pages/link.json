@@ -1,19 +1,166 @@
 {
-  "name": "Link",
-  "access": "Everybody",
-  "layout": "Main",
+  "access": [
+    "Everybody"
+  ],
   "components": [
     {
-      "type": "content",
-      "container": "main",
       "components": [
         {
-          "type": "heading",
-          "size": "H1",
           "name": "pageTitle",
-          "text": "Link"
+          "size": "H1",
+          "style": {
+            "display": "inline",
+            "float": "none"
+          },
+          "text": "Link",
+          "type": "heading"
+        },
+        {
+          "icon": "",
+          "name": "link0",
+          "path": "https://github.com/akorchev/angular.radzen.com/blob/master/meta/pages/image.json",
+          "text": "[source code]",
+          "type": "link"
+        },
+        {
+          "name": "heading0",
+          "size": "H4",
+          "text": "This page demonstrates Link component.",
+          "type": "heading"
+        },
+        {
+          "components": [
+            {
+              "components": [
+                {
+                  "class": "col-md-6",
+                  "components": [
+                    {
+                      "name": "heading2",
+                      "size": "H3",
+                      "text": "Link to path in application",
+                      "type": "heading"
+                    },
+                    {
+                      "icon": "",
+                      "name": "link1",
+                      "path": "button",
+                      "text": "Go to Buttons page",
+                      "type": "link"
+                    },
+                    {
+                      "name": "heading3",
+                      "size": "H3",
+                      "style": {
+                        "marginTop": "20px"
+                      },
+                      "text": "Link to path in application with icon",
+                      "type": "heading"
+                    },
+                    {
+                      "icon": "accessibility",
+                      "name": "link2",
+                      "path": "icon",
+                      "text": "Go to Icons page",
+                      "type": "link"
+                    },
+                    {
+                      "name": "heading4",
+                      "size": "H3",
+                      "style": {
+                        "marginTop": "20px"
+                      },
+                      "text": "Link to path in application with parameters",
+                      "type": "heading"
+                    },
+                    {
+                      "icon": "language",
+                      "name": "link3",
+                      "parameters": [
+                        {
+                          "name": "MyParameter",
+                          "value": "SomeValue"
+                        }
+                      ],
+                      "path": "page-with-parameter",
+                      "text": "Go to page with parameter ",
+                      "type": "link"
+                    },
+                    {
+                      "name": "heading5",
+                      "size": "H3",
+                      "style": {
+                        "marginTop": "20px"
+                      },
+                      "text": "Link to url",
+                      "type": "heading"
+                    },
+                    {
+                      "icon": "",
+                      "name": "link4",
+                      "parameters": [],
+                      "path": "https://www.radzen.com",
+                      "text": "Go to url",
+                      "type": "link"
+                    }
+                  ],
+                  "name": "col0",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-6",
+                  "components": [
+                    {
+                      "name": "heading1",
+                      "size": "H3",
+                      "text": "Events",
+                      "type": "heading"
+                    },
+                    {
+                      "components": [
+                        {
+                          "content": "<div style=\"overflow:auto;height:100%\">\n  N/A\n</div>",
+                          "name": "html0",
+                          "type": "html"
+                        }
+                      ],
+                      "name": "card1",
+                      "style": {
+                        "height": "500px"
+                      },
+                      "type": "card",
+                      "visible": true
+                    }
+                  ],
+                  "name": "col1",
+                  "type": "col"
+                }
+              ],
+              "name": "row0",
+              "type": "row"
+            }
+          ],
+          "name": "card0",
+          "style": {
+            "height": "600px"
+          },
+          "type": "card",
+          "visible": true
         }
-      ]
+      ],
+      "container": "main",
+      "type": "content"
     }
-  ]
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "events",
+        "type": "set",
+        "value": "[]"
+      }
+    ]
+  },
+  "layout": "Main",
+  "name": "Link"
 }

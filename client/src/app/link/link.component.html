@@ -1,4 +1,41 @@
 <rz-content #content1 container="main">
-  <rz-heading #pageTitle size="H1" text="Link">
+  <rz-heading #pageTitle size="H1" [style]="{'display': 'inline', 'float': 'none'}" text="Link">
   </rz-heading>
+  <rz-link #link0 path="https://github.com/akorchev/angular.radzen.com/blob/master/meta/pages/image.json" text="[source code]">
+  </rz-link>
+  <rz-heading #heading0 size="H4" text="This page demonstrates Link component.">
+  </rz-heading>
+  <rz-card #card0 [style]="{'height': '600px'}">
+    <div class="row">
+      <div class="col-md-6">
+        <rz-heading #heading2 size="H3" text="Link to path in application">
+        </rz-heading>
+        <rz-link #link1 path="button" text="Go to Buttons page">
+        </rz-link>
+        <rz-heading #heading3 size="H3" [style]="{'marginTop': '20px'}" text="Link to path in application with icon">
+        </rz-heading>
+        <rz-link #link2 icon="accessibility" path="icon" text="Go to Icons page">
+        </rz-link>
+        <rz-heading #heading4 size="H3" [style]="{'marginTop': '20px'}" text="Link to path in application with parameters">
+        </rz-heading>
+        <rz-link #link3 icon="language" [parameters]="[{'name': 'MyParameter', 'value': 'SomeValue'}]" path="page-with-parameter" text="Go to page with parameter ">
+        </rz-link>
+        <rz-heading #heading5 size="H3" [style]="{'marginTop': '20px'}" text="Link to url">
+        </rz-heading>
+        <rz-link #link4 [parameters]="[]" path="https://www.radzen.com" text="Go to url">
+        </rz-link>
+      </div>
+      <div class="col-md-6">
+        <rz-heading #heading1 size="H3" text="Events">
+        </rz-heading>
+        <rz-card #card1 [style]="{'height': '500px'}">
+          <rz-html #html0>
+            <div style="overflow:auto;height:100%">
+              N/A
+            </div>
+          </rz-html>
+        </rz-card>
+      </div>
+    </div>
+  </rz-card>
 </rz-content>

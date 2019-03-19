@@ -52,6 +52,7 @@ import { LineChartComponent } from './line-chart/line-chart.component';
 import { PieChartComponent } from './pie-chart/pie-chart.component';
 import { SparklineComponent } from './sparkline/sparkline.component';
 import { GaugeComponent } from './gauge/gauge.component';
+import { PageWithParameterComponent } from './page-with-parameter/page-with-parameter.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/button', pathMatch: 'full' },
@@ -254,6 +255,10 @@ export const routes: Routes = [
       {
         path: 'gauge',
         component: GaugeComponent
+      },
+      {
+        path: 'page-with-parameter/:MyParameter',
+        component: PageWithParameterComponent
       },
     ]
   },

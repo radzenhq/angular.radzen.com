@@ -1,0 +1,27 @@
+{
+  "access": [
+    "Everybody"
+  ],
+  "components": [
+    {
+      "components": [
+        {
+          "name": "pageTitle",
+          "size": "H1",
+          "text": "PageWithParameter",
+          "type": "heading"
+        },
+        {
+          "name": "heading0",
+          "size": "H3",
+          "text": "${parameters.MyParameter}",
+          "type": "heading"
+        }
+      ],
+      "container": "main",
+      "type": "content"
+    }
+  ],
+  "layout": "Main",
+  "name": "PageWithParameter"
+}

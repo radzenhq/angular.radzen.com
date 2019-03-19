@@ -111,7 +111,8 @@
     "LineChart",
     "PieChart",
     "Sparkline",
-    "Gauge"
+    "Gauge",
+    "PageWithParameter"
   ],
   "port": 8000,
   "serverLang": "cs",

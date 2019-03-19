@@ -84,6 +84,7 @@ import { LineChartComponent } from './line-chart/line-chart.component';
 import { PieChartComponent } from './pie-chart/pie-chart.component';
 import { SparklineComponent } from './sparkline/sparkline.component';
 import { GaugeComponent } from './gauge/gauge.component';
+import { PageWithParameterComponent } from './page-with-parameter/page-with-parameter.component';
 import { LoginLayoutComponent } from './login-layout/login-layout.component';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
 
@@ -138,6 +139,7 @@ export const PageDeclarations = [
   PieChartComponent,
   SparklineComponent,
   GaugeComponent,
+  PageWithParameterComponent,
 ];
 
 export const LayoutDeclarations = [
