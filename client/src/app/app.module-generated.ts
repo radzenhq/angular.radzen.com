@@ -24,6 +24,7 @@ import { HtmlModule } from '@radzen/angular/dist/html';
 import { SplitButtonModule } from '@radzen/angular/dist/splitbutton';
 import { IconModule } from '@radzen/angular/dist/icon';
 import { ImageModule } from '@radzen/angular/dist/image';
+import { ProgressBarModule } from '@radzen/angular/dist/progressbar';
 import { LoginModule } from '@radzen/angular/dist/login';
 import { GravatarModule } from '@radzen/angular/dist/gravatar';
 import { GoogleMapModule } from '@radzen/angular/dist/googlemap';
@@ -191,6 +192,7 @@ export const AppImports = [
   SplitButtonModule,
   IconModule,
   ImageModule,
+  ProgressBarModule,
   LoginModule,
   GravatarModule,
   GoogleMapModule,
