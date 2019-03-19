@@ -12,6 +12,10 @@ import { DialogService, DIALOG_PARAMETERS, DialogRef } from '@radzen/angular/dis
 import { NotificationService } from '@radzen/angular/dist/notification';
 import { ContentComponent } from '@radzen/angular/dist/content';
 import { HeadingComponent } from '@radzen/angular/dist/heading';
+import { LinkComponent } from '@radzen/angular/dist/link';
+import { CardComponent } from '@radzen/angular/dist/card';
+import { IconComponent } from '@radzen/angular/dist/icon';
+import { HtmlComponent } from '@radzen/angular/dist/html';
 
 import { ConfigService } from '../config.service';
 
@@ -20,6 +24,126 @@ export class IconGenerated implements AfterViewInit, OnInit, OnDestroy {
   // Components
   @ViewChild('content1') content1: ContentComponent;
   @ViewChild('pageTitle') pageTitle: HeadingComponent;
+  @ViewChild('link0') link0: LinkComponent;
+  @ViewChild('heading0') heading0: HeadingComponent;
+  @ViewChild('card0') card0: CardComponent;
+  @ViewChild('heading3') heading3: HeadingComponent;
+  @ViewChild('icon0') icon0: IconComponent;
+  @ViewChild('icon9') icon9: IconComponent;
+  @ViewChild('icon8') icon8: IconComponent;
+  @ViewChild('icon7') icon7: IconComponent;
+  @ViewChild('icon6') icon6: IconComponent;
+  @ViewChild('icon5') icon5: IconComponent;
+  @ViewChild('icon4') icon4: IconComponent;
+  @ViewChild('icon3') icon3: IconComponent;
+  @ViewChild('icon2') icon2: IconComponent;
+  @ViewChild('icon1') icon1: IconComponent;
+  @ViewChild('icon12') icon12: IconComponent;
+  @ViewChild('icon11') icon11: IconComponent;
+  @ViewChild('icon10') icon10: IconComponent;
+  @ViewChild('icon16') icon16: IconComponent;
+  @ViewChild('icon15') icon15: IconComponent;
+  @ViewChild('icon14') icon14: IconComponent;
+  @ViewChild('icon13') icon13: IconComponent;
+  @ViewChild('icon31') icon31: IconComponent;
+  @ViewChild('icon30') icon30: IconComponent;
+  @ViewChild('icon29') icon29: IconComponent;
+  @ViewChild('icon28') icon28: IconComponent;
+  @ViewChild('icon27') icon27: IconComponent;
+  @ViewChild('icon26') icon26: IconComponent;
+  @ViewChild('icon25') icon25: IconComponent;
+  @ViewChild('icon24') icon24: IconComponent;
+  @ViewChild('icon23') icon23: IconComponent;
+  @ViewChild('icon22') icon22: IconComponent;
+  @ViewChild('icon21') icon21: IconComponent;
+  @ViewChild('icon20') icon20: IconComponent;
+  @ViewChild('icon19') icon19: IconComponent;
+  @ViewChild('icon18') icon18: IconComponent;
+  @ViewChild('icon17') icon17: IconComponent;
+  @ViewChild('icon47') icon47: IconComponent;
+  @ViewChild('icon46') icon46: IconComponent;
+  @ViewChild('icon45') icon45: IconComponent;
+  @ViewChild('icon44') icon44: IconComponent;
+  @ViewChild('icon43') icon43: IconComponent;
+  @ViewChild('icon42') icon42: IconComponent;
+  @ViewChild('icon41') icon41: IconComponent;
+  @ViewChild('icon40') icon40: IconComponent;
+  @ViewChild('icon39') icon39: IconComponent;
+  @ViewChild('icon38') icon38: IconComponent;
+  @ViewChild('icon37') icon37: IconComponent;
+  @ViewChild('icon36') icon36: IconComponent;
+  @ViewChild('icon35') icon35: IconComponent;
+  @ViewChild('icon34') icon34: IconComponent;
+  @ViewChild('icon33') icon33: IconComponent;
+  @ViewChild('icon32') icon32: IconComponent;
+  @ViewChild('icon64') icon64: IconComponent;
+  @ViewChild('icon65') icon65: IconComponent;
+  @ViewChild('icon66') icon66: IconComponent;
+  @ViewChild('icon67') icon67: IconComponent;
+  @ViewChild('icon68') icon68: IconComponent;
+  @ViewChild('icon69') icon69: IconComponent;
+  @ViewChild('icon70') icon70: IconComponent;
+  @ViewChild('icon71') icon71: IconComponent;
+  @ViewChild('icon72') icon72: IconComponent;
+  @ViewChild('icon73') icon73: IconComponent;
+  @ViewChild('icon74') icon74: IconComponent;
+  @ViewChild('icon75') icon75: IconComponent;
+  @ViewChild('icon76') icon76: IconComponent;
+  @ViewChild('icon77') icon77: IconComponent;
+  @ViewChild('icon78') icon78: IconComponent;
+  @ViewChild('icon79') icon79: IconComponent;
+  @ViewChild('icon48') icon48: IconComponent;
+  @ViewChild('icon49') icon49: IconComponent;
+  @ViewChild('icon50') icon50: IconComponent;
+  @ViewChild('icon51') icon51: IconComponent;
+  @ViewChild('icon52') icon52: IconComponent;
+  @ViewChild('icon53') icon53: IconComponent;
+  @ViewChild('icon54') icon54: IconComponent;
+  @ViewChild('icon55') icon55: IconComponent;
+  @ViewChild('icon56') icon56: IconComponent;
+  @ViewChild('icon57') icon57: IconComponent;
+  @ViewChild('icon58') icon58: IconComponent;
+  @ViewChild('icon59') icon59: IconComponent;
+  @ViewChild('icon60') icon60: IconComponent;
+  @ViewChild('icon61') icon61: IconComponent;
+  @ViewChild('icon62') icon62: IconComponent;
+  @ViewChild('icon63') icon63: IconComponent;
+  @ViewChild('icon80') icon80: IconComponent;
+  @ViewChild('icon81') icon81: IconComponent;
+  @ViewChild('icon82') icon82: IconComponent;
+  @ViewChild('icon83') icon83: IconComponent;
+  @ViewChild('icon84') icon84: IconComponent;
+  @ViewChild('icon85') icon85: IconComponent;
+  @ViewChild('icon86') icon86: IconComponent;
+  @ViewChild('icon87') icon87: IconComponent;
+  @ViewChild('icon88') icon88: IconComponent;
+  @ViewChild('icon89') icon89: IconComponent;
+  @ViewChild('icon90') icon90: IconComponent;
+  @ViewChild('icon91') icon91: IconComponent;
+  @ViewChild('icon92') icon92: IconComponent;
+  @ViewChild('icon93') icon93: IconComponent;
+  @ViewChild('icon94') icon94: IconComponent;
+  @ViewChild('icon95') icon95: IconComponent;
+  @ViewChild('icon96') icon96: IconComponent;
+  @ViewChild('icon97') icon97: IconComponent;
+  @ViewChild('icon98') icon98: IconComponent;
+  @ViewChild('icon99') icon99: IconComponent;
+  @ViewChild('icon100') icon100: IconComponent;
+  @ViewChild('icon101') icon101: IconComponent;
+  @ViewChild('icon102') icon102: IconComponent;
+  @ViewChild('icon103') icon103: IconComponent;
+  @ViewChild('icon104') icon104: IconComponent;
+  @ViewChild('icon105') icon105: IconComponent;
+  @ViewChild('icon106') icon106: IconComponent;
+  @ViewChild('icon107') icon107: IconComponent;
+  @ViewChild('icon108') icon108: IconComponent;
+  @ViewChild('icon109') icon109: IconComponent;
+  @ViewChild('icon110') icon110: IconComponent;
+  @ViewChild('icon111') icon111: IconComponent;
+  @ViewChild('link1') link1: LinkComponent;
+  @ViewChild('heading1') heading1: HeadingComponent;
+  @ViewChild('card1') card1: CardComponent;
+  @ViewChild('html0') html0: HtmlComponent;
 
   router: Router;
 
@@ -42,6 +166,7 @@ export class IconGenerated implements AfterViewInit, OnInit, OnDestroy {
   _location: Location;
 
   _subscription: Subscription;
+  events: any;
   parameters: any;
 
   constructor(private injector: Injector) {
@@ -77,6 +202,7 @@ export class IconGenerated implements AfterViewInit, OnInit, OnDestroy {
       } else {
         this.parameters = parameters;
       }
+      this.load();
       this.cd.detectChanges();
     });
   }
@@ -85,4 +211,8 @@ export class IconGenerated implements AfterViewInit, OnInit, OnDestroy {
     this._subscription.unsubscribe();
   }
 
+
+  load() {
+    this.events = [];
+  }
 }

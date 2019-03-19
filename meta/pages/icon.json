@@ -1,19 +1,673 @@
 {
-  "name": "Icon",
-  "access": "Everybody",
-  "layout": "Main",
+  "access": [
+    "Everybody"
+  ],
   "components": [
     {
-      "type": "content",
-      "container": "main",
       "components": [
         {
-          "type": "heading",
-          "size": "H1",
           "name": "pageTitle",
-          "text": "Icon"
+          "size": "H1",
+          "style": {
+            "display": "inline",
+            "float": "none"
+          },
+          "text": "Icon",
+          "type": "heading"
+        },
+        {
+          "icon": "",
+          "name": "link0",
+          "path": "https://github.com/akorchev/angular.radzen.com/blob/master/meta/pages/icon.json",
+          "text": "[source code]",
+          "type": "link"
+        },
+        {
+          "name": "heading0",
+          "size": "H4",
+          "text": "This page demonstrates Icon component.",
+          "type": "heading"
+        },
+        {
+          "components": [
+            {
+              "components": [
+                {
+                  "class": "col-md-6",
+                  "components": [
+                    {
+                      "name": "heading3",
+                      "size": "H3",
+                      "style": {
+                        "marginTop": "20px"
+                      },
+                      "text": "Material Icons",
+                      "type": "heading"
+                    },
+                    {
+                      "icon": "accessibility",
+                      "name": "icon0",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "3d_rotation",
+                      "name": "icon9",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "accessible",
+                      "name": "icon8",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "account_balance",
+                      "name": "icon7",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "account_balance_wallet",
+                      "name": "icon6",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "account_box",
+                      "name": "icon5",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "account_circle",
+                      "name": "icon4",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "add_shopping_cart",
+                      "name": "icon3",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "alarm",
+                      "name": "icon2",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "alarm_add",
+                      "name": "icon1",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "alarm_off",
+                      "name": "icon12",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "alarm_on",
+                      "name": "icon11",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "all_out",
+                      "name": "icon10",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "android",
+                      "name": "icon16",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "announcement",
+                      "name": "icon15",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "aspect_ratio",
+                      "name": "icon14",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "assessment",
+                      "name": "icon13",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "assignment",
+                      "name": "icon31",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "assignment_ind",
+                      "name": "icon30",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "assignment_late",
+                      "name": "icon29",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "assignment_return",
+                      "name": "icon28",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "assignment_returned",
+                      "name": "icon27",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "assignment_turned_in",
+                      "name": "icon26",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "autorenew",
+                      "name": "icon25",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "backup",
+                      "name": "icon24",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "book",
+                      "name": "icon23",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "bookmark",
+                      "name": "icon22",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "bookmark_border",
+                      "name": "icon21",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "bug_report",
+                      "name": "icon20",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "build",
+                      "name": "icon19",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "cached",
+                      "name": "icon18",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "camera_enhance",
+                      "name": "icon17",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "card_giftcard",
+                      "name": "icon47",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "card_membership",
+                      "name": "icon46",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "card_travel",
+                      "name": "icon45",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "change_history",
+                      "name": "icon44",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "check_circle",
+                      "name": "icon43",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "chrome_reader_mode",
+                      "name": "icon42",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "class",
+                      "name": "icon41",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "code",
+                      "name": "icon40",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "compare_arrows",
+                      "name": "icon39",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "copyright",
+                      "name": "icon38",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "credit_card",
+                      "name": "icon37",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "dashboard",
+                      "name": "icon36",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "date_range",
+                      "name": "icon35",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "delete",
+                      "name": "icon34",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "delete_forever",
+                      "name": "icon33",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "description",
+                      "name": "icon32",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "dns",
+                      "name": "icon64",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "done",
+                      "name": "icon65",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "done_all",
+                      "name": "icon66",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "donut_large",
+                      "name": "icon67",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "donut_small",
+                      "name": "icon68",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "eject",
+                      "name": "icon69",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "euro_symbol",
+                      "name": "icon70",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "event",
+                      "name": "icon71",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "event_seat",
+                      "name": "icon72",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "exit_to_app",
+                      "name": "icon73",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "explore",
+                      "name": "icon74",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "extension",
+                      "name": "icon75",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "face",
+                      "name": "icon76",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "favorite",
+                      "name": "icon77",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "favorite_border",
+                      "name": "icon78",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "feedback",
+                      "name": "icon79",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "find_in_page",
+                      "name": "icon48",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "find_replace",
+                      "name": "icon49",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "fingerprint",
+                      "name": "icon50",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "flight_land",
+                      "name": "icon51",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "flight_takeoff",
+                      "name": "icon52",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "flip_to_back",
+                      "name": "icon53",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "flip_to_front",
+                      "name": "icon54",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "g_translate",
+                      "name": "icon55",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "gavel",
+                      "name": "icon56",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "get_app",
+                      "name": "icon57",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "gif",
+                      "name": "icon58",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "grade",
+                      "name": "icon59",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "group_work",
+                      "name": "icon60",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "help",
+                      "name": "icon61",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "help_outline",
+                      "name": "icon62",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "highlight_off",
+                      "name": "icon63",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "history",
+                      "name": "icon80",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "home",
+                      "name": "icon81",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "hourglass_empty",
+                      "name": "icon82",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "hourglass_full",
+                      "name": "icon83",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "http",
+                      "name": "icon84",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "https",
+                      "name": "icon85",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "important_devices",
+                      "name": "icon86",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "info",
+                      "name": "icon87",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "info_outline",
+                      "name": "icon88",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "input",
+                      "name": "icon89",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "invert_colors",
+                      "name": "icon90",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "label",
+                      "name": "icon91",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "label_outline",
+                      "name": "icon92",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "language",
+                      "name": "icon93",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "launch",
+                      "name": "icon94",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "lightbulb_outline",
+                      "name": "icon95",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "line_style",
+                      "name": "icon96",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "line_weight",
+                      "name": "icon97",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "list",
+                      "name": "icon98",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "lock",
+                      "name": "icon99",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "lock_open",
+                      "name": "icon100",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "lock_outline",
+                      "name": "icon101",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "loyalty",
+                      "name": "icon102",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "markunread_mailbox",
+                      "name": "icon103",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "motorcycle",
+                      "name": "icon104",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "note_add",
+                      "name": "icon105",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "offline_pin",
+                      "name": "icon106",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "opacity",
+                      "name": "icon107",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "open_in_browser",
+                      "name": "icon108",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "open_in_new",
+                      "name": "icon109",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "open_with",
+                      "name": "icon110",
+                      "type": "icon"
+                    },
+                    {
+                      "icon": "pageview",
+                      "name": "icon111",
+                      "type": "icon"
+                    },
+                    {
+                      "name": "link1",
+                      "path": "https://material.io/tools/icons/",
+                      "text": "More icons...",
+                      "type": "link"
+                    }
+                  ],
+                  "name": "col0",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-6",
+                  "components": [
+                    {
+                      "name": "heading1",
+                      "size": "H3",
+                      "text": "Events",
+                      "type": "heading"
+                    },
+                    {
+                      "components": [
+                        {
+                          "content": "<div style=\"overflow:auto;height:100%\">\n  N/A\n</div>",
+                          "name": "html0",
+                          "type": "html"
+                        }
+                      ],
+                      "name": "card1",
+                      "style": {
+                        "height": "500px"
+                      },
+                      "type": "card",
+                      "visible": true
+                    }
+                  ],
+                  "name": "col1",
+                  "type": "col"
+                }
+              ],
+              "name": "row0",
+              "type": "row"
+            }
+          ],
+          "name": "card0",
+          "style": {
+            "height": "600px"
+          },
+          "type": "card",
+          "visible": true
         }
-      ]
+      ],
+      "container": "main",
+      "type": "content"
     }
-  ]
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "events",
+        "type": "set",
+        "value": "[]"
+      }
+    ]
+  },
+  "layout": "Main",
+  "name": "Icon"
 }
