@@ -285,7 +285,7 @@
       "components": [
         {
           "name": "footerText",
-          "text": "RadzenAngularComponents, Copyright &copy; 2019",
+          "text": "Radzen Angular Components, Copyright &copy; 2019",
           "type": "label"
         }
       ],
