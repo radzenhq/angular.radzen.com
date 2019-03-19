@@ -109,14 +109,32 @@ export class SplitButtonGenerated implements AfterViewInit, OnInit, OnDestroy {
   }
 
   button0Click(event: any) {
-    this.events.push('SplitButton with text')
+    if (!event) {
+      this.events.push('SplitButton with text')
+    }
+
+    if (event) {
+      this.events.push('SplitButton with text item with value ' + event.value)
+    }
   }
 
   button1Click(event: any) {
-    this.events.push('SplitButton with text and icon')
+    if (!event) {
+      this.events.push('SplitButton with text and icon')
+    }
+
+    if (event) {
+      this.events.push('SplitButton with text and icon item with value ' + event.value)
+    }
   }
 
   button2Click(event: any) {
-    this.events.push('SplitButton with icon')
+    if (!event) {
+      this.events.push('SplitButton with icon')
+    }
+
+    if (event) {
+      this.events.push('SplitButton with icon item with value ' + event.value)
+    }
   }
 }

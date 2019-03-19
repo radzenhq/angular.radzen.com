@@ -1119,7 +1119,7 @@
           "lib/netstandard2.0/Microsoft.AspNetCore.NodeServices.dll": {}
         }
       },
-      "Microsoft.AspNetCore.OData/7.0.0": {
+      "Microsoft.AspNetCore.OData/7.1.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNetCore.Mvc.Core": "[2.0.0, 3.0.0)",
@@ -5157,7 +5157,7 @@
       ]
     },
     "Libuv/1.10.0": {
-      "sha512": "lgDqozqVhVQ+YeXZdD/nh1s0noRPw12Z6XJ4EEmdcZYd8qIbiAIg6sfiQeHWpglurv2TPj8pSfRiUNGaRGSBWw==",
+      "sha512": "GsCf4q+eyaI49rCPlgYxdxa1SQCysXFFdSJWdstrwxytg4+VPYLYrXD4AT2rjHVJ+UF7SSWX9CapWEYaU4ejVQ==",
       "type": "package",
       "path": "libuv/1.10.0",
       "files": [
@@ -5177,7 +5177,7 @@
       ]
     },
     "Microsoft.ApplicationInsights/2.4.0": {
-      "sha512": "ijBpEs+3LXptF1VMIztBjHSBmfaZXQ0esX5FWqi9+jb5kYcYm2uyZ+lSL3MkTjie/529QBSkxsCTYwyOUihHsg==",
+      "sha512": "4dX/zu3Psz9oM3ErU64xfOHuSxOwMxN6q5RabSkeYbX42Yn6dR/kDToqjs+txCRjrfHUxyYjfeJHu+MbCfvAsg==",
       "type": "package",
       "path": "microsoft.applicationinsights/2.4.0",
       "files": [
@@ -5214,7 +5214,7 @@
       ]
     },
     "Microsoft.ApplicationInsights.DependencyCollector/2.4.1": {
-      "sha512": "cmNBSZuXAN3Fcjqo6cORASHzsCDojwVkCiSbcg6lMPL8yzUHk9VX042oDfUwKNq4yk+80wgUmYKdSUgyuXaHKw==",
+      "sha512": "9dNiUxWKLlOxfk9PLrqg+idGZOkfC6Cc+wv9vieVxvcUMxDX2bRLg85F0p7gCStCwcjRySEBaJIDzktw8S8vkQ==",
       "type": "package",
       "path": "microsoft.applicationinsights.dependencycollector/2.4.1",
       "files": [
@@ -6012,16 +6012,16 @@
         "microsoft.aspnetcore.nodeservices.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.OData/7.0.0": {
-      "sha512": "pvBbayomdyEGOvsD8w07B/bOILCThrEIX1VtGanZC2RA3xsSLwvhZomOsnMTCMZvRQ+D6rbqEl0d+EIFip1USw==",
+    "Microsoft.AspNetCore.OData/7.1.0": {
+      "sha512": "weo1lPhEWnn2KnAV5fg14b8jiQeI7mH07hMfWW2LuLbgLFeK7fqfYRQufX9aqcUd3RPjyjlfRFJuYOSq5dy5yw==",
       "type": "package",
-      "path": "microsoft.aspnetcore.odata/7.0.0",
+      "path": "microsoft.aspnetcore.odata/7.1.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard2.0/Microsoft.AspNetCore.OData.dll",
         "lib/netstandard2.0/Microsoft.AspNetCore.OData.xml",
-        "microsoft.aspnetcore.odata.7.0.0.nupkg.sha512",
+        "microsoft.aspnetcore.odata.7.1.0.nupkg.sha512",
         "microsoft.aspnetcore.odata.nuspec"
       ]
     },
@@ -7966,7 +7966,7 @@
       ]
     },
     "Microsoft.NETCore.Platforms/2.0.0": {
-      "sha512": "CCf4NjmDOoise7FAij2VPuHIgKKsu696vkTwhOkPVQfLsTmB2WLFfQ4yeO5Udtk8FD636UBMx6Y9eovzJKT76A==",
+      "sha512": "BNxPJtedjaOTXAiznVFLrgcfHtZqsubECFL4KAxKPltpzjqFAU+uew1wgR6c1CaHJQJbnp43x38EXDEo6uk7PA==",
       "type": "package",
       "path": "microsoft.netcore.platforms/2.0.0",
       "files": [
@@ -8560,7 +8560,7 @@
       ]
     },
     "runtime.native.System.Data.SqlClient.sni/4.4.0": {
-      "sha512": "A8v6PGmk+UGbfWo5Ixup0lPM4swuSwOiayJExZwKIOjTlFFQIsu3QnDXECosBEyrWSPryxBVrdqtJyhK3BaupQ==",
+      "sha512": "V35fxONEHOGS6QmoDD8BxU9pX1WJTiRj16ooKgSesY6e3iYy2b44Z10w5CFejlEKCqTF0+5iskwCB4wjX5cC+w==",
       "type": "package",
       "path": "runtime.native.system.data.sqlclient.sni/4.4.0",
       "files": [
@@ -8743,7 +8743,7 @@
       ]
     },
     "runtime.win-arm64.runtime.native.System.Data.SqlClient.sni/4.4.0": {
-      "sha512": "LbrynESTp3bm5O/+jGL8v0Qg5SJlTV08lpIpFesXjF6uGNMWqFnUQbYBJwZTeua6E/Y7FIM1C54Ey1btLWupdg==",
+      "sha512": "cPmtFmtZ6So+y3w7DvjZgJWZOMbFXWKfjpVP/vaOCRQ9RTiP6iHxDTmuuyZn8eiJS6JDe/OTFkydi4Dhn2Zhmw==",
       "type": "package",
       "path": "runtime.win-arm64.runtime.native.system.data.sqlclient.sni/4.4.0",
       "files": [
@@ -8758,7 +8758,7 @@
       ]
     },
     "runtime.win-x64.runtime.native.System.Data.SqlClient.sni/4.4.0": {
-      "sha512": "38ugOfkYJqJoX9g6EYRlZB5U2ZJH51UP8ptxZgdpS07FgOEToV+lS11ouNK2PM12Pr6X/PpT5jK82G3DwH/SxQ==",
+      "sha512": "rKZUJW9LZhGLMjh+CHChXi5sPntkKuwq+O1KOQscZCdbiyu1x3pxftlpNJTl2sV6WGwiGPjgMX+mNo3NT8D0aQ==",
       "type": "package",
       "path": "runtime.win-x64.runtime.native.system.data.sqlclient.sni/4.4.0",
       "files": [
@@ -8773,7 +8773,7 @@
       ]
     },
     "runtime.win-x86.runtime.native.System.Data.SqlClient.sni/4.4.0": {
-      "sha512": "YhEdSQUsTx+C8m8Bw7ar5/VesXvCFMItyZF7G1AUY+OM0VPZUOeAVpJ4Wl6fydBGUYZxojTDR3I6Bj/+BPkJNA==",
+      "sha512": "ODqDWS33hFea2BB/2aNVCVVv0iCE4ye4NmlyBh8z/wuLPIBGEyesldE7LEtbuDSHpbIley945ZD80T/HUKThZw==",
       "type": "package",
       "path": "runtime.win-x86.runtime.native.system.data.sqlclient.sni/4.4.0",
       "files": [
@@ -9829,11 +9829,12 @@
       ]
     },
     "System.Diagnostics.FileVersionInfo/4.3.0": {
-      "sha512": "omCF64wzQ3Q2CeIqkD6lmmxeMZtGHUmzgFMPjfVaOsyqpR66p/JaZzManMw1s33osoAb5gqpncsjie67+yUPHQ==",
+      "sha512": "6WVi7gArhxRiC+3qI5V2mFe1gHENj/F7xT5PQiy/lI/RsxXeivrt09WF0huwSQK2ubnmyyRFeA9z3w743/w32A==",
       "type": "package",
       "path": "system.diagnostics.fileversioninfo/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -11207,11 +11208,12 @@
       ]
     },
     "System.Private.DataContractSerialization/4.3.0": {
-      "sha512": "yDaJ2x3mMmjdZEDB4IbezSnCsnjQ4BxinKhRAaP6kEgL6Bb6jANWphs5SzyD8imqeC/3FxgsuXT6ykkiH1uUmA==",
+      "sha512": "FQ8EpQJ/nkhlWEZSJVQmDLNONiMufYRuLVL/X7YnsVUIFJuhWO6i1Yc5+s7j7ZUlJtuTvWs96aHr5TU/kFM31w==",
       "type": "package",
       "path": "system.private.datacontractserialization/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.3/System.Private.DataContractSerialization.dll",
@@ -12082,7 +12084,7 @@
       ]
     },
     "System.Runtime.Serialization.Formatters/4.3.0": {
-      "sha512": "KT591AkTNFOTbhZlaeMVvfax3RqhH1EJlcwF50Wm7sfnBLuHiOeZRRKrr1ns3NESkM20KPZ5Ol/ueMq5vg4QoQ==",
+      "sha512": "s8fqhiYpzAQ2zUg4IaTOpnfhpP4LW4C/n0Yb62iJ6hAmJxj2fyChP+d2XzVicUs1d8iJ9StIlFL/vi8S8uDL/g==",
       "type": "package",
       "path": "system.runtime.serialization.formatters/4.3.0",
       "files": [
@@ -13625,11 +13627,12 @@
       ]
     },
     "System.Xml.XmlDocument/4.3.0": {
-      "sha512": "lJ8AxvkX7GQxpC6GFCeBj8ThYVyQczx2+f/cWHJU8tjS7YfI6Cv6bon70jVEgs2CiFbmmM8b9j1oZVx0dSI2Ww==",
+      "sha512": "dT/nA8uyJoJaGeNe1+bVTcwld7NLIVTKqxW0pPZp7CKyz/tlpXHQhtDUuYJ8uxCw8HTTrB8Z7OUeUG51qv8a6g==",
       "type": "package",
       "path": "system.xml.xmldocument/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -13663,7 +13666,7 @@
       ]
     },
     "System.Xml.XmlSerializer/4.3.0": {
-      "sha512": "MYoTCP7EZ98RrANESW05J5ZwskKDoN0AuZ06ZflnowE50LTpbR5yRg3tHckTVm5j/m47stuGgCrCHWePyHS70Q==",
+      "sha512": "VShQJhOxgD/5M2Z1IWm1vMaSqlbjo1zdFf8H7Ahte6bTvSUhUko/gDpAVVhGgGgTDeue4QyNg1fu1Zz2GKSEuQ==",
       "type": "package",
       "path": "system.xml.xmlserializer/4.3.0",
       "files": [
@@ -13809,7 +13812,7 @@
       ]
     },
     "WindowsAzure.Storage/8.1.4": {
-      "sha512": "SpcAYi5gkWLQTVQltkulSFLKsLM8BqHTFhKWQx+HYGKh7yaYy2YnVqJUWCIUpva3NUdGKpr/HKHx9WKu8h4LxQ==",
+      "sha512": "KXblJ3XWzUORNFiIoItmK/sOFIa3aKdjXSpdiCpYmqUKeFt6BQ1pDoGqeynvmuwLqlqp6/+RCXnW+Fix1bPWxQ==",
       "type": "package",
       "path": "windowsazure.storage/8.1.4",
       "files": [
@@ -13837,7 +13840,7 @@
     ".NETCoreApp,Version=v2.0": [
       "DocumentFormat.OpenXml >= 2.8.1",
       "Microsoft.AspNetCore.All >= 2.0.0",
-      "Microsoft.AspNetCore.OData >= 7.0.0",
+      "Microsoft.AspNetCore.OData >= 7.1.0",
       "Microsoft.AspNetCore.SpaServices.Extensions >= 2.0.0",
       "Microsoft.EntityFrameworkCore.Tools >= 2.0.3",
       "Microsoft.IdentityModel.Tokens >= 5.2.1",
@@ -13903,7 +13906,7 @@
           },
           "Microsoft.AspNetCore.OData": {
             "target": "Package",
-            "version": "[7.0.0, )"
+            "version": "[7.1.0, )"
           },
           "Microsoft.AspNetCore.SpaServices.Extensions": {
             "target": "Package",

@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "567502cb1446d666d08cdd48b4056266d85500ee"
+    "signature": "f7fd1b4a999d09bd9e76d211b9f33ddb9e4477ec"
   },
   "compilationOptions": {
     "defines": [
@@ -26,7 +26,7 @@
         "dependencies": {
           "DocumentFormat.OpenXml": "2.8.1",
           "Microsoft.AspNetCore.All": "2.0.0",
-          "Microsoft.AspNetCore.OData": "7.0.0",
+          "Microsoft.AspNetCore.OData": "7.1.0",
           "Microsoft.AspNetCore.SpaServices.Extensions": "2.0.0",
           "Microsoft.EntityFrameworkCore.Tools": "2.0.3",
           "Microsoft.IdentityModel.Tokens": "5.2.1",
@@ -1277,7 +1277,7 @@
           "lib/netstandard2.0/Microsoft.AspNetCore.NodeServices.dll": {}
         }
       },
-      "Microsoft.AspNetCore.OData/7.0.0": {
+      "Microsoft.AspNetCore.OData/7.1.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Mvc.Core": "2.0.1",
           "Microsoft.Extensions.DependencyInjection": "2.0.0",
@@ -1285,8 +1285,8 @@
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.AspNetCore.OData.dll": {
-            "assemblyVersion": "7.0.0.20629",
-            "fileVersion": "7.0.0.20629"
+            "assemblyVersion": "7.1.0.21120",
+            "fileVersion": "7.1.0.21120"
           }
         },
         "compile": {
@@ -4944,14 +4944,14 @@
     "Libuv/1.10.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-lgDqozqVhVQ+YeXZdD/nh1s0noRPw12Z6XJ4EEmdcZYd8qIbiAIg6sfiQeHWpglurv2TPj8pSfRiUNGaRGSBWw==",
+      "sha512": "sha512-GsCf4q+eyaI49rCPlgYxdxa1SQCysXFFdSJWdstrwxytg4+VPYLYrXD4AT2rjHVJ+UF7SSWX9CapWEYaU4ejVQ==",
       "path": "libuv/1.10.0",
       "hashPath": "libuv.1.10.0.nupkg.sha512"
     },
     "Microsoft.ApplicationInsights/2.4.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ijBpEs+3LXptF1VMIztBjHSBmfaZXQ0esX5FWqi9+jb5kYcYm2uyZ+lSL3MkTjie/529QBSkxsCTYwyOUihHsg==",
+      "sha512": "sha512-4dX/zu3Psz9oM3ErU64xfOHuSxOwMxN6q5RabSkeYbX42Yn6dR/kDToqjs+txCRjrfHUxyYjfeJHu+MbCfvAsg==",
       "path": "microsoft.applicationinsights/2.4.0",
       "hashPath": "microsoft.applicationinsights.2.4.0.nupkg.sha512"
     },
@@ -4965,7 +4965,7 @@
     "Microsoft.ApplicationInsights.DependencyCollector/2.4.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-cmNBSZuXAN3Fcjqo6cORASHzsCDojwVkCiSbcg6lMPL8yzUHk9VX042oDfUwKNq4yk+80wgUmYKdSUgyuXaHKw==",
+      "sha512": "sha512-9dNiUxWKLlOxfk9PLrqg+idGZOkfC6Cc+wv9vieVxvcUMxDX2bRLg85F0p7gCStCwcjRySEBaJIDzktw8S8vkQ==",
       "path": "microsoft.applicationinsights.dependencycollector/2.4.1",
       "hashPath": "microsoft.applicationinsights.dependencycollector.2.4.1.nupkg.sha512"
     },
@@ -5396,12 +5396,12 @@
       "path": "microsoft.aspnetcore.nodeservices/2.0.1",
       "hashPath": "microsoft.aspnetcore.nodeservices.2.0.1.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.OData/7.0.0": {
+    "Microsoft.AspNetCore.OData/7.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-pvBbayomdyEGOvsD8w07B/bOILCThrEIX1VtGanZC2RA3xsSLwvhZomOsnMTCMZvRQ+D6rbqEl0d+EIFip1USw==",
-      "path": "microsoft.aspnetcore.odata/7.0.0",
-      "hashPath": "microsoft.aspnetcore.odata.7.0.0.nupkg.sha512"
+      "sha512": "sha512-weo1lPhEWnn2KnAV5fg14b8jiQeI7mH07hMfWW2LuLbgLFeK7fqfYRQufX9aqcUd3RPjyjlfRFJuYOSq5dy5yw==",
+      "path": "microsoft.aspnetcore.odata/7.1.0",
+      "hashPath": "microsoft.aspnetcore.odata.7.1.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Owin/2.0.0": {
       "type": "package",
@@ -6239,7 +6239,7 @@
     "runtime.native.System.Data.SqlClient.sni/4.4.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-A8v6PGmk+UGbfWo5Ixup0lPM4swuSwOiayJExZwKIOjTlFFQIsu3QnDXECosBEyrWSPryxBVrdqtJyhK3BaupQ==",
+      "sha512": "sha512-V35fxONEHOGS6QmoDD8BxU9pX1WJTiRj16ooKgSesY6e3iYy2b44Z10w5CFejlEKCqTF0+5iskwCB4wjX5cC+w==",
       "path": "runtime.native.system.data.sqlclient.sni/4.4.0",
       "hashPath": "runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512"
     },
@@ -6337,21 +6337,21 @@
     "runtime.win-arm64.runtime.native.System.Data.SqlClient.sni/4.4.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-LbrynESTp3bm5O/+jGL8v0Qg5SJlTV08lpIpFesXjF6uGNMWqFnUQbYBJwZTeua6E/Y7FIM1C54Ey1btLWupdg==",
+      "sha512": "sha512-cPmtFmtZ6So+y3w7DvjZgJWZOMbFXWKfjpVP/vaOCRQ9RTiP6iHxDTmuuyZn8eiJS6JDe/OTFkydi4Dhn2Zhmw==",
       "path": "runtime.win-arm64.runtime.native.system.data.sqlclient.sni/4.4.0",
       "hashPath": "runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512"
     },
     "runtime.win-x64.runtime.native.System.Data.SqlClient.sni/4.4.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-38ugOfkYJqJoX9g6EYRlZB5U2ZJH51UP8ptxZgdpS07FgOEToV+lS11ouNK2PM12Pr6X/PpT5jK82G3DwH/SxQ==",
+      "sha512": "sha512-rKZUJW9LZhGLMjh+CHChXi5sPntkKuwq+O1KOQscZCdbiyu1x3pxftlpNJTl2sV6WGwiGPjgMX+mNo3NT8D0aQ==",
       "path": "runtime.win-x64.runtime.native.system.data.sqlclient.sni/4.4.0",
       "hashPath": "runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512"
     },
     "runtime.win-x86.runtime.native.System.Data.SqlClient.sni/4.4.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-YhEdSQUsTx+C8m8Bw7ar5/VesXvCFMItyZF7G1AUY+OM0VPZUOeAVpJ4Wl6fydBGUYZxojTDR3I6Bj/+BPkJNA==",
+      "sha512": "sha512-ODqDWS33hFea2BB/2aNVCVVv0iCE4ye4NmlyBh8z/wuLPIBGEyesldE7LEtbuDSHpbIley945ZD80T/HUKThZw==",
       "path": "runtime.win-x86.runtime.native.system.data.sqlclient.sni/4.4.0",
       "hashPath": "runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512"
     },
@@ -6561,7 +6561,7 @@
     "System.Diagnostics.FileVersionInfo/4.3.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-omCF64wzQ3Q2CeIqkD6lmmxeMZtGHUmzgFMPjfVaOsyqpR66p/JaZzManMw1s33osoAb5gqpncsjie67+yUPHQ==",
+      "sha512": "sha512-6WVi7gArhxRiC+3qI5V2mFe1gHENj/F7xT5PQiy/lI/RsxXeivrt09WF0huwSQK2ubnmyyRFeA9z3w743/w32A==",
       "path": "system.diagnostics.fileversioninfo/4.3.0",
       "hashPath": "system.diagnostics.fileversioninfo.4.3.0.nupkg.sha512"
     },
@@ -6743,7 +6743,7 @@
     "System.Private.DataContractSerialization/4.3.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-yDaJ2x3mMmjdZEDB4IbezSnCsnjQ4BxinKhRAaP6kEgL6Bb6jANWphs5SzyD8imqeC/3FxgsuXT6ykkiH1uUmA==",
+      "sha512": "sha512-FQ8EpQJ/nkhlWEZSJVQmDLNONiMufYRuLVL/X7YnsVUIFJuhWO6i1Yc5+s7j7ZUlJtuTvWs96aHr5TU/kFM31w==",
       "path": "system.private.datacontractserialization/4.3.0",
       "hashPath": "system.private.datacontractserialization.4.3.0.nupkg.sha512"
     },
@@ -6862,7 +6862,7 @@
     "System.Runtime.Serialization.Formatters/4.3.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-KT591AkTNFOTbhZlaeMVvfax3RqhH1EJlcwF50Wm7sfnBLuHiOeZRRKrr1ns3NESkM20KPZ5Ol/ueMq5vg4QoQ==",
+      "sha512": "sha512-s8fqhiYpzAQ2zUg4IaTOpnfhpP4LW4C/n0Yb62iJ6hAmJxj2fyChP+d2XzVicUs1d8iJ9StIlFL/vi8S8uDL/g==",
       "path": "system.runtime.serialization.formatters/4.3.0",
       "hashPath": "system.runtime.serialization.formatters.4.3.0.nupkg.sha512"
     },
@@ -7086,14 +7086,14 @@
     "System.Xml.XmlDocument/4.3.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-lJ8AxvkX7GQxpC6GFCeBj8ThYVyQczx2+f/cWHJU8tjS7YfI6Cv6bon70jVEgs2CiFbmmM8b9j1oZVx0dSI2Ww==",
+      "sha512": "sha512-dT/nA8uyJoJaGeNe1+bVTcwld7NLIVTKqxW0pPZp7CKyz/tlpXHQhtDUuYJ8uxCw8HTTrB8Z7OUeUG51qv8a6g==",
       "path": "system.xml.xmldocument/4.3.0",
       "hashPath": "system.xml.xmldocument.4.3.0.nupkg.sha512"
     },
     "System.Xml.XmlSerializer/4.3.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-MYoTCP7EZ98RrANESW05J5ZwskKDoN0AuZ06ZflnowE50LTpbR5yRg3tHckTVm5j/m47stuGgCrCHWePyHS70Q==",
+      "sha512": "sha512-VShQJhOxgD/5M2Z1IWm1vMaSqlbjo1zdFf8H7Ahte6bTvSUhUko/gDpAVVhGgGgTDeue4QyNg1fu1Zz2GKSEuQ==",
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
@@ -7114,7 +7114,7 @@
     "WindowsAzure.Storage/8.1.4": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-SpcAYi5gkWLQTVQltkulSFLKsLM8BqHTFhKWQx+HYGKh7yaYy2YnVqJUWCIUpva3NUdGKpr/HKHx9WKu8h4LxQ==",
+      "sha512": "sha512-KXblJ3XWzUORNFiIoItmK/sOFIa3aKdjXSpdiCpYmqUKeFt6BQ1pDoGqeynvmuwLqlqp6/+RCXnW+Fix1bPWxQ==",
       "path": "windowsazure.storage/8.1.4",
       "hashPath": "windowsazure.storage.8.1.4.nupkg.sha512"
     },
@@ -7149,7 +7149,7 @@
     "Microsoft.NETCore.Platforms/2.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-CCf4NjmDOoise7FAij2VPuHIgKKsu696vkTwhOkPVQfLsTmB2WLFfQ4yeO5Udtk8FD636UBMx6Y9eovzJKT76A==",
+      "sha512": "sha512-BNxPJtedjaOTXAiznVFLrgcfHtZqsubECFL4KAxKPltpzjqFAU+uew1wgR6c1CaHJQJbnp43x38EXDEo6uk7PA==",
       "path": "microsoft.netcore.platforms/2.0.0",
       "hashPath": "microsoft.netcore.platforms.2.0.0.nupkg.sha512"
     },

@@ -46,6 +46,12 @@
                         "click": [
                           {
                             "code": "${events.push('SplitButton with text')}",
+                            "condition": "${!event}",
+                            "type": "execute"
+                          },
+                          {
+                            "code": "${events.push('SplitButton with text item with value ' + event.value)}",
+                            "condition": "${event}",
                             "type": "execute"
                           }
                         ]
@@ -85,6 +91,12 @@
                         "click": [
                           {
                             "code": "${events.push('SplitButton with text and icon')}",
+                            "condition": "${!event}",
+                            "type": "execute"
+                          },
+                          {
+                            "code": "${events.push('SplitButton with text and icon item with value ' + event.value)}",
+                            "condition": "${event}",
                             "type": "execute"
                           }
                         ]
@@ -125,6 +137,12 @@
                         "click": [
                           {
                             "code": "${events.push('SplitButton with icon')}",
+                            "condition": "${!event}",
+                            "type": "execute"
+                          },
+                          {
+                            "code": "${events.push('SplitButton with icon item with value ' + event.value)}",
+                            "condition": "${event}",
                             "type": "execute"
                           }
                         ]

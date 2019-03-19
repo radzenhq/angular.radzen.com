@@ -33,8 +33,6 @@ namespace RadzenAngularComponents
     public void ConfigureServices(IServiceCollection services)
     {
       services.AddOptions();
-      services.AddCors();
-
       services.AddMvc(options =>
       {
           options.FormatterMappings.SetMediaTypeMappingForFormat("csv", "text/csv");
@@ -53,14 +51,13 @@ namespace RadzenAngularComponents
 
     partial void OnConfigure(IApplicationBuilder app);
     partial void OnConfigureOData(ODataConventionModelBuilder builder);
-   
+
     public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
     {
       loggerFactory.AddConsole(Configuration.GetSection("Logging"));
       loggerFactory.AddDebug();
 
       IServiceProvider provider = app.ApplicationServices.GetRequiredService<IServiceProvider>();
-
       app.UseCors(builder =>
         builder.WithOrigins("*")
                .AllowAnyHeader()
@@ -68,7 +65,6 @@ namespace RadzenAngularComponents
                .AllowCredentials()
                .AllowAnyOrigin()
       );
-
       app.Use(async (context, next) => {
           if (context.Request.Path.Value == "/__ssrsreport" || context.Request.Path.Value == "/ssrsproxy") {
             await next();

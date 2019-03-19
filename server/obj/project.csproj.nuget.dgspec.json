@@ -57,7 +57,7 @@
             },
             "Microsoft.AspNetCore.OData": {
               "target": "Package",
-              "version": "[7.0.0, )"
+              "version": "[7.1.0, )"
             },
             "Microsoft.AspNetCore.SpaServices.Extensions": {
               "target": "Package",
