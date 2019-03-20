@@ -12,14 +12,28 @@ import { DialogService, DIALOG_PARAMETERS, DialogRef } from '@radzen/angular/dis
 import { NotificationService } from '@radzen/angular/dist/notification';
 import { ContentComponent } from '@radzen/angular/dist/content';
 import { HeadingComponent } from '@radzen/angular/dist/heading';
+import { LinkComponent } from '@radzen/angular/dist/link';
+import { CardComponent } from '@radzen/angular/dist/card';
+import { LabelComponent } from '@radzen/angular/dist/label';
+import { AutoCompleteComponent } from '@radzen/angular/dist/autocomplete';
+import { HtmlComponent } from '@radzen/angular/dist/html';
 
 import { ConfigService } from '../config.service';
 
+import { NorthwindService } from '../northwind.service';
 
 export class AutoCompleteGenerated implements AfterViewInit, OnInit, OnDestroy {
   // Components
   @ViewChild('content1') content1: ContentComponent;
   @ViewChild('pageTitle') pageTitle: HeadingComponent;
+  @ViewChild('link0') link0: LinkComponent;
+  @ViewChild('heading0') heading0: HeadingComponent;
+  @ViewChild('card0') card0: CardComponent;
+  @ViewChild('label0') label0: LabelComponent;
+  @ViewChild('autocomplete0') autocomplete0: AutoCompleteComponent;
+  @ViewChild('heading1') heading1: HeadingComponent;
+  @ViewChild('card1') card1: CardComponent;
+  @ViewChild('html0') html0: HtmlComponent;
 
   router: Router;
 
@@ -42,6 +56,10 @@ export class AutoCompleteGenerated implements AfterViewInit, OnInit, OnDestroy {
   _location: Location;
 
   _subscription: Subscription;
+
+  northwind: NorthwindService;
+  events: any;
+  customer: any;
   parameters: any;
 
   constructor(private injector: Injector) {
@@ -68,6 +86,7 @@ export class AutoCompleteGenerated implements AfterViewInit, OnInit, OnDestroy {
 
     this.httpClient = this.injector.get(HttpClient);
 
+    this.northwind = this.injector.get(NorthwindService);
   }
 
   ngAfterViewInit() {
@@ -77,6 +96,7 @@ export class AutoCompleteGenerated implements AfterViewInit, OnInit, OnDestroy {
       } else {
         this.parameters = parameters;
       }
+      this.load();
       this.cd.detectChanges();
     });
   }
@@ -85,4 +105,21 @@ export class AutoCompleteGenerated implements AfterViewInit, OnInit, OnDestroy {
     this._subscription.unsubscribe();
   }
 
+
+  load() {
+    this.events = [];
+
+    this.customer = null;
+  }
+
+  autocomplete0Search(event: any) {
+    this.events.push('AutoComplete Search: ' + event.text)
+
+    this.northwind.getCustomers(`contains(CustomerID,'${event.text}') and contains(CompanyName,'${event.text}')`, null, null, null, null, null)
+    .subscribe((result: any) => {
+      event.data = result.value
+    }, (result: any) => {
+
+    });
+  }
 }
