@@ -92,6 +92,7 @@ import { PageWithParameterComponent } from './page-with-parameter/page-with-para
 import { LoginLayoutComponent } from './login-layout/login-layout.component';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
 
+import { NorthwindService } from './northwind.service';
 
 export const PageDeclarations = [
   ButtonComponent,
@@ -163,6 +164,7 @@ export const AppProviders = [
     useClass: CacheInterceptor,
     multi: true
   },
+  NorthwindService,
   ConfigService,
   {
     provide: APP_INITIALIZER,

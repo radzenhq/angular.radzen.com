@@ -1,5 +1,7 @@
 {
-  "dataSources": [],
+  "dataSources": [
+    "Northwind"
+  ],
   "generator": "@radzen/angular-generator",
   "https": false,
   "ignore": [
