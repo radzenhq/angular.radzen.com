@@ -30,6 +30,9 @@ import { UploadModule } from '@radzen/angular/dist/upload';
 import { GravatarModule } from '@radzen/angular/dist/gravatar';
 import { GoogleMapModule } from '@radzen/angular/dist/googlemap';
 import { AccordionModule } from '@radzen/angular/dist/accordion';
+import { FieldsetModule } from '@radzen/angular/dist/fieldset';
+import { DataListModule } from '@radzen/angular/dist/datalist';
+import { PanelModule } from '@radzen/angular/dist/panel';
 import { SharedModule } from '@radzen/angular/dist/shared';
 import { NotificationModule } from '@radzen/angular/dist/notification';
 import { DialogModule } from '@radzen/angular/dist/dialog';
@@ -202,6 +205,9 @@ export const AppImports = [
   GravatarModule,
   GoogleMapModule,
   AccordionModule,
+  FieldsetModule,
+  DataListModule,
+  PanelModule,
   SharedModule,
   NotificationModule,
   DialogModule,
