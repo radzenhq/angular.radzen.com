@@ -1,4 +1,49 @@
 <rz-content #content1 container="main">
-  <rz-heading #pageTitle size="H1" text="DropDown">
+  <rz-heading #pageTitle size="H1" [style]="{'display': 'inline', 'float': 'none'}" text="DropDown">
   </rz-heading>
+  <rz-link #link0 path="https://github.com/akorchev/angular.radzen.com/blob/master/meta/pages/drop-down.json" text="[source code]">
+  </rz-link>
+  <rz-heading #heading0 size="H4" text="This page demonstrates DropDown component.">
+  </rz-heading>
+  <rz-card #card0 [style]="{'height': '600px'}">
+    <div class="row">
+      <div class="col-md-6">
+        <rz-heading #heading2 size="H3" text="Single select">
+        </rz-heading>
+        <rz-dropdown #dropdown0 [data]="getCustomersResult" placeholder="Select customer" textProperty="CompanyName" valueProperty="CustomerID" name="dropdown0" (change)="dropdown0Change($event)">
+        </rz-dropdown>
+        <rz-heading #heading3 size="H3" [style]="{'marginTop': '20px'}" text="Multiple select">
+        </rz-heading>
+        <rz-dropdown #dropdown1 [data]="getCustomersResult" [multiple]="true" placeholder="Select customer" textProperty="CompanyName" valueProperty="CustomerID" name="dropdown1" (change)="dropdown1Change($event)">
+        </rz-dropdown>
+        <rz-heading #heading4 size="H3" [style]="{'marginTop': '20px'}" text="Multiple select with filtering">
+        </rz-heading>
+        <rz-dropdown #dropdown2 [allowClear]="true" [allowFiltering]="true" [data]="getCustomersResult" [multiple]="true" placeholder="Select customer" textProperty="CompanyName" valueProperty="CustomerID" name="dropdown2" (change)="dropdown2Change($event)">
+        </rz-dropdown>
+        <rz-heading #heading5 size="H3" [style]="{'marginTop': '20px'}" text="Single select with template">
+        </rz-heading>
+        <rz-dropdown #dropdown3 [data]="getCustomersResult" placeholder="Select customer" textProperty="CompanyName" name="dropdown3" (change)="dropdown3Change($event)">
+          <ng-template let-data dropdownTemplate>
+            <rz-label #label0 text="Company:">
+            </rz-label>
+            <rz-label #label1 [text]="data?.CompanyName">
+            </rz-label>
+          </ng-template>
+        </rz-dropdown>
+      </div>
+      <div class="col-md-6">
+        <rz-heading #heading1 size="H3" text="Events">
+        </rz-heading>
+        <rz-card #card1 [style]="{'height': '500px'}">
+          <rz-html #html0>
+            <div style="overflow:auto;height:100%">
+              <div *ngFor="let event of events?.reverse()">
+                  {{ event }}
+              </div>
+            </div>
+          </rz-html>
+        </rz-card>
+      </div>
+    </div>
+  </rz-card>
 </rz-content>

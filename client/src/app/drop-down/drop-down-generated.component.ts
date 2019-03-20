@@ -12,14 +12,34 @@ import { DialogService, DIALOG_PARAMETERS, DialogRef } from '@radzen/angular/dis
 import { NotificationService } from '@radzen/angular/dist/notification';
 import { ContentComponent } from '@radzen/angular/dist/content';
 import { HeadingComponent } from '@radzen/angular/dist/heading';
+import { LinkComponent } from '@radzen/angular/dist/link';
+import { CardComponent } from '@radzen/angular/dist/card';
+import { DropDownComponent } from '@radzen/angular/dist/dropdown';
+import { LabelComponent } from '@radzen/angular/dist/label';
+import { HtmlComponent } from '@radzen/angular/dist/html';
 
 import { ConfigService } from '../config.service';
 
+import { NorthwindService } from '../northwind.service';
 
 export class DropDownGenerated implements AfterViewInit, OnInit, OnDestroy {
   // Components
   @ViewChild('content1') content1: ContentComponent;
   @ViewChild('pageTitle') pageTitle: HeadingComponent;
+  @ViewChild('link0') link0: LinkComponent;
+  @ViewChild('heading0') heading0: HeadingComponent;
+  @ViewChild('card0') card0: CardComponent;
+  @ViewChild('heading2') heading2: HeadingComponent;
+  @ViewChild('dropdown0') dropdown0: DropDownComponent;
+  @ViewChild('heading3') heading3: HeadingComponent;
+  @ViewChild('dropdown1') dropdown1: DropDownComponent;
+  @ViewChild('heading4') heading4: HeadingComponent;
+  @ViewChild('dropdown2') dropdown2: DropDownComponent;
+  @ViewChild('heading5') heading5: HeadingComponent;
+  @ViewChild('dropdown3') dropdown3: DropDownComponent;
+  @ViewChild('heading1') heading1: HeadingComponent;
+  @ViewChild('card1') card1: CardComponent;
+  @ViewChild('html0') html0: HtmlComponent;
 
   router: Router;
 
@@ -42,6 +62,10 @@ export class DropDownGenerated implements AfterViewInit, OnInit, OnDestroy {
   _location: Location;
 
   _subscription: Subscription;
+
+  northwind: NorthwindService;
+  events: any;
+  getCustomersResult: any;
   parameters: any;
 
   constructor(private injector: Injector) {
@@ -68,6 +92,7 @@ export class DropDownGenerated implements AfterViewInit, OnInit, OnDestroy {
 
     this.httpClient = this.injector.get(HttpClient);
 
+    this.northwind = this.injector.get(NorthwindService);
   }
 
   ngAfterViewInit() {
@@ -77,6 +102,7 @@ export class DropDownGenerated implements AfterViewInit, OnInit, OnDestroy {
       } else {
         this.parameters = parameters;
       }
+      this.load();
       this.cd.detectChanges();
     });
   }
@@ -85,4 +111,31 @@ export class DropDownGenerated implements AfterViewInit, OnInit, OnDestroy {
     this._subscription.unsubscribe();
   }
 
+
+  load() {
+    this.events = [];
+
+    this.northwind.getCustomers(null, null, null, null, null, null)
+    .subscribe((result: any) => {
+      this.getCustomersResult = result.value;
+    }, (result: any) => {
+
+    });
+  }
+
+  dropdown0Change(event: any) {
+    this.events.push('Single select DropDown Change: ' + JSON.stringify(event))
+  }
+
+  dropdown1Change(event: any) {
+    this.events.push('Multiple select DropDown Change: ' + JSON.stringify(event))
+  }
+
+  dropdown2Change(event: any) {
+    this.events.push('Multiple select with filtering DropDown Change: ' + JSON.stringify(event))
+  }
+
+  dropdown3Change(event: any) {
+    this.events.push('Single select DropDown with template Change: ' + JSON.stringify(event))
+  }
 }

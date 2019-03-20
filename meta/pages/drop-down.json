@@ -1,19 +1,223 @@
 {
-  "name": "DropDown",
-  "access": "Everybody",
-  "layout": "Main",
+  "access": [
+    "Everybody"
+  ],
   "components": [
     {
-      "type": "content",
-      "container": "main",
       "components": [
         {
-          "type": "heading",
-          "size": "H1",
           "name": "pageTitle",
-          "text": "DropDown"
+          "size": "H1",
+          "style": {
+            "display": "inline",
+            "float": "none"
+          },
+          "text": "DropDown",
+          "type": "heading"
+        },
+        {
+          "icon": "",
+          "name": "link0",
+          "path": "https://github.com/akorchev/angular.radzen.com/blob/master/meta/pages/drop-down.json",
+          "text": "[source code]",
+          "type": "link"
+        },
+        {
+          "name": "heading0",
+          "size": "H4",
+          "text": "This page demonstrates DropDown component.",
+          "type": "heading"
+        },
+        {
+          "components": [
+            {
+              "components": [
+                {
+                  "class": "col-md-6",
+                  "components": [
+                    {
+                      "name": "heading2",
+                      "size": "H3",
+                      "text": "Single select",
+                      "type": "heading"
+                    },
+                    {
+                      "data": "${getCustomersResult}",
+                      "events": {
+                        "change": [
+                          {
+                            "code": "${events.push('Single select DropDown Change: ' + JSON.stringify(event))}",
+                            "type": "execute"
+                          }
+                        ]
+                      },
+                      "name": "dropdown0",
+                      "placeholder": "Select customer",
+                      "textProperty": "CompanyName",
+                      "type": "dropdown",
+                      "valueProperty": "CustomerID"
+                    },
+                    {
+                      "name": "heading3",
+                      "size": "H3",
+                      "style": {
+                        "marginTop": "20px"
+                      },
+                      "text": "Multiple select",
+                      "type": "heading"
+                    },
+                    {
+                      "data": "${getCustomersResult}",
+                      "events": {
+                        "change": [
+                          {
+                            "code": "${events.push('Multiple select DropDown Change: ' + JSON.stringify(event))}",
+                            "type": "execute"
+                          }
+                        ]
+                      },
+                      "multiple": true,
+                      "name": "dropdown1",
+                      "placeholder": "Select customer",
+                      "textProperty": "CompanyName",
+                      "type": "dropdown",
+                      "valueProperty": "CustomerID"
+                    },
+                    {
+                      "name": "heading4",
+                      "size": "H3",
+                      "style": {
+                        "marginTop": "20px"
+                      },
+                      "text": "Multiple select with filtering",
+                      "type": "heading"
+                    },
+                    {
+                      "allowClear": true,
+                      "allowFiltering": true,
+                      "data": "${getCustomersResult}",
+                      "events": {
+                        "change": [
+                          {
+                            "code": "${events.push('Multiple select with filtering DropDown Change: ' + JSON.stringify(event))}",
+                            "type": "execute"
+                          }
+                        ]
+                      },
+                      "multiple": true,
+                      "name": "dropdown2",
+                      "placeholder": "Select customer",
+                      "textProperty": "CompanyName",
+                      "type": "dropdown",
+                      "valueProperty": "CustomerID"
+                    },
+                    {
+                      "name": "heading5",
+                      "size": "H3",
+                      "style": {
+                        "marginTop": "20px"
+                      },
+                      "text": "Single select with template",
+                      "type": "heading"
+                    },
+                    {
+                      "data": "${getCustomersResult}",
+                      "events": {
+                        "change": [
+                          {
+                            "code": "${events.push('Single select DropDown with template Change: ' + JSON.stringify(event))}",
+                            "type": "execute"
+                          }
+                        ]
+                      },
+                      "name": "dropdown3",
+                      "placeholder": "Select customer",
+                      "template": [
+                        {
+                          "name": "label0",
+                          "text": "Company:",
+                          "type": "label"
+                        },
+                        {
+                          "name": "label1",
+                          "text": "${data.CompanyName}",
+                          "type": "label"
+                        }
+                      ],
+                      "textProperty": "CompanyName",
+                      "type": "dropdown",
+                      "value": ""
+                    }
+                  ],
+                  "name": "col0",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-6",
+                  "components": [
+                    {
+                      "name": "heading1",
+                      "size": "H3",
+                      "text": "Events",
+                      "type": "heading"
+                    },
+                    {
+                      "components": [
+                        {
+                          "content": "<div style=\"overflow:auto;height:100%\">\n  <div *ngFor=\"let event of events?.reverse()\">\n      {{ event }}\n  </div>\n</div>\n",
+                          "name": "html0",
+                          "type": "html"
+                        }
+                      ],
+                      "name": "card1",
+                      "style": {
+                        "height": "500px"
+                      },
+                      "type": "card",
+                      "visible": true
+                    }
+                  ],
+                  "name": "col1",
+                  "type": "col"
+                }
+              ],
+              "name": "row0",
+              "type": "row"
+            }
+          ],
+          "name": "card0",
+          "style": {
+            "height": "600px"
+          },
+          "type": "card",
+          "visible": true
         }
-      ]
+      ],
+      "container": "main",
+      "type": "content"
     }
-  ]
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "events",
+        "type": "set",
+        "value": "[]"
+      },
+      {
+        "name": "Northwind.getCustomers",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getCustomersResult",
+            "type": "set",
+            "value": "${result.value}"
+          }
+        ],
+        "type": "invoke"
+      }
+    ]
+  },
+  "layout": "Main",
+  "name": "DropDown"
 }
