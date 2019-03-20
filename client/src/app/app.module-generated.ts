@@ -37,6 +37,7 @@ import { StepsModule } from '@radzen/angular/dist/steps';
 import { TabsModule } from '@radzen/angular/dist/tabs';
 import { GridModule } from '@radzen/angular/dist/grid';
 import { AutoCompleteModule } from '@radzen/angular/dist/autocomplete';
+import { CheckBoxModule } from '@radzen/angular/dist/checkbox';
 import { SharedModule } from '@radzen/angular/dist/shared';
 import { NotificationModule } from '@radzen/angular/dist/notification';
 import { DialogModule } from '@radzen/angular/dist/dialog';
@@ -216,6 +217,7 @@ export const AppImports = [
   TabsModule,
   GridModule,
   AutoCompleteModule,
+  CheckBoxModule,
   SharedModule,
   NotificationModule,
   DialogModule,

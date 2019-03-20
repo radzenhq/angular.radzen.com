@@ -1,4 +1,35 @@
 <rz-content #content1 container="main">
-  <rz-heading #pageTitle size="H1" text="CheckBox">
+  <rz-heading #pageTitle size="H1" [style]="{'display': 'inline', 'float': 'none'}" text="CheckBox">
   </rz-heading>
+  <rz-link #link0 path="https://github.com/akorchev/angular.radzen.com/blob/master/meta/pages/check-box.json" text="[source code]">
+  </rz-link>
+  <rz-heading #heading0 size="H4" text="This page demonstrates CheckBox component.">
+  </rz-heading>
+  <rz-card #card0 [style]="{'height': '600px'}">
+    <div class="row">
+      <div class="col-md-6">
+        <rz-heading #heading2 size="H3" text="Two-state">
+        </rz-heading>
+        <rz-checkbox #checkbox0 name="checkbox0" (change)="checkbox0Change($event)">
+        </rz-checkbox>
+        <rz-heading #heading3 size="H3" [style]="{'marginTop': '20px'}" text="Three-state">
+        </rz-heading>
+        <rz-checkbox #checkbox1 [triState]="true" name="checkbox1" (change)="checkbox1Change($event)">
+        </rz-checkbox>
+      </div>
+      <div class="col-md-6">
+        <rz-heading #heading1 size="H3" text="Events">
+        </rz-heading>
+        <rz-card #card1 [style]="{'height': '500px'}">
+          <rz-html #html0>
+            <div style="overflow:auto;height:100%">
+              <div *ngFor="let event of events?.reverse()">
+                  {{ event }}
+              </div>
+            </div>
+          </rz-html>
+        </rz-card>
+      </div>
+    </div>
+  </rz-card>
 </rz-content>
