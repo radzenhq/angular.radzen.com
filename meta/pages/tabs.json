@@ -1,19 +1,520 @@
 {
-  "name": "Tabs",
-  "access": "Everybody",
-  "layout": "Main",
+  "access": [
+    "Everybody"
+  ],
   "components": [
     {
-      "type": "content",
-      "container": "main",
       "components": [
         {
-          "type": "heading",
-          "size": "H1",
           "name": "pageTitle",
-          "text": "Tabs"
+          "size": "H1",
+          "style": {
+            "display": "inline",
+            "float": "none"
+          },
+          "text": "Tabs",
+          "type": "heading"
+        },
+        {
+          "icon": "",
+          "name": "link0",
+          "path": "https://github.com/akorchev/angular.radzen.com/blob/master/meta/pages/tabs.json",
+          "text": "[source code]",
+          "type": "link"
+        },
+        {
+          "name": "heading0",
+          "size": "H4",
+          "text": "This page demonstrates Tabs component.",
+          "type": "heading"
+        },
+        {
+          "components": [
+            {
+              "items": [
+                {
+                  "components": [
+                    {
+                      "allowPaging": true,
+                      "count": "${getNorthwindOrdersCount}",
+                      "data": "${getNorthwindOrdersResult}",
+                      "events": {
+                        "loadData": [
+                          {
+                            "name": "Northwind.getNorthwindOrders",
+                            "parameters": [
+                              {
+                                "name": "$top",
+                                "value": "event.top"
+                              },
+                              {
+                                "name": "$skip",
+                                "value": "event.skip"
+                              },
+                              {
+                                "name": "$count",
+                                "value": "event.top != null && event.skip != null"
+                              },
+                              {
+                                "name": "$expand",
+                                "value": "Customer,Employee"
+                              }
+                            ],
+                            "then": [
+                              {
+                                "name": "getNorthwindOrdersResult",
+                                "type": "set",
+                                "value": "${result.value}"
+                              },
+                              {
+                                "name": "getNorthwindOrdersCount",
+                                "type": "set",
+                                "value": "event.top != null && event.skip != null ? result['@odata.count'] : ${result.value.length}"
+                              }
+                            ],
+                            "type": "invoke"
+                          }
+                        ]
+                      },
+                      "name": "datalist0",
+                      "pageSize": 6,
+                      "template": [
+                        {
+                          "components": [
+                            {
+                              "components": [
+                                {
+                                  "class": "col-md-6",
+                                  "components": [
+                                    {
+                                      "name": "heading14",
+                                      "size": "H6",
+                                      "text": "Company:",
+                                      "type": "heading"
+                                    },
+                                    {
+                                      "name": "heading15",
+                                      "size": "H4",
+                                      "text": "${data.Customer.CompanyName}",
+                                      "type": "heading"
+                                    },
+                                    {
+                                      "name": "heading16",
+                                      "size": "H6",
+                                      "text": "Employee:",
+                                      "type": "heading"
+                                    },
+                                    {
+                                      "name": "heading17",
+                                      "size": "H4",
+                                      "text": "${data.Employee.FirstName + ' ' + data.Employee.LastName}",
+                                      "type": "heading"
+                                    },
+                                    {
+                                      "name": "image1",
+                                      "path": "${data.Employee.Photo}",
+                                      "type": "image"
+                                    }
+                                  ],
+                                  "name": "col4",
+                                  "type": "col"
+                                },
+                                {
+                                  "class": "col-md-6",
+                                  "components": [
+                                    {
+                                      "name": "heading18",
+                                      "size": "H6",
+                                      "text": "Freight:",
+                                      "type": "heading"
+                                    },
+                                    {
+                                      "name": "heading19",
+                                      "size": "H4",
+                                      "text": "${data.Freight | currency}",
+                                      "type": "heading"
+                                    },
+                                    {
+                                      "name": "heading20",
+                                      "size": "H6",
+                                      "text": "Ship country:",
+                                      "type": "heading"
+                                    },
+                                    {
+                                      "name": "heading21",
+                                      "size": "H4",
+                                      "text": "${data.ShipCountry}",
+                                      "type": "heading"
+                                    },
+                                    {
+                                      "name": "heading22",
+                                      "size": "H6",
+                                      "text": "Ship city:",
+                                      "type": "heading"
+                                    },
+                                    {
+                                      "name": "heading23",
+                                      "size": "H4",
+                                      "text": "${data.ShipCity}",
+                                      "type": "heading"
+                                    },
+                                    {
+                                      "name": "heading24",
+                                      "size": "H6",
+                                      "text": "Ship name:",
+                                      "type": "heading"
+                                    },
+                                    {
+                                      "name": "heading25",
+                                      "size": "H4",
+                                      "text": "${data.ShipName}",
+                                      "type": "heading"
+                                    }
+                                  ],
+                                  "name": "col5",
+                                  "type": "col"
+                                }
+                              ],
+                              "name": "row2",
+                              "type": "row"
+                            }
+                          ],
+                          "name": "card3",
+                          "style": {
+                            "height": "370px",
+                            "marginBottom": "10px",
+                            "marginLeft": "10px",
+                            "marginRight": "10px",
+                            "marginTop": "10px",
+                            "width": "450px"
+                          },
+                          "type": "card",
+                          "visible": "${data}"
+                        }
+                      ],
+                      "type": "datalist",
+                      "wrapItems": true
+                    }
+                  ],
+                  "icon": "",
+                  "selected": true,
+                  "text": "Orders"
+                },
+                {
+                  "components": [
+                    {
+                      "allowFiltering": true,
+                      "allowPaging": true,
+                      "allowSorting": true,
+                      "columns": [
+                        {
+                          "format": "int32",
+                          "property": "EmployeeID",
+                          "title": "Employee ID",
+                          "type": "integer",
+                          "width": "100px"
+                        },
+                        {
+                          "filterable": false,
+                          "property": "Photo",
+                          "sortable": false,
+                          "template": [
+                            {
+                              "name": "image0",
+                              "path": "${data.Photo}",
+                              "style": {},
+                              "type": "image"
+                            }
+                          ],
+                          "title": "Photo",
+                          "type": "string",
+                          "width": "120px"
+                        },
+                        {
+                          "property": "LastName",
+                          "title": "Last Name",
+                          "type": "string"
+                        },
+                        {
+                          "property": "FirstName",
+                          "title": "First Name",
+                          "type": "string"
+                        },
+                        {
+                          "property": "Title",
+                          "title": "Title",
+                          "type": "string"
+                        },
+                        {
+                          "property": "TitleOfCourtesy",
+                          "title": "Title Of Courtesy",
+                          "type": "string"
+                        },
+                        {
+                          "format": "date-time",
+                          "property": "BirthDate",
+                          "template": "${data.BirthDate | utcDate}",
+                          "title": "Birth Date",
+                          "type": "string"
+                        },
+                        {
+                          "format": "date-time",
+                          "property": "HireDate",
+                          "template": "${data.HireDate | utcDate}",
+                          "title": "Hire Date",
+                          "type": "string"
+                        },
+                        {
+                          "property": "Address",
+                          "title": "Address",
+                          "type": "string"
+                        },
+                        {
+                          "property": "City",
+                          "title": "City",
+                          "type": "string"
+                        },
+                        {
+                          "property": "Region",
+                          "title": "Region",
+                          "type": "string"
+                        },
+                        {
+                          "property": "PostalCode",
+                          "title": "Postal Code",
+                          "type": "string"
+                        },
+                        {
+                          "property": "Country",
+                          "title": "Country",
+                          "type": "string"
+                        },
+                        {
+                          "property": "HomePhone",
+                          "title": "Home Phone",
+                          "type": "string"
+                        },
+                        {
+                          "property": "Extension",
+                          "title": "Extension",
+                          "type": "string"
+                        },
+                        {
+                          "property": "Notes",
+                          "title": "Notes",
+                          "type": "string"
+                        }
+                      ],
+                      "count": "${getEmployeesCount}",
+                      "data": "${getEmployeesResult}",
+                      "events": {
+                        "loadData": [
+                          {
+                            "name": "Northwind.getEmployees",
+                            "parameters": [
+                              {
+                                "name": "$top",
+                                "value": "event.top"
+                              },
+                              {
+                                "name": "$skip",
+                                "value": "event.skip"
+                              },
+                              {
+                                "name": "$count",
+                                "value": "event.top != null && event.skip != null"
+                              },
+                              {
+                                "name": "$filter",
+                                "value": "${event.filter}"
+                              },
+                              {
+                                "name": "$orderby",
+                                "value": "${event.orderby}"
+                              }
+                            ],
+                            "then": [
+                              {
+                                "name": "getEmployeesResult",
+                                "type": "set",
+                                "value": "${result.value}"
+                              },
+                              {
+                                "name": "getEmployeesCount",
+                                "type": "set",
+                                "value": "event.top != null && event.skip != null ? result['@odata.count'] : ${result.value.length}"
+                              }
+                            ],
+                            "type": "invoke"
+                          }
+                        ]
+                      },
+                      "name": "grid0",
+                      "pageSize": 4,
+                      "type": "grid"
+                    }
+                  ],
+                  "icon": "",
+                  "selected": false,
+                  "text": "Employees"
+                },
+                {
+                  "components": [
+                    {
+                      "allowFiltering": true,
+                      "allowPaging": true,
+                      "allowSorting": true,
+                      "columns": [
+                        {
+                          "property": "CustomerID",
+                          "title": "Customer ID",
+                          "type": "string"
+                        },
+                        {
+                          "property": "CompanyName",
+                          "title": "Company Name",
+                          "type": "string"
+                        },
+                        {
+                          "property": "ContactName",
+                          "title": "Contact Name",
+                          "type": "string"
+                        },
+                        {
+                          "property": "ContactTitle",
+                          "title": "Contact Title",
+                          "type": "string"
+                        },
+                        {
+                          "property": "Address",
+                          "title": "Address",
+                          "type": "string"
+                        },
+                        {
+                          "property": "City",
+                          "title": "City",
+                          "type": "string"
+                        },
+                        {
+                          "property": "Region",
+                          "title": "Region",
+                          "type": "string"
+                        },
+                        {
+                          "property": "PostalCode",
+                          "title": "Postal Code",
+                          "type": "string"
+                        },
+                        {
+                          "property": "Country",
+                          "title": "Country",
+                          "type": "string"
+                        },
+                        {
+                          "property": "Phone",
+                          "title": "Phone",
+                          "type": "string"
+                        },
+                        {
+                          "property": "Fax",
+                          "title": "Fax",
+                          "type": "string"
+                        }
+                      ],
+                      "count": "${getCustomersCount}",
+                      "data": "${getCustomersResult}",
+                      "events": {
+                        "loadData": [
+                          {
+                            "name": "Northwind.getCustomers",
+                            "parameters": [
+                              {
+                                "name": "$top",
+                                "value": "event.top"
+                              },
+                              {
+                                "name": "$skip",
+                                "value": "event.skip"
+                              },
+                              {
+                                "name": "$count",
+                                "value": "event.top != null && event.skip != null"
+                              },
+                              {
+                                "name": "$filter",
+                                "value": "${event.filter}"
+                              },
+                              {
+                                "name": "$orderby",
+                                "value": "${event.orderby}"
+                              }
+                            ],
+                            "then": [
+                              {
+                                "name": "getCustomersResult",
+                                "type": "set",
+                                "value": "${result.value}"
+                              },
+                              {
+                                "name": "getCustomersCount",
+                                "type": "set",
+                                "value": "event.top != null && event.skip != null ? result['@odata.count'] : ${result.value.length}"
+                              }
+                            ],
+                            "type": "invoke"
+                          }
+                        ]
+                      },
+                      "name": "grid1",
+                      "pageSize": 10,
+                      "type": "grid"
+                    }
+                  ],
+                  "icon": "",
+                  "selected": false,
+                  "text": "Customers"
+                }
+              ],
+              "name": "tabs0",
+              "style": {
+                "height": "100%"
+              },
+              "type": "tabs"
+            }
+          ],
+          "name": "card0",
+          "style": {
+            "height": "100%"
+          },
+          "type": "card",
+          "visible": true
         }
-      ]
+      ],
+      "container": "main",
+      "type": "content"
     }
-  ]
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "events",
+        "type": "set",
+        "value": "[]"
+      },
+      {
+        "code": "this.datalist0.load();",
+        "type": "execute"
+      },
+      {
+        "code": "this.grid0.load();",
+        "type": "execute"
+      },
+      {
+        "code": "this.grid1.load();",
+        "type": "execute"
+      }
+    ]
+  },
+  "layout": "Main",
+  "name": "Tabs"
 }

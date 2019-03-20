@@ -1,4 +1,124 @@
 <rz-content #content1 container="main">
-  <rz-heading #pageTitle size="H1" text="Tabs">
+  <rz-heading #pageTitle size="H1" [style]="{'display': 'inline', 'float': 'none'}" text="Tabs">
   </rz-heading>
+  <rz-link #link0 path="https://github.com/akorchev/angular.radzen.com/blob/master/meta/pages/tabs.json" text="[source code]">
+  </rz-link>
+  <rz-heading #heading0 size="H4" text="This page demonstrates Tabs component.">
+  </rz-heading>
+  <rz-card #card0 [style]="{'height': '100%'}">
+    <rz-tabs #tabs0 [style]="{'height': '100%'}">
+      <rz-tabs-item [selected]="true" text="Orders">
+        <rz-datalist #datalist0 [allowPaging]="true" [count]="getNorthwindOrdersCount" [data]="getNorthwindOrdersResult" [pageSize]="6" [wrapItems]="true" (loadData)="datalist0LoadData($event)">
+          <ng-template let-data datalistTemplate>
+            <rz-card #card3 [style]="{'height': '370px', 'marginBottom': '10px', 'marginLeft': '10px', 'marginRight': '10px', 'marginTop': '10px', 'width': '450px'}" *ngIf="data">
+              <div class="row">
+                <div class="col-md-6">
+                  <rz-heading #heading14 size="H6" text="Company:">
+                  </rz-heading>
+                  <rz-heading #heading15 size="H4" [text]="data?.Customer?.CompanyName">
+                  </rz-heading>
+                  <rz-heading #heading16 size="H6" text="Employee:">
+                  </rz-heading>
+                  <rz-heading #heading17 size="H4" [text]="data?.Employee?.FirstName + ' ' + data?.Employee?.LastName">
+                  </rz-heading>
+                  <rz-image #image1 [path]="data?.Employee?.Photo">
+                  </rz-image>
+                </div>
+                <div class="col-md-6">
+                  <rz-heading #heading18 size="H6" text="Freight:">
+                  </rz-heading>
+                  <rz-heading #heading19 size="H4" [text]="data?.Freight | currency">
+                  </rz-heading>
+                  <rz-heading #heading20 size="H6" text="Ship country:">
+                  </rz-heading>
+                  <rz-heading #heading21 size="H4" [text]="data?.ShipCountry">
+                  </rz-heading>
+                  <rz-heading #heading22 size="H6" text="Ship city:">
+                  </rz-heading>
+                  <rz-heading #heading23 size="H4" [text]="data?.ShipCity">
+                  </rz-heading>
+                  <rz-heading #heading24 size="H6" text="Ship name:">
+                  </rz-heading>
+                  <rz-heading #heading25 size="H4" [text]="data?.ShipName">
+                  </rz-heading>
+                </div>
+              </div>
+            </rz-card>
+          </ng-template>
+        </rz-datalist>
+      </rz-tabs-item>
+      <rz-tabs-item [selected]="false" text="Employees">
+        <rz-grid #grid0 [allowFiltering]="true" [allowPaging]="true" [allowSorting]="true" [count]="getEmployeesCount" [data]="getEmployeesResult" [pageSize]="4" (loadData)="grid0LoadData($event)">
+          <rz-grid-column format="int32" property="EmployeeID" title="Employee ID" width="100px" type="integer">
+          </rz-grid-column>
+          <rz-grid-column [filterable]="false" property="Photo" [sortable]="false" title="Photo" width="120px" type="string">
+            <ng-template let-data gridColumnTemplate>
+              <rz-image #image0 [path]="data?.Photo" [style]="{}">
+              </rz-image>
+            </ng-template>
+          </rz-grid-column>
+          <rz-grid-column property="LastName" title="Last Name" type="string">
+          </rz-grid-column>
+          <rz-grid-column property="FirstName" title="First Name" type="string">
+          </rz-grid-column>
+          <rz-grid-column property="Title" title="Title" type="string">
+          </rz-grid-column>
+          <rz-grid-column property="TitleOfCourtesy" title="Title Of Courtesy" type="string">
+          </rz-grid-column>
+          <rz-grid-column format="date-time" property="BirthDate" title="Birth Date" type="string">
+            <ng-template let-data gridColumnTemplate>
+            {{data?.BirthDate | utcDate}}
+            </ng-template>
+          </rz-grid-column>
+          <rz-grid-column format="date-time" property="HireDate" title="Hire Date" type="string">
+            <ng-template let-data gridColumnTemplate>
+            {{data?.HireDate | utcDate}}
+            </ng-template>
+          </rz-grid-column>
+          <rz-grid-column property="Address" title="Address" type="string">
+          </rz-grid-column>
+          <rz-grid-column property="City" title="City" type="string">
+          </rz-grid-column>
+          <rz-grid-column property="Region" title="Region" type="string">
+          </rz-grid-column>
+          <rz-grid-column property="PostalCode" title="Postal Code" type="string">
+          </rz-grid-column>
+          <rz-grid-column property="Country" title="Country" type="string">
+          </rz-grid-column>
+          <rz-grid-column property="HomePhone" title="Home Phone" type="string">
+          </rz-grid-column>
+          <rz-grid-column property="Extension" title="Extension" type="string">
+          </rz-grid-column>
+          <rz-grid-column property="Notes" title="Notes" type="string">
+          </rz-grid-column>
+        </rz-grid>
+      </rz-tabs-item>
+      <rz-tabs-item [selected]="false" text="Customers">
+        <rz-grid #grid1 [allowFiltering]="true" [allowPaging]="true" [allowSorting]="true" [count]="getCustomersCount" [data]="getCustomersResult" [pageSize]="10" (loadData)="grid1LoadData($event)">
+          <rz-grid-column property="CustomerID" title="Customer ID" type="string">
+          </rz-grid-column>
+          <rz-grid-column property="CompanyName" title="Company Name" type="string">
+          </rz-grid-column>
+          <rz-grid-column property="ContactName" title="Contact Name" type="string">
+          </rz-grid-column>
+          <rz-grid-column property="ContactTitle" title="Contact Title" type="string">
+          </rz-grid-column>
+          <rz-grid-column property="Address" title="Address" type="string">
+          </rz-grid-column>
+          <rz-grid-column property="City" title="City" type="string">
+          </rz-grid-column>
+          <rz-grid-column property="Region" title="Region" type="string">
+          </rz-grid-column>
+          <rz-grid-column property="PostalCode" title="Postal Code" type="string">
+          </rz-grid-column>
+          <rz-grid-column property="Country" title="Country" type="string">
+          </rz-grid-column>
+          <rz-grid-column property="Phone" title="Phone" type="string">
+          </rz-grid-column>
+          <rz-grid-column property="Fax" title="Fax" type="string">
+          </rz-grid-column>
+        </rz-grid>
+      </rz-tabs-item>
+    </rz-tabs>
+  </rz-card>
 </rz-content>

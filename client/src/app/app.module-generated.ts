@@ -33,6 +33,9 @@ import { AccordionModule } from '@radzen/angular/dist/accordion';
 import { FieldsetModule } from '@radzen/angular/dist/fieldset';
 import { DataListModule } from '@radzen/angular/dist/datalist';
 import { PanelModule } from '@radzen/angular/dist/panel';
+import { StepsModule } from '@radzen/angular/dist/steps';
+import { TabsModule } from '@radzen/angular/dist/tabs';
+import { GridModule } from '@radzen/angular/dist/grid';
 import { SharedModule } from '@radzen/angular/dist/shared';
 import { NotificationModule } from '@radzen/angular/dist/notification';
 import { DialogModule } from '@radzen/angular/dist/dialog';
@@ -208,6 +211,9 @@ export const AppImports = [
   FieldsetModule,
   DataListModule,
   PanelModule,
+  StepsModule,
+  TabsModule,
+  GridModule,
   SharedModule,
   NotificationModule,
   DialogModule,

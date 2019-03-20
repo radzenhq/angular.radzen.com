@@ -1,19 +1,531 @@
 {
-  "name": "Steps",
-  "access": "Everybody",
-  "layout": "Main",
+  "access": [
+    "Everybody"
+  ],
   "components": [
     {
-      "type": "content",
-      "container": "main",
       "components": [
         {
-          "type": "heading",
-          "size": "H1",
           "name": "pageTitle",
-          "text": "Steps"
+          "size": "H1",
+          "style": {
+            "display": "inline",
+            "float": "none"
+          },
+          "text": "Steps",
+          "type": "heading"
+        },
+        {
+          "icon": "",
+          "name": "link0",
+          "path": "https://github.com/akorchev/angular.radzen.com/blob/master/meta/pages/steps.json",
+          "text": "[source code]",
+          "type": "link"
+        },
+        {
+          "name": "heading0",
+          "size": "H4",
+          "text": "This page demonstrates Steps component.",
+          "type": "heading"
+        },
+        {
+          "components": [
+            {
+              "components": [
+                {
+                  "class": "col-md-6",
+                  "components": [
+                    {
+                      "events": {
+                        "change": [
+                          {
+                            "code": "${events.push('Steps Changed: ' + JSON.stringify(event))}",
+                            "error": [],
+                            "type": "execute"
+                          },
+                          {
+                            "condition": "${event.index == 1}",
+                            "name": "Northwind.getNorthwindOrders",
+                            "parameters": [
+                              {
+                                "name": "$filter",
+                                "value": "OrderID eq 10249"
+                              },
+                              {
+                                "name": "$expand",
+                                "value": "Customer,Employee"
+                              }
+                            ],
+                            "then": [
+                              {
+                                "name": "firstOrder",
+                                "type": "set",
+                                "value": "${result.value[0]}"
+                              }
+                            ],
+                            "type": "invoke"
+                          },
+                          {
+                            "condition": "${event.index == 0}",
+                            "name": "Northwind.getNorthwindOrders",
+                            "parameters": [
+                              {
+                                "name": "$filter",
+                                "value": "OrderID eq 10248"
+                              },
+                              {
+                                "name": "$expand",
+                                "value": "Customer,Employee"
+                              }
+                            ],
+                            "then": [
+                              {
+                                "name": "firstOrder",
+                                "type": "set",
+                                "value": "${result.value[0]}"
+                              }
+                            ],
+                            "type": "invoke"
+                          },
+                          {
+                            "condition": "${event.index == 2}",
+                            "name": "Northwind.getNorthwindOrders",
+                            "parameters": [
+                              {
+                                "name": "$filter",
+                                "value": "OrderID eq 10250"
+                              },
+                              {
+                                "name": "$expand",
+                                "value": "Customer,Employee"
+                              }
+                            ],
+                            "then": [
+                              {
+                                "name": "firstOrder",
+                                "type": "set",
+                                "value": "${result.value[0]}"
+                              }
+                            ],
+                            "type": "invoke"
+                          }
+                        ]
+                      },
+                      "items": [
+                        {
+                          "components": [
+                            {
+                              "components": [
+                                {
+                                  "components": [
+                                    {
+                                      "class": "col-md-6",
+                                      "components": [
+                                        {
+                                          "name": "heading2",
+                                          "size": "H6",
+                                          "text": "Company:",
+                                          "type": "heading"
+                                        },
+                                        {
+                                          "name": "heading3",
+                                          "size": "H2",
+                                          "text": "${firstOrder.Customer.CompanyName}",
+                                          "type": "heading"
+                                        },
+                                        {
+                                          "name": "heading4",
+                                          "size": "H6",
+                                          "text": "Employee:",
+                                          "type": "heading"
+                                        },
+                                        {
+                                          "name": "heading5",
+                                          "size": "H2",
+                                          "text": "${firstOrder.Employee.FirstName + ' ' + firstOrder.Employee.LastName}",
+                                          "type": "heading"
+                                        },
+                                        {
+                                          "name": "image0",
+                                          "path": "${firstOrder.Employee.Photo}",
+                                          "type": "image"
+                                        }
+                                      ],
+                                      "name": "col2",
+                                      "type": "col"
+                                    },
+                                    {
+                                      "class": "col-md-6",
+                                      "components": [
+                                        {
+                                          "name": "heading6",
+                                          "size": "H6",
+                                          "text": "Freight:",
+                                          "type": "heading"
+                                        },
+                                        {
+                                          "name": "heading7",
+                                          "size": "H2",
+                                          "text": "${firstOrder.Freight | currency}",
+                                          "type": "heading"
+                                        },
+                                        {
+                                          "name": "heading8",
+                                          "size": "H6",
+                                          "text": "Ship country:",
+                                          "type": "heading"
+                                        },
+                                        {
+                                          "name": "heading9",
+                                          "size": "H2",
+                                          "text": "${firstOrder.ShipCountry}",
+                                          "type": "heading"
+                                        },
+                                        {
+                                          "name": "heading10",
+                                          "size": "H6",
+                                          "text": "Ship city:",
+                                          "type": "heading"
+                                        },
+                                        {
+                                          "name": "heading11",
+                                          "size": "H2",
+                                          "text": "${firstOrder.ShipCity}",
+                                          "type": "heading"
+                                        },
+                                        {
+                                          "name": "heading12",
+                                          "size": "H6",
+                                          "text": "Ship name:",
+                                          "type": "heading"
+                                        },
+                                        {
+                                          "name": "heading13",
+                                          "size": "H2",
+                                          "text": "${firstOrder.ShipName}",
+                                          "type": "heading"
+                                        }
+                                      ],
+                                      "name": "col3",
+                                      "type": "col"
+                                    }
+                                  ],
+                                  "name": "row1",
+                                  "type": "row"
+                                }
+                              ],
+                              "name": "card2",
+                              "type": "card",
+                              "visible": "${firstOrder}"
+                            }
+                          ],
+                          "selected": false,
+                          "text": "Step 1"
+                        },
+                        {
+                          "components": [
+                            {
+                              "components": [
+                                {
+                                  "components": [
+                                    {
+                                      "class": "col-md-6",
+                                      "components": [
+                                        {
+                                          "name": "heading14",
+                                          "size": "H6",
+                                          "text": "Company:",
+                                          "type": "heading"
+                                        },
+                                        {
+                                          "name": "heading15",
+                                          "size": "H2",
+                                          "text": "${firstOrder.Customer.CompanyName}",
+                                          "type": "heading"
+                                        },
+                                        {
+                                          "name": "heading16",
+                                          "size": "H6",
+                                          "text": "Employee:",
+                                          "type": "heading"
+                                        },
+                                        {
+                                          "name": "heading17",
+                                          "size": "H2",
+                                          "text": "${firstOrder.Employee.FirstName + ' ' + firstOrder.Employee.LastName}",
+                                          "type": "heading"
+                                        },
+                                        {
+                                          "name": "image1",
+                                          "path": "${firstOrder.Employee.Photo}",
+                                          "type": "image"
+                                        }
+                                      ],
+                                      "name": "col4",
+                                      "type": "col"
+                                    },
+                                    {
+                                      "class": "col-md-6",
+                                      "components": [
+                                        {
+                                          "name": "heading18",
+                                          "size": "H6",
+                                          "text": "Freight:",
+                                          "type": "heading"
+                                        },
+                                        {
+                                          "name": "heading19",
+                                          "size": "H2",
+                                          "text": "${firstOrder.Freight | currency}",
+                                          "type": "heading"
+                                        },
+                                        {
+                                          "name": "heading20",
+                                          "size": "H6",
+                                          "text": "Ship country:",
+                                          "type": "heading"
+                                        },
+                                        {
+                                          "name": "heading21",
+                                          "size": "H2",
+                                          "text": "${firstOrder.ShipCountry}",
+                                          "type": "heading"
+                                        },
+                                        {
+                                          "name": "heading22",
+                                          "size": "H6",
+                                          "text": "Ship city:",
+                                          "type": "heading"
+                                        },
+                                        {
+                                          "name": "heading23",
+                                          "size": "H2",
+                                          "text": "${firstOrder.ShipCity}",
+                                          "type": "heading"
+                                        },
+                                        {
+                                          "name": "heading24",
+                                          "size": "H6",
+                                          "text": "Ship name:",
+                                          "type": "heading"
+                                        },
+                                        {
+                                          "name": "heading25",
+                                          "size": "H2",
+                                          "text": "${firstOrder.ShipName}",
+                                          "type": "heading"
+                                        }
+                                      ],
+                                      "name": "col5",
+                                      "type": "col"
+                                    }
+                                  ],
+                                  "name": "row2",
+                                  "type": "row"
+                                }
+                              ],
+                              "name": "card3",
+                              "type": "card",
+                              "visible": true
+                            }
+                          ],
+                          "selected": false,
+                          "text": "Step 2"
+                        },
+                        {
+                          "components": [
+                            {
+                              "components": [
+                                {
+                                  "components": [
+                                    {
+                                      "class": "col-md-6",
+                                      "components": [
+                                        {
+                                          "name": "heading26",
+                                          "size": "H6",
+                                          "text": "Company:",
+                                          "type": "heading"
+                                        },
+                                        {
+                                          "name": "heading27",
+                                          "size": "H2",
+                                          "text": "${firstOrder.Customer.CompanyName}",
+                                          "type": "heading"
+                                        },
+                                        {
+                                          "name": "heading28",
+                                          "size": "H6",
+                                          "text": "Employee:",
+                                          "type": "heading"
+                                        },
+                                        {
+                                          "name": "heading29",
+                                          "size": "H2",
+                                          "text": "${firstOrder.Employee.FirstName + ' ' + firstOrder.Employee.LastName}",
+                                          "type": "heading"
+                                        },
+                                        {
+                                          "name": "image2",
+                                          "path": "${firstOrder.Employee.Photo}",
+                                          "type": "image"
+                                        }
+                                      ],
+                                      "name": "col6",
+                                      "type": "col"
+                                    },
+                                    {
+                                      "class": "col-md-6",
+                                      "components": [
+                                        {
+                                          "name": "heading30",
+                                          "size": "H6",
+                                          "text": "Freight:",
+                                          "type": "heading"
+                                        },
+                                        {
+                                          "name": "heading31",
+                                          "size": "H2",
+                                          "text": "${firstOrder.Freight | currency}",
+                                          "type": "heading"
+                                        },
+                                        {
+                                          "name": "heading32",
+                                          "size": "H6",
+                                          "text": "Ship country:",
+                                          "type": "heading"
+                                        },
+                                        {
+                                          "name": "heading33",
+                                          "size": "H2",
+                                          "text": "${firstOrder.ShipCountry}",
+                                          "type": "heading"
+                                        },
+                                        {
+                                          "name": "heading34",
+                                          "size": "H6",
+                                          "text": "Ship city:",
+                                          "type": "heading"
+                                        },
+                                        {
+                                          "name": "heading35",
+                                          "size": "H2",
+                                          "text": "${firstOrder.ShipCity}",
+                                          "type": "heading"
+                                        },
+                                        {
+                                          "name": "heading36",
+                                          "size": "H6",
+                                          "text": "Ship name:",
+                                          "type": "heading"
+                                        },
+                                        {
+                                          "name": "heading37",
+                                          "size": "H2",
+                                          "text": "${firstOrder.ShipName}",
+                                          "type": "heading"
+                                        }
+                                      ],
+                                      "name": "col7",
+                                      "type": "col"
+                                    }
+                                  ],
+                                  "name": "row3",
+                                  "type": "row"
+                                }
+                              ],
+                              "name": "card4",
+                              "type": "card",
+                              "visible": true
+                            }
+                          ],
+                          "selected": true,
+                          "text": "Step 3"
+                        }
+                      ],
+                      "name": "steps0",
+                      "style": {},
+                      "type": "steps"
+                    }
+                  ],
+                  "name": "col0",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-6",
+                  "components": [
+                    {
+                      "name": "heading1",
+                      "size": "H3",
+                      "text": "Events",
+                      "type": "heading"
+                    },
+                    {
+                      "components": [
+                        {
+                          "content": "<div style=\"overflow:auto;height:100%\">\n  <div *ngFor=\"let event of events?.reverse()\">\n      {{ event }}\n  </div>\n</div>\n",
+                          "name": "html0",
+                          "type": "html"
+                        }
+                      ],
+                      "name": "card1",
+                      "style": {
+                        "height": "500px"
+                      },
+                      "type": "card",
+                      "visible": true
+                    }
+                  ],
+                  "name": "col1",
+                  "type": "col"
+                }
+              ],
+              "name": "row0",
+              "type": "row"
+            }
+          ],
+          "name": "card0",
+          "style": {
+            "height": "600px"
+          },
+          "type": "card",
+          "visible": true
         }
-      ]
+      ],
+      "container": "main",
+      "type": "content"
     }
-  ]
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "events",
+        "type": "set",
+        "value": "[]"
+      },
+      {
+        "name": "Northwind.getNorthwindOrders",
+        "parameters": [
+          {
+            "name": "$filter",
+            "value": "OrderID eq 10248"
+          },
+          {
+            "name": "$expand",
+            "value": "Customer,Employee"
+          }
+        ],
+        "then": [
+          {
+            "name": "firstOrder",
+            "type": "set",
+            "value": "${result.value[0]}"
+          }
+        ],
+        "type": "invoke"
+      }
+    ]
+  },
+  "layout": "Main",
+  "name": "Steps"
 }

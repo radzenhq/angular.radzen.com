@@ -12,14 +12,69 @@ import { DialogService, DIALOG_PARAMETERS, DialogRef } from '@radzen/angular/dis
 import { NotificationService } from '@radzen/angular/dist/notification';
 import { ContentComponent } from '@radzen/angular/dist/content';
 import { HeadingComponent } from '@radzen/angular/dist/heading';
+import { LinkComponent } from '@radzen/angular/dist/link';
+import { CardComponent } from '@radzen/angular/dist/card';
+import { StepsComponent } from '@radzen/angular/dist/steps';
+import { ImageComponent } from '@radzen/angular/dist/image';
+import { HtmlComponent } from '@radzen/angular/dist/html';
 
 import { ConfigService } from '../config.service';
 
+import { NorthwindService } from '../northwind.service';
 
 export class StepsGenerated implements AfterViewInit, OnInit, OnDestroy {
   // Components
   @ViewChild('content1') content1: ContentComponent;
   @ViewChild('pageTitle') pageTitle: HeadingComponent;
+  @ViewChild('link0') link0: LinkComponent;
+  @ViewChild('heading0') heading0: HeadingComponent;
+  @ViewChild('card0') card0: CardComponent;
+  @ViewChild('steps0') steps0: StepsComponent;
+  @ViewChild('card2') card2: CardComponent;
+  @ViewChild('heading2') heading2: HeadingComponent;
+  @ViewChild('heading3') heading3: HeadingComponent;
+  @ViewChild('heading4') heading4: HeadingComponent;
+  @ViewChild('heading5') heading5: HeadingComponent;
+  @ViewChild('image0') image0: ImageComponent;
+  @ViewChild('heading6') heading6: HeadingComponent;
+  @ViewChild('heading7') heading7: HeadingComponent;
+  @ViewChild('heading8') heading8: HeadingComponent;
+  @ViewChild('heading9') heading9: HeadingComponent;
+  @ViewChild('heading10') heading10: HeadingComponent;
+  @ViewChild('heading11') heading11: HeadingComponent;
+  @ViewChild('heading12') heading12: HeadingComponent;
+  @ViewChild('heading13') heading13: HeadingComponent;
+  @ViewChild('card3') card3: CardComponent;
+  @ViewChild('heading14') heading14: HeadingComponent;
+  @ViewChild('heading15') heading15: HeadingComponent;
+  @ViewChild('heading16') heading16: HeadingComponent;
+  @ViewChild('heading17') heading17: HeadingComponent;
+  @ViewChild('image1') image1: ImageComponent;
+  @ViewChild('heading18') heading18: HeadingComponent;
+  @ViewChild('heading19') heading19: HeadingComponent;
+  @ViewChild('heading20') heading20: HeadingComponent;
+  @ViewChild('heading21') heading21: HeadingComponent;
+  @ViewChild('heading22') heading22: HeadingComponent;
+  @ViewChild('heading23') heading23: HeadingComponent;
+  @ViewChild('heading24') heading24: HeadingComponent;
+  @ViewChild('heading25') heading25: HeadingComponent;
+  @ViewChild('card4') card4: CardComponent;
+  @ViewChild('heading26') heading26: HeadingComponent;
+  @ViewChild('heading27') heading27: HeadingComponent;
+  @ViewChild('heading28') heading28: HeadingComponent;
+  @ViewChild('heading29') heading29: HeadingComponent;
+  @ViewChild('image2') image2: ImageComponent;
+  @ViewChild('heading30') heading30: HeadingComponent;
+  @ViewChild('heading31') heading31: HeadingComponent;
+  @ViewChild('heading32') heading32: HeadingComponent;
+  @ViewChild('heading33') heading33: HeadingComponent;
+  @ViewChild('heading34') heading34: HeadingComponent;
+  @ViewChild('heading35') heading35: HeadingComponent;
+  @ViewChild('heading36') heading36: HeadingComponent;
+  @ViewChild('heading37') heading37: HeadingComponent;
+  @ViewChild('heading1') heading1: HeadingComponent;
+  @ViewChild('card1') card1: CardComponent;
+  @ViewChild('html0') html0: HtmlComponent;
 
   router: Router;
 
@@ -42,6 +97,10 @@ export class StepsGenerated implements AfterViewInit, OnInit, OnDestroy {
   _location: Location;
 
   _subscription: Subscription;
+
+  northwind: NorthwindService;
+  events: any;
+  firstOrder: any;
   parameters: any;
 
   constructor(private injector: Injector) {
@@ -68,6 +127,7 @@ export class StepsGenerated implements AfterViewInit, OnInit, OnDestroy {
 
     this.httpClient = this.injector.get(HttpClient);
 
+    this.northwind = this.injector.get(NorthwindService);
   }
 
   ngAfterViewInit() {
@@ -77,6 +137,7 @@ export class StepsGenerated implements AfterViewInit, OnInit, OnDestroy {
       } else {
         this.parameters = parameters;
       }
+      this.load();
       this.cd.detectChanges();
     });
   }
@@ -85,4 +146,46 @@ export class StepsGenerated implements AfterViewInit, OnInit, OnDestroy {
     this._subscription.unsubscribe();
   }
 
+
+  load() {
+    this.events = [];
+
+    this.northwind.getNorthwindOrders(`OrderID eq 10248`, null, null, null, `Customer,Employee`, null)
+    .subscribe((result: any) => {
+      this.firstOrder = result.value[0];
+    }, (result: any) => {
+
+    });
+  }
+
+  steps0Change(event: any) {
+    this.events.push('Steps Changed: ' + JSON.stringify(event))
+
+    if (event.index == 1) {
+          this.northwind.getNorthwindOrders(`OrderID eq 10249`, null, null, null, `Customer,Employee`, null)
+      .subscribe((result: any) => {
+          this.firstOrder = result.value[0];
+      }, (result: any) => {
+    
+      });
+    }
+
+    if (event.index == 0) {
+          this.northwind.getNorthwindOrders(`OrderID eq 10248`, null, null, null, `Customer,Employee`, null)
+      .subscribe((result: any) => {
+          this.firstOrder = result.value[0];
+      }, (result: any) => {
+    
+      });
+    }
+
+    if (event.index == 2) {
+          this.northwind.getNorthwindOrders(`OrderID eq 10250`, null, null, null, `Customer,Employee`, null)
+      .subscribe((result: any) => {
+          this.firstOrder = result.value[0];
+      }, (result: any) => {
+    
+      });
+    }
+  }
 }
