@@ -1,4 +1,47 @@
 <rz-content #content1 container="main">
-  <rz-heading #pageTitle size="H1" text="CheckBoxList">
+  <rz-heading #pageTitle size="H1" [style]="{'display': 'inline', 'float': 'none'}" text="CheckBoxList">
   </rz-heading>
+  <rz-link #link0 path="https://github.com/akorchev/angular.radzen.com/blob/master/meta/pages/check-box-list.json" text="[source code]">
+  </rz-link>
+  <rz-heading #heading0 size="H4" text="This page demonstrates CheckBoxList component.">
+  </rz-heading>
+  <rz-card #card0 [style]="{'height': '600px'}">
+    <div class="row">
+      <div class="col-md-6">
+        <rz-heading #heading2 size="H3" text="Horizontal">
+        </rz-heading>
+        <rz-checkboxlist #checkboxlist0 name="checkboxlist0" (change)="checkboxlist0Change($event)">
+          <rz-checkboxlist-option text="Item 1" value="1">
+          </rz-checkboxlist-option>
+          <rz-checkboxlist-option text="Item 2" value="2">
+          </rz-checkboxlist-option>
+          <rz-checkboxlist-option text="Item 3" value="3">
+          </rz-checkboxlist-option>
+        </rz-checkboxlist>
+        <rz-heading #heading3 size="H3" [style]="{'marginTop': '20px'}" text="Vertical">
+        </rz-heading>
+        <rz-checkboxlist #checkboxlist1 orientation="vertical" name="checkboxlist1" (change)="checkboxlist1Change($event)">
+          <rz-checkboxlist-option text="Item 1" value="1">
+          </rz-checkboxlist-option>
+          <rz-checkboxlist-option text="Item 2" value="2">
+          </rz-checkboxlist-option>
+          <rz-checkboxlist-option text="Item 3" value="3">
+          </rz-checkboxlist-option>
+        </rz-checkboxlist>
+      </div>
+      <div class="col-md-6">
+        <rz-heading #heading1 size="H3" text="Events">
+        </rz-heading>
+        <rz-card #card1 [style]="{'height': '500px'}">
+          <rz-html #html0>
+            <div style="overflow:auto;height:100%">
+              <div *ngFor="let event of events?.reverse()">
+                  {{ event }}
+              </div>
+            </div>
+          </rz-html>
+        </rz-card>
+      </div>
+    </div>
+  </rz-card>
 </rz-content>
