@@ -12,6 +12,10 @@ import { DialogService, DIALOG_PARAMETERS, DialogRef } from '@radzen/angular/dis
 import { NotificationService } from '@radzen/angular/dist/notification';
 import { ContentComponent } from '@radzen/angular/dist/content';
 import { HeadingComponent } from '@radzen/angular/dist/heading';
+import { LinkComponent } from '@radzen/angular/dist/link';
+import { CardComponent } from '@radzen/angular/dist/card';
+import { DatePickerComponent } from '@radzen/angular/dist/datepicker';
+import { HtmlComponent } from '@radzen/angular/dist/html';
 
 import { ConfigService } from '../config.service';
 
@@ -20,6 +24,22 @@ export class DatePickerGenerated implements AfterViewInit, OnInit, OnDestroy {
   // Components
   @ViewChild('content1') content1: ContentComponent;
   @ViewChild('pageTitle') pageTitle: HeadingComponent;
+  @ViewChild('link0') link0: LinkComponent;
+  @ViewChild('heading0') heading0: HeadingComponent;
+  @ViewChild('card0') card0: CardComponent;
+  @ViewChild('heading2') heading2: HeadingComponent;
+  @ViewChild('datepicker0') datepicker0: DatePickerComponent;
+  @ViewChild('heading3') heading3: HeadingComponent;
+  @ViewChild('datepicker1') datepicker1: DatePickerComponent;
+  @ViewChild('heading4') heading4: HeadingComponent;
+  @ViewChild('datepicker2') datepicker2: DatePickerComponent;
+  @ViewChild('heading5') heading5: HeadingComponent;
+  @ViewChild('datepicker3') datepicker3: DatePickerComponent;
+  @ViewChild('heading6') heading6: HeadingComponent;
+  @ViewChild('datepicker4') datepicker4: DatePickerComponent;
+  @ViewChild('heading1') heading1: HeadingComponent;
+  @ViewChild('card1') card1: CardComponent;
+  @ViewChild('html0') html0: HtmlComponent;
 
   router: Router;
 
@@ -42,6 +62,7 @@ export class DatePickerGenerated implements AfterViewInit, OnInit, OnDestroy {
   _location: Location;
 
   _subscription: Subscription;
+  events: any;
   parameters: any;
 
   constructor(private injector: Injector) {
@@ -77,6 +98,7 @@ export class DatePickerGenerated implements AfterViewInit, OnInit, OnDestroy {
       } else {
         this.parameters = parameters;
       }
+      this.load();
       this.cd.detectChanges();
     });
   }
@@ -85,4 +107,28 @@ export class DatePickerGenerated implements AfterViewInit, OnInit, OnDestroy {
     this._subscription.unsubscribe();
   }
 
+
+  load() {
+    this.events = [];
+  }
+
+  datepicker0Change(event: any) {
+    this.events.push('Single date DatePicker Change: ' + JSON.stringify(event))
+  }
+
+  datepicker1Change(event: any) {
+    this.events.push('Multimple dates DatePicker Change: ' + JSON.stringify(event))
+  }
+
+  datepicker2Change(event: any) {
+    this.events.push('Range DatePicker Change: ' + JSON.stringify(event))
+  }
+
+  datepicker3Change(event: any) {
+    this.events.push('DatePicker with time Change: ' + JSON.stringify(event))
+  }
+
+  datepicker4Change(event: any) {
+    this.events.push('DatePicker with year range Change: ' + JSON.stringify(event))
+  }
 }

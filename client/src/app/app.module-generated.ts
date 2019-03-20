@@ -39,6 +39,7 @@ import { GridModule } from '@radzen/angular/dist/grid';
 import { AutoCompleteModule } from '@radzen/angular/dist/autocomplete';
 import { CheckBoxModule } from '@radzen/angular/dist/checkbox';
 import { CheckBoxListModule } from '@radzen/angular/dist/checkboxlist';
+import { DatePickerModule } from '@radzen/angular/dist/datepicker';
 import { SharedModule } from '@radzen/angular/dist/shared';
 import { NotificationModule } from '@radzen/angular/dist/notification';
 import { DialogModule } from '@radzen/angular/dist/dialog';
@@ -220,6 +221,7 @@ export const AppImports = [
   AutoCompleteModule,
   CheckBoxModule,
   CheckBoxListModule,
+  DatePickerModule,
   SharedModule,
   NotificationModule,
   DialogModule,

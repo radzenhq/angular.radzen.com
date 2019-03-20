@@ -1,19 +1,213 @@
 {
-  "name": "DatePicker",
-  "access": "Everybody",
-  "layout": "Main",
+  "access": [
+    "Everybody"
+  ],
   "components": [
     {
-      "type": "content",
-      "container": "main",
       "components": [
         {
-          "type": "heading",
-          "size": "H1",
           "name": "pageTitle",
-          "text": "DatePicker"
+          "size": "H1",
+          "style": {
+            "display": "inline",
+            "float": "none"
+          },
+          "text": "DatePicker",
+          "type": "heading"
+        },
+        {
+          "icon": "",
+          "name": "link0",
+          "path": "https://github.com/akorchev/angular.radzen.com/blob/master/meta/pages/date-picker.json",
+          "text": "[source code]",
+          "type": "link"
+        },
+        {
+          "name": "heading0",
+          "size": "H4",
+          "text": "This page demonstrates DatePicker component.",
+          "type": "heading"
+        },
+        {
+          "components": [
+            {
+              "components": [
+                {
+                  "class": "col-md-6",
+                  "components": [
+                    {
+                      "name": "heading2",
+                      "size": "H3",
+                      "text": "Single date",
+                      "type": "heading"
+                    },
+                    {
+                      "events": {
+                        "change": [
+                          {
+                            "code": "${events.push('Single date DatePicker Change: ' + JSON.stringify(event))}",
+                            "type": "execute"
+                          }
+                        ]
+                      },
+                      "name": "datepicker0",
+                      "placeholder": "Select single date",
+                      "type": "datepicker",
+                      "value": ""
+                    },
+                    {
+                      "name": "heading3",
+                      "size": "H3",
+                      "style": {
+                        "marginTop": "20px"
+                      },
+                      "text": "Multiple dates",
+                      "type": "heading"
+                    },
+                    {
+                      "events": {
+                        "change": [
+                          {
+                            "code": "${events.push('Multimple dates DatePicker Change: ' + JSON.stringify(event))}",
+                            "type": "execute"
+                          }
+                        ]
+                      },
+                      "name": "datepicker1",
+                      "placeholder": "Select multiple dates",
+                      "selectionMode": "multiple",
+                      "type": "datepicker"
+                    },
+                    {
+                      "name": "heading4",
+                      "size": "H3",
+                      "style": {
+                        "marginTop": "20px"
+                      },
+                      "text": "Range",
+                      "type": "heading"
+                    },
+                    {
+                      "events": {
+                        "change": [
+                          {
+                            "code": "${events.push('Range DatePicker Change: ' + JSON.stringify(event))}",
+                            "type": "execute"
+                          }
+                        ]
+                      },
+                      "name": "datepicker2",
+                      "placeholder": "Select range",
+                      "selectionMode": "range",
+                      "type": "datepicker"
+                    },
+                    {
+                      "name": "heading5",
+                      "size": "H3",
+                      "style": {
+                        "marginTop": "20px"
+                      },
+                      "text": "Date with time",
+                      "type": "heading"
+                    },
+                    {
+                      "events": {
+                        "change": [
+                          {
+                            "code": "${events.push('DatePicker with time Change: ' + JSON.stringify(event))}",
+                            "type": "execute"
+                          }
+                        ]
+                      },
+                      "name": "datepicker3",
+                      "placeholder": "Select range",
+                      "selectionMode": "single",
+                      "showTime": true,
+                      "type": "datepicker"
+                    },
+                    {
+                      "name": "heading6",
+                      "size": "H3",
+                      "style": {
+                        "marginTop": "20px"
+                      },
+                      "text": "Year range (2018-2019)",
+                      "type": "heading"
+                    },
+                    {
+                      "events": {
+                        "change": [
+                          {
+                            "code": "${events.push('DatePicker with year range Change: ' + JSON.stringify(event))}",
+                            "type": "execute"
+                          }
+                        ]
+                      },
+                      "name": "datepicker4",
+                      "placeholder": "Select range",
+                      "selectionMode": "single",
+                      "showTime": true,
+                      "type": "datepicker",
+                      "yearRange": "2018:2019"
+                    }
+                  ],
+                  "name": "col0",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-6",
+                  "components": [
+                    {
+                      "name": "heading1",
+                      "size": "H3",
+                      "text": "Events",
+                      "type": "heading"
+                    },
+                    {
+                      "components": [
+                        {
+                          "content": "<div style=\"overflow:auto;height:100%\">\n  <div *ngFor=\"let event of events?.reverse()\">\n      {{ event }}\n  </div>\n</div>\n",
+                          "name": "html0",
+                          "type": "html"
+                        }
+                      ],
+                      "name": "card1",
+                      "style": {
+                        "height": "500px"
+                      },
+                      "type": "card",
+                      "visible": true
+                    }
+                  ],
+                  "name": "col1",
+                  "type": "col"
+                }
+              ],
+              "name": "row0",
+              "type": "row"
+            }
+          ],
+          "name": "card0",
+          "style": {
+            "height": "600px"
+          },
+          "type": "card",
+          "visible": true
         }
-      ]
+      ],
+      "container": "main",
+      "type": "content"
     }
-  ]
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "events",
+        "type": "set",
+        "value": "[]"
+      }
+    ]
+  },
+  "layout": "Main",
+  "name": "DatePicker"
 }

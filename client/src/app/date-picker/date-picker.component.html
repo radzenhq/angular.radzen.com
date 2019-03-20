@@ -1,4 +1,47 @@
 <rz-content #content1 container="main">
-  <rz-heading #pageTitle size="H1" text="DatePicker">
+  <rz-heading #pageTitle size="H1" [style]="{'display': 'inline', 'float': 'none'}" text="DatePicker">
   </rz-heading>
+  <rz-link #link0 path="https://github.com/akorchev/angular.radzen.com/blob/master/meta/pages/date-picker.json" text="[source code]">
+  </rz-link>
+  <rz-heading #heading0 size="H4" text="This page demonstrates DatePicker component.">
+  </rz-heading>
+  <rz-card #card0 [style]="{'height': '600px'}">
+    <div class="row">
+      <div class="col-md-6">
+        <rz-heading #heading2 size="H3" text="Single date">
+        </rz-heading>
+        <rz-datepicker #datepicker0 placeholder="Select single date" name="datepicker0" (change)="datepicker0Change($event)">
+        </rz-datepicker>
+        <rz-heading #heading3 size="H3" [style]="{'marginTop': '20px'}" text="Multiple dates">
+        </rz-heading>
+        <rz-datepicker #datepicker1 placeholder="Select multiple dates" selectionMode="multiple" name="datepicker1" (change)="datepicker1Change($event)">
+        </rz-datepicker>
+        <rz-heading #heading4 size="H3" [style]="{'marginTop': '20px'}" text="Range">
+        </rz-heading>
+        <rz-datepicker #datepicker2 placeholder="Select range" selectionMode="range" name="datepicker2" (change)="datepicker2Change($event)">
+        </rz-datepicker>
+        <rz-heading #heading5 size="H3" [style]="{'marginTop': '20px'}" text="Date with time">
+        </rz-heading>
+        <rz-datepicker #datepicker3 placeholder="Select range" selectionMode="single" [showTime]="true" name="datepicker3" (change)="datepicker3Change($event)">
+        </rz-datepicker>
+        <rz-heading #heading6 size="H3" [style]="{'marginTop': '20px'}" text="Year range (2018-2019)">
+        </rz-heading>
+        <rz-datepicker #datepicker4 placeholder="Select range" selectionMode="single" [showTime]="true" yearRange="2018:2019" name="datepicker4" (change)="datepicker4Change($event)">
+        </rz-datepicker>
+      </div>
+      <div class="col-md-6">
+        <rz-heading #heading1 size="H3" text="Events">
+        </rz-heading>
+        <rz-card #card1 [style]="{'height': '500px'}">
+          <rz-html #html0>
+            <div style="overflow:auto;height:100%">
+              <div *ngFor="let event of events?.reverse()">
+                  {{ event }}
+              </div>
+            </div>
+          </rz-html>
+        </rz-card>
+      </div>
+    </div>
+  </rz-card>
 </rz-content>
