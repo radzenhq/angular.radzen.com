@@ -12,14 +12,29 @@ import { DialogService, DIALOG_PARAMETERS, DialogRef } from '@radzen/angular/dis
 import { NotificationService } from '@radzen/angular/dist/notification';
 import { ContentComponent } from '@radzen/angular/dist/content';
 import { HeadingComponent } from '@radzen/angular/dist/heading';
+import { LinkComponent } from '@radzen/angular/dist/link';
+import { CardComponent } from '@radzen/angular/dist/card';
+import { DropDownDataGridComponent } from '@radzen/angular/dist/dropdown-datagrid';
+import { HtmlComponent } from '@radzen/angular/dist/html';
 
 import { ConfigService } from '../config.service';
 
+import { NorthwindService } from '../northwind.service';
 
 export class DropDownDataGridGenerated implements AfterViewInit, OnInit, OnDestroy {
   // Components
   @ViewChild('content1') content1: ContentComponent;
   @ViewChild('pageTitle') pageTitle: HeadingComponent;
+  @ViewChild('link0') link0: LinkComponent;
+  @ViewChild('heading0') heading0: HeadingComponent;
+  @ViewChild('card0') card0: CardComponent;
+  @ViewChild('heading2') heading2: HeadingComponent;
+  @ViewChild('dropdownDatagrid0') dropdownDatagrid0: DropDownDataGridComponent;
+  @ViewChild('heading3') heading3: HeadingComponent;
+  @ViewChild('dropdownDatagrid1') dropdownDatagrid1: DropDownDataGridComponent;
+  @ViewChild('heading1') heading1: HeadingComponent;
+  @ViewChild('card1') card1: CardComponent;
+  @ViewChild('html0') html0: HtmlComponent;
 
   router: Router;
 
@@ -42,7 +57,14 @@ export class DropDownDataGridGenerated implements AfterViewInit, OnInit, OnDestr
   _location: Location;
 
   _subscription: Subscription;
+
+  northwind: NorthwindService;
+  events: any;
   parameters: any;
+  getCustomersResult: any;
+  getCustomersCount: any;
+  getNorthwindProductsResult: any;
+  getNorthwindProductsCount: any;
 
   constructor(private injector: Injector) {
   }
@@ -68,6 +90,7 @@ export class DropDownDataGridGenerated implements AfterViewInit, OnInit, OnDestr
 
     this.httpClient = this.injector.get(HttpClient);
 
+    this.northwind = this.injector.get(NorthwindService);
   }
 
   ngAfterViewInit() {
@@ -77,6 +100,7 @@ export class DropDownDataGridGenerated implements AfterViewInit, OnInit, OnDestr
       } else {
         this.parameters = parameters;
       }
+      this.load();
       this.cd.detectChanges();
     });
   }
@@ -85,4 +109,44 @@ export class DropDownDataGridGenerated implements AfterViewInit, OnInit, OnDestr
     this._subscription.unsubscribe();
   }
 
+
+  load() {
+    this.events = [];
+
+    this.dropdownDatagrid0.load();
+
+    this.dropdownDatagrid1.load();
+
+    this.dropdownDatagrid1.load();
+  }
+
+  dropdownDatagrid0Change(event: any) {
+    this.events.push('Single select Change: ' + JSON.stringify(event))
+  }
+
+  dropdownDatagrid0LoadData(event: any) {
+    this.northwind.getCustomers(`${event.filter}`, event.top, event.skip, `${event.orderby}`, null, event.top != null && event.skip != null)
+    .subscribe((result: any) => {
+      this.getCustomersResult = result.value;
+
+      this.getCustomersCount = event.top != null && event.skip != null ? result['@odata.count'] : result.value.length;
+    }, (result: any) => {
+
+    });
+  }
+
+  dropdownDatagrid1Change(event: any) {
+    this.events.push('Multiple select Change: ' + JSON.stringify(event))
+  }
+
+  dropdownDatagrid1LoadData(event: any) {
+    this.northwind.getNorthwindProducts(`${event.filter}`, event.top, event.skip, `${event.orderby}`, `Supplier,Category`, event.top != null && event.skip != null)
+    .subscribe((result: any) => {
+      this.getNorthwindProductsResult = result.value;
+
+      this.getNorthwindProductsCount = event.top != null && event.skip != null ? result['@odata.count'] : result.value.length;
+    }, (result: any) => {
+
+    });
+  }
 }

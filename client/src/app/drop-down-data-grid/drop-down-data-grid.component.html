@@ -1,4 +1,35 @@
 <rz-content #content1 container="main">
-  <rz-heading #pageTitle size="H1" text="DropDownDataGrid">
+  <rz-heading #pageTitle size="H1" [style]="{'display': 'inline', 'float': 'none'}" text="DropDownDataGrid">
   </rz-heading>
+  <rz-link #link0 path="https://github.com/akorchev/angular.radzen.com/blob/master/meta/pages/drop-down-data-grid.json" text="[source code]">
+  </rz-link>
+  <rz-heading #heading0 size="H4" text="This page demonstrates DropDownDataGrid component.">
+  </rz-heading>
+  <rz-card #card0 [style]="{'height': '600px'}">
+    <div class="row">
+      <div class="col-md-6">
+        <rz-heading #heading2 size="H3" text="Single select">
+        </rz-heading>
+        <rz-dropdown-datagrid #dropdownDatagrid0 [allowFiltering]="true" [allowSorting]="true" [count]="getCustomersCount" [data]="getCustomersResult" [pageSize]="10" placeholder="Select customer" textProperty="CompanyName" valueProperty="CustomerID" name="dropdownDatagrid0" (change)="dropdownDatagrid0Change($event)" (loadData)="dropdownDatagrid0LoadData($event)">
+        </rz-dropdown-datagrid>
+        <rz-heading #heading3 size="H3" [style]="{'marginTop': '20px'}" text="Multiple select">
+        </rz-heading>
+        <rz-dropdown-datagrid #dropdownDatagrid1 [allowFiltering]="true" [allowSorting]="true" [count]="getNorthwindProductsCount" [data]="getNorthwindProductsResult" [multiple]="true" [pageSize]="10" placeholder="Select products" textProperty="ProductName" valueProperty="ProductID" name="dropdownDatagrid1" (change)="dropdownDatagrid1Change($event)" (loadData)="dropdownDatagrid1LoadData($event)">
+        </rz-dropdown-datagrid>
+      </div>
+      <div class="col-md-6">
+        <rz-heading #heading1 size="H3" text="Events">
+        </rz-heading>
+        <rz-card #card1 [style]="{'height': '500px'}">
+          <rz-html #html0>
+            <div style="overflow:auto;height:100%">
+              <div *ngFor="let event of events?.reverse()">
+                  {{ event }}
+              </div>
+            </div>
+          </rz-html>
+        </rz-card>
+      </div>
+    </div>
+  </rz-card>
 </rz-content>
