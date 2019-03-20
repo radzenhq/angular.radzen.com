@@ -1,4 +1,43 @@
 <rz-content #content1 container="main">
-  <rz-heading #pageTitle size="H1" text="Accordion">
+  <rz-heading #pageTitle size="H1" [style]="{'display': 'inline', 'float': 'none'}" text="Accordion">
   </rz-heading>
+  <rz-link #link0 path="https://github.com/akorchev/angular.radzen.com/blob/master/meta/pages/accordion.json" text="[source code]">
+  </rz-link>
+  <rz-heading #heading0 size="H4" text="This page demonstrates Accordion component.">
+  </rz-heading>
+  <rz-card #card0 [style]="{'height': '600px'}">
+    <div class="row">
+      <div class="col-md-6">
+        <rz-heading #heading3 size="H3" [style]="{'marginTop': '20px'}" text="Single expand accordion">
+        </rz-heading>
+        <rz-accordion #accordion0 [multiple]="false" selectedIndex="1" (collapse)="accordion0Collapse($event)" (expand)="accordion0Expand($event)">
+          <rz-accordion-item text="Item 1">
+          </rz-accordion-item>
+          <rz-accordion-item text="Item 2">
+          </rz-accordion-item>
+        </rz-accordion>
+        <rz-heading #heading2 size="H3" [style]="{'marginTop': '20px'}" text="Multiple expand accordion with icons">
+        </rz-heading>
+        <rz-accordion #accordion1 [multiple]="true" selectedIndex="1" (collapse)="accordion1Collapse($event)" (expand)="accordion1Expand($event)">
+          <rz-accordion-item icon="account_balance" text="Item 1">
+          </rz-accordion-item>
+          <rz-accordion-item icon="account_balance_wallet" text="Item 2">
+          </rz-accordion-item>
+        </rz-accordion>
+      </div>
+      <div class="col-md-6">
+        <rz-heading #heading1 size="H3" text="Events">
+        </rz-heading>
+        <rz-card #card1 [style]="{'height': '500px'}">
+          <rz-html #html0>
+            <div style="overflow:auto;height:100%">
+              <div *ngFor="let event of events?.reverse()">
+                  {{ event }}
+              </div>
+            </div>
+          </rz-html>
+        </rz-card>
+      </div>
+    </div>
+  </rz-card>
 </rz-content>

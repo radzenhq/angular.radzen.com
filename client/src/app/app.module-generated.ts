@@ -29,6 +29,7 @@ import { LoginModule } from '@radzen/angular/dist/login';
 import { UploadModule } from '@radzen/angular/dist/upload';
 import { GravatarModule } from '@radzen/angular/dist/gravatar';
 import { GoogleMapModule } from '@radzen/angular/dist/googlemap';
+import { AccordionModule } from '@radzen/angular/dist/accordion';
 import { SharedModule } from '@radzen/angular/dist/shared';
 import { NotificationModule } from '@radzen/angular/dist/notification';
 import { DialogModule } from '@radzen/angular/dist/dialog';
@@ -198,6 +199,7 @@ export const AppImports = [
   UploadModule,
   GravatarModule,
   GoogleMapModule,
+  AccordionModule,
   SharedModule,
   NotificationModule,
   DialogModule,
