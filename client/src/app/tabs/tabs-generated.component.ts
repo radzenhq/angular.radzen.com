@@ -115,10 +115,16 @@ export class TabsGenerated implements AfterViewInit, OnInit, OnDestroy {
     this.events = [];
 
     this.datalist0.load();
+  }
 
-    this.grid0.load();
+  tabs0Change(event: any) {
+    if (event.index == 1 && !this.getEmployeesCount) {
+      this.grid0.load();
+    }
 
-    this.grid1.load();
+    if (event.index == 2 && !this.getCustomersCount) {
+      this.grid1.load();
+    }
   }
 
   datalist0LoadData(event: any) {

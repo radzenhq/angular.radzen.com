@@ -31,6 +31,20 @@
         {
           "components": [
             {
+              "events": {
+                "change": [
+                  {
+                    "code": "this.grid0.load();",
+                    "condition": "${event.index == 1 && !this.getEmployeesCount}",
+                    "type": "execute"
+                  },
+                  {
+                    "code": "this.grid1.load();",
+                    "condition": "${event.index == 2 && !this.getCustomersCount}",
+                    "type": "execute"
+                  }
+                ]
+              },
               "items": [
                 {
                   "components": [
@@ -503,14 +517,7 @@
       },
       {
         "code": "this.datalist0.load();",
-        "type": "execute"
-      },
-      {
-        "code": "this.grid0.load();",
-        "type": "execute"
-      },
-      {
-        "code": "this.grid1.load();",
+        "error": [],
         "type": "execute"
       }
     ]
