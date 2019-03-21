@@ -49,6 +49,7 @@ import { ListBoxModule } from '@radzen/angular/dist/listbox';
 import { MaskModule } from '@radzen/angular/dist/mask';
 import { NumericModule } from '@radzen/angular/dist/numeric';
 import { PasswordModule } from '@radzen/angular/dist/password';
+import { RadioButtonListModule } from '@radzen/angular/dist/radiobuttonlist';
 import { SharedModule } from '@radzen/angular/dist/shared';
 import { NotificationModule } from '@radzen/angular/dist/notification';
 import { DialogModule } from '@radzen/angular/dist/dialog';
@@ -240,6 +241,7 @@ export const AppImports = [
   MaskModule,
   NumericModule,
   PasswordModule,
+  RadioButtonListModule,
   SharedModule,
   NotificationModule,
   DialogModule,

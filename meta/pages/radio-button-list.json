@@ -1,19 +1,166 @@
 {
-  "name": "RadioButtonList",
-  "access": "Everybody",
-  "layout": "Main",
+  "access": [
+    "Everybody"
+  ],
   "components": [
     {
-      "type": "content",
-      "container": "main",
       "components": [
         {
-          "type": "heading",
-          "size": "H1",
           "name": "pageTitle",
-          "text": "RadioButtonList"
+          "size": "H1",
+          "style": {
+            "display": "inline",
+            "float": "none"
+          },
+          "text": "RadioButtonList",
+          "type": "heading"
+        },
+        {
+          "icon": "",
+          "name": "link0",
+          "path": "https://github.com/akorchev/angular.radzen.com/blob/master/meta/pages/radio-button-list.json",
+          "text": "[source code]",
+          "type": "link"
+        },
+        {
+          "name": "heading0",
+          "size": "H4",
+          "text": "This page demonstrates RadioButtonList component.",
+          "type": "heading"
+        },
+        {
+          "components": [
+            {
+              "components": [
+                {
+                  "class": "col-md-6",
+                  "components": [
+                    {
+                      "name": "heading2",
+                      "size": "H3",
+                      "text": "Horizontal",
+                      "type": "heading"
+                    },
+                    {
+                      "events": {
+                        "change": [
+                          {
+                            "code": "${events.push('Horizontal RadioButtonList Change: ' + JSON.stringify(event))}",
+                            "type": "execute"
+                          }
+                        ]
+                      },
+                      "name": "radiobuttonlist0",
+                      "options": [
+                        {
+                          "text": "Item 1",
+                          "value": "1"
+                        },
+                        {
+                          "text": "Item 2",
+                          "value": "2"
+                        },
+                        {
+                          "text": "Item 3",
+                          "value": "3"
+                        }
+                      ],
+                      "type": "radiobuttonlist"
+                    },
+                    {
+                      "name": "heading3",
+                      "size": "H3",
+                      "style": {
+                        "marginTop": "20px"
+                      },
+                      "text": "Vertical",
+                      "type": "heading"
+                    },
+                    {
+                      "events": {
+                        "change": [
+                          {
+                            "code": "${events.push('Vertical RadioButtonList Change: ' + JSON.stringify(event))}",
+                            "type": "execute"
+                          }
+                        ]
+                      },
+                      "name": "radiobuttonlist1",
+                      "options": [
+                        {
+                          "text": "Item 1",
+                          "value": "1"
+                        },
+                        {
+                          "text": "Item 2",
+                          "value": "2"
+                        },
+                        {
+                          "text": "Item 3",
+                          "value": "3"
+                        }
+                      ],
+                      "orientation": "vertical",
+                      "type": "radiobuttonlist"
+                    }
+                  ],
+                  "name": "col0",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-6",
+                  "components": [
+                    {
+                      "name": "heading1",
+                      "size": "H3",
+                      "text": "Events",
+                      "type": "heading"
+                    },
+                    {
+                      "components": [
+                        {
+                          "content": "<div style=\"overflow:auto;height:100%\">\n  <div *ngFor=\"let event of events?.reverse()\">\n      {{ event }}\n  </div>\n</div>\n",
+                          "name": "html0",
+                          "type": "html"
+                        }
+                      ],
+                      "name": "card1",
+                      "style": {
+                        "height": "500px"
+                      },
+                      "type": "card",
+                      "visible": true
+                    }
+                  ],
+                  "name": "col1",
+                  "type": "col"
+                }
+              ],
+              "name": "row0",
+              "type": "row"
+            }
+          ],
+          "name": "card0",
+          "style": {
+            "height": "600px"
+          },
+          "type": "card",
+          "visible": true
         }
-      ]
+      ],
+      "container": "main",
+      "type": "content"
     }
-  ]
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "events",
+        "type": "set",
+        "value": "[]"
+      }
+    ]
+  },
+  "layout": "Main",
+  "name": "RadioButtonList"
 }

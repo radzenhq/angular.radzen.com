@@ -12,6 +12,10 @@ import { DialogService, DIALOG_PARAMETERS, DialogRef } from '@radzen/angular/dis
 import { NotificationService } from '@radzen/angular/dist/notification';
 import { ContentComponent } from '@radzen/angular/dist/content';
 import { HeadingComponent } from '@radzen/angular/dist/heading';
+import { LinkComponent } from '@radzen/angular/dist/link';
+import { CardComponent } from '@radzen/angular/dist/card';
+import { RadioButtonListComponent } from '@radzen/angular/dist/radiobuttonlist';
+import { HtmlComponent } from '@radzen/angular/dist/html';
 
 import { ConfigService } from '../config.service';
 
@@ -20,6 +24,16 @@ export class RadioButtonListGenerated implements AfterViewInit, OnInit, OnDestro
   // Components
   @ViewChild('content1') content1: ContentComponent;
   @ViewChild('pageTitle') pageTitle: HeadingComponent;
+  @ViewChild('link0') link0: LinkComponent;
+  @ViewChild('heading0') heading0: HeadingComponent;
+  @ViewChild('card0') card0: CardComponent;
+  @ViewChild('heading2') heading2: HeadingComponent;
+  @ViewChild('radiobuttonlist0') radiobuttonlist0: RadioButtonListComponent;
+  @ViewChild('heading3') heading3: HeadingComponent;
+  @ViewChild('radiobuttonlist1') radiobuttonlist1: RadioButtonListComponent;
+  @ViewChild('heading1') heading1: HeadingComponent;
+  @ViewChild('card1') card1: CardComponent;
+  @ViewChild('html0') html0: HtmlComponent;
 
   router: Router;
 
@@ -42,6 +56,7 @@ export class RadioButtonListGenerated implements AfterViewInit, OnInit, OnDestro
   _location: Location;
 
   _subscription: Subscription;
+  events: any;
   parameters: any;
 
   constructor(private injector: Injector) {
@@ -77,6 +92,7 @@ export class RadioButtonListGenerated implements AfterViewInit, OnInit, OnDestro
       } else {
         this.parameters = parameters;
       }
+      this.load();
       this.cd.detectChanges();
     });
   }
@@ -85,4 +101,16 @@ export class RadioButtonListGenerated implements AfterViewInit, OnInit, OnDestro
     this._subscription.unsubscribe();
   }
 
+
+  load() {
+    this.events = [];
+  }
+
+  radiobuttonlist0Change(event: any) {
+    this.events.push('Horizontal RadioButtonList Change: ' + JSON.stringify(event))
+  }
+
+  radiobuttonlist1Change(event: any) {
+    this.events.push('Vertical RadioButtonList Change: ' + JSON.stringify(event))
+  }
 }
