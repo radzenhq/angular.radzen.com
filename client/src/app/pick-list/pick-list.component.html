@@ -1,4 +1,18 @@
 <rz-content #content1 container="main">
-  <rz-heading #pageTitle size="H1" text="PickList">
+  <rz-heading #pageTitle size="H1" [style]="{'display': 'inline', 'float': 'none'}" text="PickList">
   </rz-heading>
+  <rz-link #link0 path="https://github.com/akorchev/angular.radzen.com/blob/master/meta/pages/pick-list.json" text="[source code]">
+  </rz-link>
+  <rz-heading #heading0 size="H4" text="This page demonstrates PickList component.">
+  </rz-heading>
+  <rz-card #card0 [style]="{'height': '100%'}">
+    <rz-picklist #picklist0 [dragdrop]="true" filterBy="LastName" [source]="employees" sourceFilterPlaceholder="Search by last name ..." sourceHeader="Employees" [style]="{'height': '600px'}" [target]="selectedEmployees" targetFilterPlaceholder="Search by last name ..." targetHeader="Selected Employees" defaultItemText="Template for index">
+      <ng-template let-data picklistTemplate>
+        <rz-image #image0 [path]="data?.Photo">
+        </rz-image>
+        <rz-heading #heading1 size="H5" [text]="data?.FirstName + ' ' + data?.LastName">
+        </rz-heading>
+      </ng-template>
+    </rz-picklist>
+  </rz-card>
 </rz-content>

@@ -1,19 +1,102 @@
 {
-  "name": "PickList",
-  "access": "Everybody",
-  "layout": "Main",
+  "access": [
+    "Everybody"
+  ],
   "components": [
     {
-      "type": "content",
-      "container": "main",
       "components": [
         {
-          "type": "heading",
-          "size": "H1",
           "name": "pageTitle",
-          "text": "PickList"
+          "size": "H1",
+          "style": {
+            "display": "inline",
+            "float": "none"
+          },
+          "text": "PickList",
+          "type": "heading"
+        },
+        {
+          "icon": "",
+          "name": "link0",
+          "path": "https://github.com/akorchev/angular.radzen.com/blob/master/meta/pages/pick-list.json",
+          "text": "[source code]",
+          "type": "link"
+        },
+        {
+          "name": "heading0",
+          "size": "H4",
+          "text": "This page demonstrates PickList component.",
+          "type": "heading"
+        },
+        {
+          "components": [
+            {
+              "dragdrop": true,
+              "filterBy": "LastName",
+              "name": "picklist0",
+              "source": "${employees}",
+              "sourceFilterPlaceholder": "Search by last name ...",
+              "sourceHeader": "Employees",
+              "style": {
+                "height": "600px"
+              },
+              "target": "${selectedEmployees}",
+              "targetFilterPlaceholder": "Search by last name ...",
+              "targetHeader": "Selected Employees",
+              "template": [
+                {
+                  "name": "image0",
+                  "path": "${data.Photo}",
+                  "type": "image"
+                },
+                {
+                  "name": "heading1",
+                  "size": "H5",
+                  "text": "${data.FirstName + ' ' + data.LastName}",
+                  "type": "heading"
+                }
+              ],
+              "type": "picklist",
+              "defaultItemText": "Template for index"
+            }
+          ],
+          "name": "card0",
+          "style": {
+            "height": "100%"
+          },
+          "type": "card",
+          "visible": true
         }
-      ]
+      ],
+      "container": "main",
+      "type": "content"
     }
-  ]
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "events",
+        "type": "set",
+        "value": "[]"
+      },
+      {
+        "name": "Northwind.getEmployees",
+        "then": [
+          {
+            "name": "employees",
+            "type": "set",
+            "value": "${result.value}"
+          }
+        ],
+        "type": "invoke"
+      },
+      {
+        "name": "selectedEmployees",
+        "type": "set",
+        "value": "[]"
+      }
+    ]
+  },
+  "layout": "Main",
+  "name": "PickList"
 }
