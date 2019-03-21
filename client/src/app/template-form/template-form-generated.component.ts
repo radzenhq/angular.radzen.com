@@ -12,14 +12,66 @@ import { DialogService, DIALOG_PARAMETERS, DialogRef } from '@radzen/angular/dis
 import { NotificationService } from '@radzen/angular/dist/notification';
 import { ContentComponent } from '@radzen/angular/dist/content';
 import { HeadingComponent } from '@radzen/angular/dist/heading';
+import { LinkComponent } from '@radzen/angular/dist/link';
+import { CardComponent } from '@radzen/angular/dist/card';
+import { TemplateFormComponent } from '@radzen/angular/dist/template-form';
+import { LabelComponent } from '@radzen/angular/dist/label';
+import { TextBoxComponent } from '@radzen/angular/dist/textbox';
+import { TextAreaComponent } from '@radzen/angular/dist/textarea';
+import { DropDownComponent } from '@radzen/angular/dist/dropdown';
+import { DropDownDataGridComponent } from '@radzen/angular/dist/dropdown-datagrid';
+import { FileInputComponent } from '@radzen/angular/dist/file-input';
+import { CheckBoxComponent } from '@radzen/angular/dist/checkbox';
+import { NumericComponent } from '@radzen/angular/dist/numeric';
+import { DatePickerComponent } from '@radzen/angular/dist/datepicker';
+import { RatingComponent } from '@radzen/angular/dist/rating';
+import { PasswordComponent } from '@radzen/angular/dist/password';
+import { SelectBarComponent } from '@radzen/angular/dist/selectbar';
+import { ButtonComponent } from '@radzen/angular/dist/button';
+import { HtmlComponent } from '@radzen/angular/dist/html';
 
 import { ConfigService } from '../config.service';
 
+import { NorthwindService } from '../northwind.service';
 
 export class TemplateFormGenerated implements AfterViewInit, OnInit, OnDestroy {
   // Components
   @ViewChild('content1') content1: ContentComponent;
   @ViewChild('pageTitle') pageTitle: HeadingComponent;
+  @ViewChild('link0') link0: LinkComponent;
+  @ViewChild('heading0') heading0: HeadingComponent;
+  @ViewChild('card0') card0: CardComponent;
+  @ViewChild('heading2') heading2: HeadingComponent;
+  @ViewChild('form0') form0: TemplateFormComponent;
+  @ViewChild('label1') label1: LabelComponent;
+  @ViewChild('stringProperty') stringProperty: TextBoxComponent;
+  @ViewChild('label2') label2: LabelComponent;
+  @ViewChild('textProperty') textProperty: TextAreaComponent;
+  @ViewChild('label3') label3: LabelComponent;
+  @ViewChild('lookupProperty') lookupProperty: DropDownComponent;
+  @ViewChild('label4') label4: LabelComponent;
+  @ViewChild('lookupPopupProperty') lookupPopupProperty: DropDownDataGridComponent;
+  @ViewChild('label5') label5: LabelComponent;
+  @ViewChild('fileProperty') fileProperty: FileInputComponent;
+  @ViewChild('label6') label6: LabelComponent;
+  @ViewChild('boolProperty') boolProperty: CheckBoxComponent;
+  @ViewChild('label7') label7: LabelComponent;
+  @ViewChild('numberProperty') numberProperty: NumericComponent;
+  @ViewChild('label8') label8: LabelComponent;
+  @ViewChild('integerProperty') integerProperty: NumericComponent;
+  @ViewChild('label9') label9: LabelComponent;
+  @ViewChild('dateProperty') dateProperty: DatePickerComponent;
+  @ViewChild('label10') label10: LabelComponent;
+  @ViewChild('ratingProperty') ratingProperty: RatingComponent;
+  @ViewChild('label11') label11: LabelComponent;
+  @ViewChild('passwordProperty') passwordProperty: PasswordComponent;
+  @ViewChild('label12') label12: LabelComponent;
+  @ViewChild('selectBarProperty') selectBarProperty: SelectBarComponent;
+  @ViewChild('button1') button1: ButtonComponent;
+  @ViewChild('button2') button2: ButtonComponent;
+  @ViewChild('heading1') heading1: HeadingComponent;
+  @ViewChild('card1') card1: CardComponent;
+  @ViewChild('html0') html0: HtmlComponent;
 
   router: Router;
 
@@ -42,6 +94,14 @@ export class TemplateFormGenerated implements AfterViewInit, OnInit, OnDestroy {
   _location: Location;
 
   _subscription: Subscription;
+
+  northwind: NorthwindService;
+  events: any;
+  formData: any;
+  getCategoriesResult: any;
+  getProductsResult: any;
+  getProductsCount: any;
+  getProductsPageSize: any;
   parameters: any;
 
   constructor(private injector: Injector) {
@@ -68,6 +128,7 @@ export class TemplateFormGenerated implements AfterViewInit, OnInit, OnDestroy {
 
     this.httpClient = this.injector.get(HttpClient);
 
+    this.northwind = this.injector.get(NorthwindService);
   }
 
   ngAfterViewInit() {
@@ -77,6 +138,7 @@ export class TemplateFormGenerated implements AfterViewInit, OnInit, OnDestroy {
       } else {
         this.parameters = parameters;
       }
+      this.load();
       this.cd.detectChanges();
     });
   }
@@ -85,4 +147,32 @@ export class TemplateFormGenerated implements AfterViewInit, OnInit, OnDestroy {
     this._subscription.unsubscribe();
   }
 
+
+  load() {
+    this.events = [];
+
+    this.formData = {};
+
+    this.northwind.getCategories(null, null, null, null, null, null)
+    .subscribe((result: any) => {
+      this.getCategoriesResult = result.value;
+    }, (result: any) => {
+
+    });
+
+    this.northwind.getNorthwindProducts(null, this.getProductsPageSize, 0, null, null, true)
+    .subscribe((result: any) => {
+      this.getProductsResult = result.value;
+
+      this.getProductsCount = result['@odata.count'];
+    }, (result: any) => {
+
+    });
+
+    this.getProductsPageSize = 10;
+  }
+
+  form0Submit(event: any) {
+    this.events.push('Form Submit: ' + JSON.stringify(event))
+  }
 }

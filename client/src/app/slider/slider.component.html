@@ -1,4 +1,39 @@
 <rz-content #content1 container="main">
-  <rz-heading #pageTitle size="H1" text="Slider">
+  <rz-heading #pageTitle size="H1" [style]="{'display': 'inline', 'float': 'none'}" text="Slider">
   </rz-heading>
+  <rz-link #link0 path="https://github.com/akorchev/angular.radzen.com/blob/master/meta/pages/slider.json" text="[source code]">
+  </rz-link>
+  <rz-heading #heading0 size="H4" text="This page demonstrates Slider component.">
+  </rz-heading>
+  <rz-card #card0 [style]="{'height': '600px'}">
+    <div class="row">
+      <div class="col-md-6">
+        <rz-heading #heading2 size="H3" text="Slider from 0 to 100">
+        </rz-heading>
+        <rz-slider #slider0 name="slider0" (change)="slider0Change($event)">
+        </rz-slider>
+        <rz-heading #heading3 size="H3" [style]="{'marginTop': '20px'}" text="Slider with Step 10">
+        </rz-heading>
+        <rz-slider #slider1 [range]="false" [step]="10" name="slider1" (change)="slider1Change($event)">
+        </rz-slider>
+        <rz-heading #heading4 size="H3" [style]="{'marginTop': '20px'}" text="Range Slider">
+        </rz-heading>
+        <rz-slider #slider2 [range]="true" [step]="1" [(ngModel)]="range" name="slider2">
+        </rz-slider>
+      </div>
+      <div class="col-md-6">
+        <rz-heading #heading1 size="H3" text="Events">
+        </rz-heading>
+        <rz-card #card1 [style]="{'height': '500px'}">
+          <rz-html #html0>
+            <div style="overflow:auto;height:100%">
+              <div *ngFor="let event of events?.reverse()">
+                  {{ event }}
+              </div>
+            </div>
+          </rz-html>
+        </rz-card>
+      </div>
+    </div>
+  </rz-card>
 </rz-content>

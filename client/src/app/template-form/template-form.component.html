@@ -1,4 +1,129 @@
 <rz-content #content1 container="main">
-  <rz-heading #pageTitle size="H1" text="TemplateForm">
+  <rz-heading #pageTitle size="H1" [style]="{'display': 'inline', 'float': 'none'}" text="TemplateForm">
   </rz-heading>
+  <rz-link #link0 path="https://github.com/akorchev/angular.radzen.com/blob/master/meta/pages/template-form.json" text="[source code]">
+  </rz-link>
+  <rz-heading #heading0 size="H4" text="This page demonstrates TemplateForm component.">
+  </rz-heading>
+  <rz-card #card0 [style]="{'height': '100%'}">
+    <div class="row">
+      <div class="col-md-6">
+        <rz-heading #heading2 size="H3" [style]="{'display': 'inline'}" text="TemplateForm with two columns">
+        </rz-heading>
+        <rz-template-form #form0 (submit)="form0Submit($event)">
+          <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+            <div class="col-md-6">
+              <rz-label #label1 component="stringProperty" [style]="{'width': '100%'}" text="String">
+              </rz-label>
+              <rz-textbox #stringProperty [style]="{'width': '100%'}" [(ngModel)]="formData && formData.stringProperty" name="stringProperty">
+              </rz-textbox>
+            </div>
+            <div class="col-md-6">
+              <rz-label #label2 component="textProperty" [style]="{'width': '100%'}" text="Text">
+              </rz-label>
+              <rz-textarea #textProperty [style]="{'width': '100%'}" [(ngModel)]="formData && formData.textProperty" name="textProperty">
+              </rz-textarea>
+            </div>
+          </div>
+          <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+            <div class="col-md-6">
+              <rz-label #label3 component="lookupProperty" [style]="{'width': '100%'}" text="Lookup">
+              </rz-label>
+              <rz-dropdown #lookupProperty [allowClear]="true" [allowFiltering]="true" [data]="getCategoriesResult" placeholder="Select category" [style]="{'width': '100%'}" textProperty="CategoryName" [(ngModel)]="formData && formData.lookupProperty" valueProperty="CategoryID" name="lookupProperty">
+              </rz-dropdown>
+            </div>
+            <div class="col-md-6">
+              <rz-label #label4 component="lookupPopupProperty" [style]="{'width': '100%'}" text="lookupPopupProperty">
+              </rz-label>
+              <rz-dropdown-datagrid #lookupPopupProperty [count]="getProductsCount" [data]="getProductsResult" [pageSize]="getProductsPageSize" placeholder="Select product" [style]="{'width': '100%'}" textProperty="ProductName" [(ngModel)]="formData && formData.lookupPopupProperty" valueProperty="ProductID" name="lookupPopupProperty">
+              </rz-dropdown-datagrid>
+            </div>
+          </div>
+          <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+            <div class="col-md-6">
+              <rz-label #label5 component="fileProperty" [style]="{'width': '100%'}" text="File">
+              </rz-label>
+              <rz-file-input #fileProperty [(ngModel)]="formData && formData.fileProperty" name="fileProperty">
+              </rz-file-input>
+            </div>
+            <div class="col-md-6">
+              <rz-label #label6 component="boolProperty" [style]="{'width': '100%'}" text="Boolean">
+              </rz-label>
+              <rz-checkbox #boolProperty [(ngModel)]="formData && formData.boolProperty" name="boolProperty">
+              </rz-checkbox>
+            </div>
+          </div>
+          <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+            <div class="col-md-6">
+              <rz-label #label7 component="numberProperty" [style]="{'width': '100%'}" text="Number">
+              </rz-label>
+              <rz-numeric #numberProperty maxText="cannot be more than" minText="cannot be less than" [style]="{'width': '100%'}" [(ngModel)]="formData && formData.numberProperty" name="numberProperty">
+              </rz-numeric>
+            </div>
+            <div class="col-md-6">
+              <rz-label #label8 component="integerProperty" [style]="{'width': '100%'}" text="Integer">
+              </rz-label>
+              <rz-numeric #integerProperty maxText="cannot be more than" minText="cannot be less than" [style]="{'width': '100%'}" [(ngModel)]="formData && formData.integerProperty" name="integerProperty">
+              </rz-numeric>
+            </div>
+          </div>
+          <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+            <div class="col-md-6">
+              <rz-label #label9 component="dateProperty" [style]="{'width': '100%'}" text="Date">
+              </rz-label>
+              <rz-datepicker #dateProperty [style]="{'width': '100%'}" [(ngModel)]="formData && formData.dateProperty" name="dateProperty">
+              </rz-datepicker>
+            </div>
+            <div class="col-md-6">
+              <rz-label #label10 component="ratingProperty" [style]="{'width': '100%'}" text="Rating">
+              </rz-label>
+              <rz-rating #ratingProperty [(ngModel)]="formData && formData.ratingProperty" name="ratingProperty">
+              </rz-rating>
+            </div>
+          </div>
+          <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+            <div class="col-md-6">
+              <rz-label #label11 component="passwordProperty" [style]="{'width': '100%'}" text="Password">
+              </rz-label>
+              <rz-password #passwordProperty [style]="{'width': '100%'}" [(ngModel)]="formData && formData.passwordProperty" name="passwordProperty">
+              </rz-password>
+            </div>
+            <div class="col-md-6">
+              <rz-label #label12 component="selectBarProperty" [style]="{'width': '100%'}" text="SelectBar">
+              </rz-label>
+              <rz-selectbar #selectBarProperty [(ngModel)]="formData && formData.selectBarProperty" name="selectBarProperty">
+                <rz-selectbar-option text="Item 1" value="1">
+                </rz-selectbar-option>
+                <rz-selectbar-option text="Item 2" value="2">
+                </rz-selectbar-option>
+                <rz-selectbar-option text="Item 3" value="3">
+                </rz-selectbar-option>
+              </rz-selectbar>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col offset-sm-3">
+              <rz-button #button1 buttonStyle="primary" buttonType="submit" icon="save" text="Save">
+              </rz-button>
+              <rz-button #button2 buttonStyle="light" text="Cancel">
+              </rz-button>
+            </div>
+          </div>
+        </rz-template-form>
+      </div>
+      <div class="col-md-6">
+        <rz-heading #heading1 size="H3" text="Events">
+        </rz-heading>
+        <rz-card #card1 [style]="{'height': '500px'}">
+          <rz-html #html0>
+            <div style="overflow:auto;height:100%">
+              <div *ngFor="let event of events?.reverse()">
+                  {{ event }}
+              </div>
+            </div>
+          </rz-html>
+        </rz-card>
+      </div>
+    </div>
+  </rz-card>
 </rz-content>

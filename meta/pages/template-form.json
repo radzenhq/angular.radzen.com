@@ -1,19 +1,530 @@
 {
-  "name": "TemplateForm",
-  "access": "Everybody",
-  "layout": "Main",
+  "access": [
+    "Everybody"
+  ],
   "components": [
     {
-      "type": "content",
-      "container": "main",
       "components": [
         {
-          "type": "heading",
-          "size": "H1",
           "name": "pageTitle",
-          "text": "TemplateForm"
+          "size": "H1",
+          "style": {
+            "display": "inline",
+            "float": "none"
+          },
+          "text": "TemplateForm",
+          "type": "heading"
+        },
+        {
+          "icon": "",
+          "name": "link0",
+          "path": "https://github.com/akorchev/angular.radzen.com/blob/master/meta/pages/template-form.json",
+          "text": "[source code]",
+          "type": "link"
+        },
+        {
+          "name": "heading0",
+          "size": "H4",
+          "text": "This page demonstrates TemplateForm component.",
+          "type": "heading"
+        },
+        {
+          "components": [
+            {
+              "components": [
+                {
+                  "class": "col-md-6",
+                  "components": [
+                    {
+                      "name": "heading2",
+                      "size": "H3",
+                      "style": {
+                        "display": "inline"
+                      },
+                      "text": "TemplateForm with two columns",
+                      "type": "heading"
+                    },
+                    {
+                      "components": [
+                        {
+                          "components": [
+                            {
+                              "class": "col-md-6",
+                              "components": [
+                                {
+                                  "component": "stringProperty",
+                                  "style": {
+                                    "width": "100%"
+                                  },
+                                  "text": "String",
+                                  "type": "label"
+                                },
+                                {
+                                  "name": "stringProperty",
+                                  "style": {
+                                    "width": "100%"
+                                  },
+                                  "type": "textbox",
+                                  "value": "${formData.stringProperty}"
+                                }
+                              ],
+                              "type": "col"
+                            },
+                            {
+                              "class": "col-md-6",
+                              "components": [
+                                {
+                                  "component": "textProperty",
+                                  "style": {
+                                    "width": "100%"
+                                  },
+                                  "text": "Text",
+                                  "type": "label"
+                                },
+                                {
+                                  "name": "textProperty",
+                                  "style": {
+                                    "width": "100%"
+                                  },
+                                  "type": "textarea",
+                                  "value": "${formData.textProperty}"
+                                }
+                              ],
+                              "type": "col"
+                            }
+                          ],
+                          "style": {
+                            "marginBottom": "1rem"
+                          },
+                          "type": "row"
+                        },
+                        {
+                          "components": [
+                            {
+                              "class": "col-md-6",
+                              "components": [
+                                {
+                                  "component": "lookupProperty",
+                                  "style": {
+                                    "width": "100%"
+                                  },
+                                  "text": "Lookup",
+                                  "type": "label"
+                                },
+                                {
+                                  "allowClear": true,
+                                  "allowFiltering": true,
+                                  "data": "${getCategoriesResult}",
+                                  "name": "lookupProperty",
+                                  "placeholder": "Select category",
+                                  "style": {
+                                    "width": "100%"
+                                  },
+                                  "template": "",
+                                  "textProperty": "CategoryName",
+                                  "type": "dropdown",
+                                  "value": "${formData.lookupProperty}",
+                                  "valueProperty": "CategoryID"
+                                }
+                              ],
+                              "type": "col"
+                            },
+                            {
+                              "class": "col-md-6",
+                              "components": [
+                                {
+                                  "component": "lookupPopupProperty",
+                                  "style": {
+                                    "width": "100%"
+                                  },
+                                  "text": "lookupPopupProperty",
+                                  "type": "label"
+                                },
+                                {
+                                  "count": "${getProductsCount}",
+                                  "data": "${getProductsResult}",
+                                  "events": {
+                                    "loadData": []
+                                  },
+                                  "name": "lookupPopupProperty",
+                                  "pageSize": "${getProductsPageSize}",
+                                  "placeholder": "Select product",
+                                  "style": {
+                                    "width": "100%"
+                                  },
+                                  "textProperty": "ProductName",
+                                  "type": "dropdown-datagrid",
+                                  "value": "${formData.lookupPopupProperty}",
+                                  "valueProperty": "ProductID"
+                                }
+                              ],
+                              "type": "col"
+                            }
+                          ],
+                          "style": {
+                            "marginBottom": "1rem"
+                          },
+                          "type": "row"
+                        },
+                        {
+                          "components": [
+                            {
+                              "class": "col-md-6",
+                              "components": [
+                                {
+                                  "component": "fileProperty",
+                                  "style": {
+                                    "width": "100%"
+                                  },
+                                  "text": "File",
+                                  "type": "label"
+                                },
+                                {
+                                  "name": "fileProperty",
+                                  "type": "file-input",
+                                  "value": "${formData.fileProperty}"
+                                }
+                              ],
+                              "type": "col"
+                            },
+                            {
+                              "class": "col-md-6",
+                              "components": [
+                                {
+                                  "component": "boolProperty",
+                                  "style": {
+                                    "width": "100%"
+                                  },
+                                  "text": "Boolean",
+                                  "type": "label"
+                                },
+                                {
+                                  "name": "boolProperty",
+                                  "type": "checkbox",
+                                  "value": "${formData.boolProperty}"
+                                }
+                              ],
+                              "type": "col"
+                            }
+                          ],
+                          "style": {
+                            "marginBottom": "1rem"
+                          },
+                          "type": "row"
+                        },
+                        {
+                          "components": [
+                            {
+                              "class": "col-md-6",
+                              "components": [
+                                {
+                                  "component": "numberProperty",
+                                  "style": {
+                                    "width": "100%"
+                                  },
+                                  "text": "Number",
+                                  "type": "label"
+                                },
+                                {
+                                  "maxText": "cannot be more than",
+                                  "minText": "cannot be less than",
+                                  "name": "numberProperty",
+                                  "style": {
+                                    "width": "100%"
+                                  },
+                                  "type": "numeric",
+                                  "value": "${formData.numberProperty}"
+                                }
+                              ],
+                              "type": "col"
+                            },
+                            {
+                              "class": "col-md-6",
+                              "components": [
+                                {
+                                  "component": "integerProperty",
+                                  "style": {
+                                    "width": "100%"
+                                  },
+                                  "text": "Integer",
+                                  "type": "label"
+                                },
+                                {
+                                  "maxText": "cannot be more than",
+                                  "minText": "cannot be less than",
+                                  "name": "integerProperty",
+                                  "style": {
+                                    "width": "100%"
+                                  },
+                                  "type": "numeric",
+                                  "value": "${formData.integerProperty}"
+                                }
+                              ],
+                              "type": "col"
+                            }
+                          ],
+                          "style": {
+                            "marginBottom": "1rem"
+                          },
+                          "type": "row"
+                        },
+                        {
+                          "components": [
+                            {
+                              "class": "col-md-6",
+                              "components": [
+                                {
+                                  "component": "dateProperty",
+                                  "style": {
+                                    "width": "100%"
+                                  },
+                                  "text": "Date",
+                                  "type": "label"
+                                },
+                                {
+                                  "name": "dateProperty",
+                                  "style": {
+                                    "width": "100%"
+                                  },
+                                  "type": "datepicker",
+                                  "value": "${formData.dateProperty}"
+                                }
+                              ],
+                              "type": "col"
+                            },
+                            {
+                              "class": "col-md-6",
+                              "components": [
+                                {
+                                  "component": "ratingProperty",
+                                  "style": {
+                                    "width": "100%"
+                                  },
+                                  "text": "Rating",
+                                  "type": "label"
+                                },
+                                {
+                                  "name": "ratingProperty",
+                                  "type": "rating",
+                                  "value": "${formData.ratingProperty}"
+                                }
+                              ],
+                              "type": "col"
+                            }
+                          ],
+                          "style": {
+                            "marginBottom": "1rem"
+                          },
+                          "type": "row"
+                        },
+                        {
+                          "components": [
+                            {
+                              "class": "col-md-6",
+                              "components": [
+                                {
+                                  "component": "passwordProperty",
+                                  "style": {
+                                    "width": "100%"
+                                  },
+                                  "text": "Password",
+                                  "type": "label"
+                                },
+                                {
+                                  "name": "passwordProperty",
+                                  "style": {
+                                    "width": "100%"
+                                  },
+                                  "type": "password",
+                                  "value": "${formData.passwordProperty}"
+                                }
+                              ],
+                              "type": "col"
+                            },
+                            {
+                              "class": "col-md-6",
+                              "components": [
+                                {
+                                  "component": "selectBarProperty",
+                                  "style": {
+                                    "width": "100%"
+                                  },
+                                  "text": "SelectBar",
+                                  "type": "label"
+                                },
+                                {
+                                  "name": "selectBarProperty",
+                                  "options": [
+                                    {
+                                      "text": "Item 1",
+                                      "value": "1"
+                                    },
+                                    {
+                                      "text": "Item 2",
+                                      "value": "2"
+                                    },
+                                    {
+                                      "text": "Item 3",
+                                      "value": "3"
+                                    }
+                                  ],
+                                  "type": "selectbar",
+                                  "value": "${formData.selectBarProperty}"
+                                }
+                              ],
+                              "type": "col"
+                            }
+                          ],
+                          "style": {
+                            "marginBottom": "1rem"
+                          },
+                          "type": "row"
+                        },
+                        {
+                          "components": [
+                            {
+                              "class": "col offset-sm-3",
+                              "components": [
+                                {
+                                  "buttonStyle": "primary",
+                                  "buttonType": "submit",
+                                  "icon": "save",
+                                  "text": "Save",
+                                  "type": "button"
+                                },
+                                {
+                                  "buttonStyle": "light",
+                                  "text": "Cancel",
+                                  "type": "button"
+                                }
+                              ],
+                              "type": "col"
+                            }
+                          ],
+                          "type": "row"
+                        }
+                      ],
+                      "events": {
+                        "submit": [
+                          {
+                            "code": "${events.push('Form Submit: ' + JSON.stringify(event))}",
+                            "type": "execute"
+                          }
+                        ]
+                      },
+                      "name": "form0",
+                      "type": "template-form"
+                    }
+                  ],
+                  "name": "col0",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-6",
+                  "components": [
+                    {
+                      "name": "heading1",
+                      "size": "H3",
+                      "text": "Events",
+                      "type": "heading"
+                    },
+                    {
+                      "components": [
+                        {
+                          "content": "<div style=\"overflow:auto;height:100%\">\n  <div *ngFor=\"let event of events?.reverse()\">\n      {{ event }}\n  </div>\n</div>\n",
+                          "name": "html0",
+                          "type": "html"
+                        }
+                      ],
+                      "name": "card1",
+                      "style": {
+                        "height": "500px"
+                      },
+                      "type": "card",
+                      "visible": true
+                    }
+                  ],
+                  "name": "col1",
+                  "type": "col"
+                }
+              ],
+              "name": "row0",
+              "type": "row"
+            }
+          ],
+          "name": "card0",
+          "style": {
+            "height": "100%"
+          },
+          "type": "card",
+          "visible": true
         }
-      ]
+      ],
+      "container": "main",
+      "type": "content"
     }
-  ]
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "events",
+        "type": "set",
+        "value": "[]"
+      },
+      {
+        "name": "formData",
+        "type": "set",
+        "value": "{}"
+      },
+      {
+        "name": "Northwind.getCategories",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getCategoriesResult",
+            "type": "set",
+            "value": "${result.value}"
+          }
+        ],
+        "type": "invoke"
+      },
+      {
+        "name": "Northwind.getNorthwindProducts",
+        "parameters": [
+          {
+            "name": "$top",
+            "value": "${getProductsPageSize}"
+          },
+          {
+            "name": "$skip",
+            "value": "0"
+          },
+          {
+            "name": "$count",
+            "value": "true"
+          }
+        ],
+        "then": [
+          {
+            "name": "getProductsResult",
+            "type": "set",
+            "value": "${result.value}"
+          },
+          {
+            "name": "getProductsCount",
+            "type": "set",
+            "value": "result['@odata.count']"
+          }
+        ],
+        "type": "invoke"
+      },
+      {
+        "name": "getProductsPageSize",
+        "type": "set",
+        "value": "10"
+      }
+    ]
+  },
+  "layout": "Main",
+  "name": "TemplateForm"
 }

@@ -12,6 +12,10 @@ import { DialogService, DIALOG_PARAMETERS, DialogRef } from '@radzen/angular/dis
 import { NotificationService } from '@radzen/angular/dist/notification';
 import { ContentComponent } from '@radzen/angular/dist/content';
 import { HeadingComponent } from '@radzen/angular/dist/heading';
+import { LinkComponent } from '@radzen/angular/dist/link';
+import { CardComponent } from '@radzen/angular/dist/card';
+import { SliderComponent } from '@radzen/angular/dist/slider';
+import { HtmlComponent } from '@radzen/angular/dist/html';
 
 import { ConfigService } from '../config.service';
 
@@ -20,6 +24,18 @@ export class SliderGenerated implements AfterViewInit, OnInit, OnDestroy {
   // Components
   @ViewChild('content1') content1: ContentComponent;
   @ViewChild('pageTitle') pageTitle: HeadingComponent;
+  @ViewChild('link0') link0: LinkComponent;
+  @ViewChild('heading0') heading0: HeadingComponent;
+  @ViewChild('card0') card0: CardComponent;
+  @ViewChild('heading2') heading2: HeadingComponent;
+  @ViewChild('slider0') slider0: SliderComponent;
+  @ViewChild('heading3') heading3: HeadingComponent;
+  @ViewChild('slider1') slider1: SliderComponent;
+  @ViewChild('heading4') heading4: HeadingComponent;
+  @ViewChild('slider2') slider2: SliderComponent;
+  @ViewChild('heading1') heading1: HeadingComponent;
+  @ViewChild('card1') card1: CardComponent;
+  @ViewChild('html0') html0: HtmlComponent;
 
   router: Router;
 
@@ -42,6 +58,8 @@ export class SliderGenerated implements AfterViewInit, OnInit, OnDestroy {
   _location: Location;
 
   _subscription: Subscription;
+  events: any;
+  range: any;
   parameters: any;
 
   constructor(private injector: Injector) {
@@ -77,6 +95,7 @@ export class SliderGenerated implements AfterViewInit, OnInit, OnDestroy {
       } else {
         this.parameters = parameters;
       }
+      this.load();
       this.cd.detectChanges();
     });
   }
@@ -85,4 +104,18 @@ export class SliderGenerated implements AfterViewInit, OnInit, OnDestroy {
     this._subscription.unsubscribe();
   }
 
+
+  load() {
+    this.events = [];
+
+    this.range = [20,80];
+  }
+
+  slider0Change(event: any) {
+    this.events.push('Slider from 0 to 100 Change: ' + JSON.stringify(event))
+  }
+
+  slider1Change(event: any) {
+    this.events.push('Slider with Step 10 Change: ' + JSON.stringify(event))
+  }
 }
