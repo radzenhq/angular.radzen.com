@@ -47,6 +47,7 @@ import { FormModule } from '@radzen/angular/dist/form';
 import { TextBoxModule } from '@radzen/angular/dist/textbox';
 import { ListBoxModule } from '@radzen/angular/dist/listbox';
 import { MaskModule } from '@radzen/angular/dist/mask';
+import { NumericModule } from '@radzen/angular/dist/numeric';
 import { SharedModule } from '@radzen/angular/dist/shared';
 import { NotificationModule } from '@radzen/angular/dist/notification';
 import { DialogModule } from '@radzen/angular/dist/dialog';
@@ -236,6 +237,7 @@ export const AppImports = [
   TextBoxModule,
   ListBoxModule,
   MaskModule,
+  NumericModule,
   SharedModule,
   NotificationModule,
   DialogModule,
