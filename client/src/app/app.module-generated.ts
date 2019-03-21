@@ -45,6 +45,7 @@ import { DropDownDataGridModule } from '@radzen/angular/dist/dropdown-datagrid';
 import { FileInputModule } from '@radzen/angular/dist/file-input';
 import { FormModule } from '@radzen/angular/dist/form';
 import { TextBoxModule } from '@radzen/angular/dist/textbox';
+import { ListBoxModule } from '@radzen/angular/dist/listbox';
 import { SharedModule } from '@radzen/angular/dist/shared';
 import { NotificationModule } from '@radzen/angular/dist/notification';
 import { DialogModule } from '@radzen/angular/dist/dialog';
@@ -232,6 +233,7 @@ export const AppImports = [
   FileInputModule,
   FormModule,
   TextBoxModule,
+  ListBoxModule,
   SharedModule,
   NotificationModule,
   DialogModule,

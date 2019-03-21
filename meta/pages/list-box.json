@@ -1,19 +1,205 @@
 {
-  "name": "ListBox",
-  "access": "Everybody",
-  "layout": "Main",
+  "access": [
+    "Everybody"
+  ],
   "components": [
     {
-      "type": "content",
-      "container": "main",
       "components": [
         {
-          "type": "heading",
-          "size": "H1",
           "name": "pageTitle",
-          "text": "ListBox"
+          "size": "H1",
+          "style": {
+            "display": "inline",
+            "float": "none"
+          },
+          "text": "ListBox",
+          "type": "heading"
+        },
+        {
+          "icon": "",
+          "name": "link0",
+          "path": "https://github.com/akorchev/angular.radzen.com/blob/master/meta/pages/list-box.json",
+          "text": "[source code]",
+          "type": "link"
+        },
+        {
+          "name": "heading0",
+          "size": "H4",
+          "text": "This page demonstrates ListBox component.",
+          "type": "heading"
+        },
+        {
+          "components": [
+            {
+              "components": [
+                {
+                  "class": "col-md-6",
+                  "components": [
+                    {
+                      "name": "heading2",
+                      "size": "H3",
+                      "text": "Single selection ListBox",
+                      "type": "heading"
+                    },
+                    {
+                      "data": "${getEmployeesResult}",
+                      "events": {
+                        "change": [
+                          {
+                            "code": "${events.push('Single selection ListBox Change EmployeeID: ' + event.EmployeeID)}",
+                            "type": "execute"
+                          }
+                        ]
+                      },
+                      "name": "listbox0",
+                      "style": {
+                        "height": "150px"
+                      },
+                      "textProperty": "LastName",
+                      "type": "listbox",
+                      "valueProperty": "EmployeeID"
+                    },
+                    {
+                      "name": "heading3",
+                      "size": "H3",
+                      "style": {
+                        "marginTop": "20px"
+                      },
+                      "text": "Multiple selection ListBox with filtering",
+                      "type": "heading"
+                    },
+                    {
+                      "allowFiltering": true,
+                      "checkbox": true,
+                      "data": "${getEmployeesResult}",
+                      "events": {
+                        "change": [
+                          {
+                            "code": "${events.push('Multiple selection ListBox Change EmployeeID: ' + event.EmployeeID)}",
+                            "type": "execute"
+                          }
+                        ]
+                      },
+                      "multiple": true,
+                      "name": "listbox1",
+                      "style": {
+                        "height": "150px"
+                      },
+                      "textProperty": "LastName",
+                      "type": "listbox",
+                      "valueProperty": "EmployeeID"
+                    },
+                    {
+                      "name": "heading4",
+                      "size": "H3",
+                      "style": {
+                        "marginTop": "20px"
+                      },
+                      "text": "Single selection ListBox with template",
+                      "type": "heading"
+                    },
+                    {
+                      "allowFiltering": false,
+                      "checkbox": false,
+                      "data": "${getEmployeesResult}",
+                      "events": {
+                        "change": [
+                          {
+                            "code": "${events.push('Single selection ListBox with template Change EmployeeID: ' + event.EmployeeID)}",
+                            "type": "execute"
+                          }
+                        ]
+                      },
+                      "multiple": false,
+                      "name": "listbox2",
+                      "style": {
+                        "height": "150px"
+                      },
+                      "template": [
+                        {
+                          "name": "label0",
+                          "text": "Name:",
+                          "type": "label"
+                        },
+                        {
+                          "name": "label1",
+                          "text": "${data.FirstName + ' ' + data.LastName}",
+                          "type": "label"
+                        }
+                      ],
+                      "textProperty": "LastName",
+                      "type": "listbox"
+                    }
+                  ],
+                  "name": "col0",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-6",
+                  "components": [
+                    {
+                      "name": "heading1",
+                      "size": "H3",
+                      "text": "Events",
+                      "type": "heading"
+                    },
+                    {
+                      "components": [
+                        {
+                          "content": "<div style=\"overflow:auto;height:100%\">\n  <div *ngFor=\"let event of events?.reverse()\">\n      {{ event }}\n  </div>\n</div>\n",
+                          "name": "html0",
+                          "type": "html"
+                        }
+                      ],
+                      "name": "card1",
+                      "style": {
+                        "height": "500px"
+                      },
+                      "type": "card",
+                      "visible": true
+                    }
+                  ],
+                  "name": "col1",
+                  "type": "col"
+                }
+              ],
+              "name": "row0",
+              "type": "row"
+            }
+          ],
+          "name": "card0",
+          "style": {
+            "height": "100%"
+          },
+          "type": "card",
+          "visible": true
         }
-      ]
+      ],
+      "container": "main",
+      "type": "content"
     }
-  ]
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "events",
+        "type": "set",
+        "value": "[]"
+      },
+      {
+        "name": "Northwind.getEmployees",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getEmployeesResult",
+            "type": "set",
+            "value": "${result.value}"
+          }
+        ],
+        "type": "invoke"
+      }
+    ]
+  },
+  "layout": "Main",
+  "name": "ListBox"
 }

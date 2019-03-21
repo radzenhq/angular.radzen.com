@@ -12,14 +12,32 @@ import { DialogService, DIALOG_PARAMETERS, DialogRef } from '@radzen/angular/dis
 import { NotificationService } from '@radzen/angular/dist/notification';
 import { ContentComponent } from '@radzen/angular/dist/content';
 import { HeadingComponent } from '@radzen/angular/dist/heading';
+import { LinkComponent } from '@radzen/angular/dist/link';
+import { CardComponent } from '@radzen/angular/dist/card';
+import { ListBoxComponent } from '@radzen/angular/dist/listbox';
+import { LabelComponent } from '@radzen/angular/dist/label';
+import { HtmlComponent } from '@radzen/angular/dist/html';
 
 import { ConfigService } from '../config.service';
 
+import { NorthwindService } from '../northwind.service';
 
 export class ListBoxGenerated implements AfterViewInit, OnInit, OnDestroy {
   // Components
   @ViewChild('content1') content1: ContentComponent;
   @ViewChild('pageTitle') pageTitle: HeadingComponent;
+  @ViewChild('link0') link0: LinkComponent;
+  @ViewChild('heading0') heading0: HeadingComponent;
+  @ViewChild('card0') card0: CardComponent;
+  @ViewChild('heading2') heading2: HeadingComponent;
+  @ViewChild('listbox0') listbox0: ListBoxComponent;
+  @ViewChild('heading3') heading3: HeadingComponent;
+  @ViewChild('listbox1') listbox1: ListBoxComponent;
+  @ViewChild('heading4') heading4: HeadingComponent;
+  @ViewChild('listbox2') listbox2: ListBoxComponent;
+  @ViewChild('heading1') heading1: HeadingComponent;
+  @ViewChild('card1') card1: CardComponent;
+  @ViewChild('html0') html0: HtmlComponent;
 
   router: Router;
 
@@ -42,6 +60,10 @@ export class ListBoxGenerated implements AfterViewInit, OnInit, OnDestroy {
   _location: Location;
 
   _subscription: Subscription;
+
+  northwind: NorthwindService;
+  events: any;
+  getEmployeesResult: any;
   parameters: any;
 
   constructor(private injector: Injector) {
@@ -68,6 +90,7 @@ export class ListBoxGenerated implements AfterViewInit, OnInit, OnDestroy {
 
     this.httpClient = this.injector.get(HttpClient);
 
+    this.northwind = this.injector.get(NorthwindService);
   }
 
   ngAfterViewInit() {
@@ -77,6 +100,7 @@ export class ListBoxGenerated implements AfterViewInit, OnInit, OnDestroy {
       } else {
         this.parameters = parameters;
       }
+      this.load();
       this.cd.detectChanges();
     });
   }
@@ -85,4 +109,27 @@ export class ListBoxGenerated implements AfterViewInit, OnInit, OnDestroy {
     this._subscription.unsubscribe();
   }
 
+
+  load() {
+    this.events = [];
+
+    this.northwind.getEmployees(null, null, null, null, null, null)
+    .subscribe((result: any) => {
+      this.getEmployeesResult = result.value;
+    }, (result: any) => {
+
+    });
+  }
+
+  listbox0Change(event: any) {
+    this.events.push('Single selection ListBox Change EmployeeID: ' + event.EmployeeID)
+  }
+
+  listbox1Change(event: any) {
+    this.events.push('Multiple selection ListBox Change EmployeeID: ' + event.EmployeeID)
+  }
+
+  listbox2Change(event: any) {
+    this.events.push('Single selection ListBox with template Change EmployeeID: ' + event.EmployeeID)
+  }
 }
