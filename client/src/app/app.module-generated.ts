@@ -61,6 +61,7 @@ import { TreeModule } from '@radzen/angular/dist/tree';
 import { TreeGridModule } from '@radzen/angular/dist/treegrid';
 import { ChartModule } from '@radzen/angular/dist/chart';
 import { PieModule } from '@radzen/angular/dist/pie';
+import { GaugeModule } from '@radzen/angular/dist/gauge';
 import { SharedModule } from '@radzen/angular/dist/shared';
 import { NotificationModule } from '@radzen/angular/dist/notification';
 import { DialogModule } from '@radzen/angular/dist/dialog';
@@ -266,6 +267,7 @@ export const AppImports = [
   TreeGridModule,
   ChartModule,
   PieModule,
+  GaugeModule,
   SharedModule,
   NotificationModule,
   DialogModule,

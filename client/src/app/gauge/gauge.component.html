@@ -1,4 +1,33 @@
 <rz-content #content1 container="main">
-  <rz-heading #pageTitle size="H1" text="Gauge">
+  <rz-heading #pageTitle size="H1" [style]="{'display': 'inline', 'float': 'none'}" text="Gauge">
   </rz-heading>
+  <rz-link #link0 path="https://github.com/akorchev/angular.radzen.com/blob/master/meta/pages/gauge.json" text="[source code]">
+  </rz-link>
+  <rz-heading #heading0 size="H4" text="This page demonstrates Gauge component.">
+  </rz-heading>
+  <rz-card #card0 [style]="{'height': '100%'}">
+    <div class="row">
+      <div class="col-md-6">
+        <rz-heading #heading2 size="H3" text="Gauge">
+        </rz-heading>
+        <rz-gauge #gauge0 [showAxis]="false" [style]="{'height': '200px', 'width': '200px'}" text="Speed" unit="km/h" [value]="50">
+        </rz-gauge>
+        <rz-heading #heading3 size="H3" [style]="{'marginTop': '20px'}" text="Gauge with axis">
+        </rz-heading>
+        <rz-gauge #gauge1 color="#fa0f0f" [max]="120" [showAxis]="true" [startAngle]="-100" [style]="{'height': '400px', 'width': '400px'}" text="Fuel" unit="l" [value]="80">
+        </rz-gauge>
+      </div>
+      <div class="col-md-6">
+        <rz-heading #heading1 size="H3" text="Events">
+        </rz-heading>
+        <rz-card #card1 [style]="{'height': '500px'}">
+          <rz-html #html0>
+            <div style="overflow:auto;height:100%">
+              N/A
+            </div>
+          </rz-html>
+        </rz-card>
+      </div>
+    </div>
+  </rz-card>
 </rz-content>

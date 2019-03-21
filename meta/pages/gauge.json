@@ -1,19 +1,165 @@
 {
-  "name": "Gauge",
-  "access": "Everybody",
-  "layout": "Main",
+  "access": [
+    "Everybody"
+  ],
   "components": [
     {
-      "type": "content",
-      "container": "main",
       "components": [
         {
-          "type": "heading",
-          "size": "H1",
           "name": "pageTitle",
-          "text": "Gauge"
+          "size": "H1",
+          "style": {
+            "display": "inline",
+            "float": "none"
+          },
+          "text": "Gauge",
+          "type": "heading"
+        },
+        {
+          "icon": "",
+          "name": "link0",
+          "path": "https://github.com/akorchev/angular.radzen.com/blob/master/meta/pages/gauge.json",
+          "text": "[source code]",
+          "type": "link"
+        },
+        {
+          "name": "heading0",
+          "size": "H4",
+          "text": "This page demonstrates Gauge component.",
+          "type": "heading"
+        },
+        {
+          "components": [
+            {
+              "components": [
+                {
+                  "class": "col-md-6",
+                  "components": [
+                    {
+                      "name": "heading2",
+                      "size": "H3",
+                      "text": "Gauge",
+                      "type": "heading"
+                    },
+                    {
+                      "name": "gauge0",
+                      "showAxis": false,
+                      "style": {
+                        "height": "200px",
+                        "width": "200px"
+                      },
+                      "text": "Speed",
+                      "type": "gauge",
+                      "unit": "km/h",
+                      "value": 50
+                    },
+                    {
+                      "name": "heading3",
+                      "size": "H3",
+                      "style": {
+                        "marginTop": "20px"
+                      },
+                      "text": "Gauge with axis",
+                      "type": "heading"
+                    },
+                    {
+                      "color": "#fa0f0f",
+                      "max": 120,
+                      "name": "gauge1",
+                      "showAxis": true,
+                      "startAngle": -100,
+                      "style": {
+                        "height": "400px",
+                        "width": "400px"
+                      },
+                      "text": "Fuel",
+                      "type": "gauge",
+                      "unit": "l",
+                      "value": 80
+                    }
+                  ],
+                  "name": "col0",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-6",
+                  "components": [
+                    {
+                      "name": "heading1",
+                      "size": "H3",
+                      "text": "Events",
+                      "type": "heading"
+                    },
+                    {
+                      "components": [
+                        {
+                          "content": "<div style=\"overflow:auto;height:100%\">\n  N/A\n</div>\n",
+                          "name": "html0",
+                          "type": "html"
+                        }
+                      ],
+                      "name": "card1",
+                      "style": {
+                        "height": "500px"
+                      },
+                      "type": "card",
+                      "visible": true
+                    }
+                  ],
+                  "name": "col1",
+                  "type": "col"
+                }
+              ],
+              "name": "row0",
+              "type": "row"
+            }
+          ],
+          "name": "card0",
+          "style": {
+            "height": "100%"
+          },
+          "type": "card",
+          "visible": true
         }
-      ]
+      ],
+      "container": "main",
+      "type": "content"
     }
-  ]
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "events",
+        "type": "set",
+        "value": "[]"
+      },
+      {
+        "name": "Northwind.getNorthwindOrders",
+        "parameters": [
+          {
+            "name": "$expand",
+            "value": "Customer,Employee"
+          },
+          {
+            "name": "$top",
+            "value": "5"
+          },
+          {
+            "name": "$orderby",
+            "value": "Freight"
+          }
+        ],
+        "then": [
+          {
+            "name": "getNorthwindOrdersResult",
+            "type": "set",
+            "value": "${result.value}"
+          }
+        ],
+        "type": "invoke"
+      }
+    ]
+  },
+  "layout": "Main",
+  "name": "Gauge"
 }

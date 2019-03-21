@@ -12,14 +12,29 @@ import { DialogService, DIALOG_PARAMETERS, DialogRef } from '@radzen/angular/dis
 import { NotificationService } from '@radzen/angular/dist/notification';
 import { ContentComponent } from '@radzen/angular/dist/content';
 import { HeadingComponent } from '@radzen/angular/dist/heading';
+import { LinkComponent } from '@radzen/angular/dist/link';
+import { CardComponent } from '@radzen/angular/dist/card';
+import { GaugeComponent } from '@radzen/angular/dist/gauge';
+import { HtmlComponent } from '@radzen/angular/dist/html';
 
 import { ConfigService } from '../config.service';
 
+import { NorthwindService } from '../northwind.service';
 
 export class GaugeGenerated implements AfterViewInit, OnInit, OnDestroy {
   // Components
   @ViewChild('content1') content1: ContentComponent;
   @ViewChild('pageTitle') pageTitle: HeadingComponent;
+  @ViewChild('link0') link0: LinkComponent;
+  @ViewChild('heading0') heading0: HeadingComponent;
+  @ViewChild('card0') card0: CardComponent;
+  @ViewChild('heading2') heading2: HeadingComponent;
+  @ViewChild('gauge0') gauge0: GaugeComponent;
+  @ViewChild('heading3') heading3: HeadingComponent;
+  @ViewChild('gauge1') gauge1: GaugeComponent;
+  @ViewChild('heading1') heading1: HeadingComponent;
+  @ViewChild('card1') card1: CardComponent;
+  @ViewChild('html0') html0: HtmlComponent;
 
   router: Router;
 
@@ -42,6 +57,10 @@ export class GaugeGenerated implements AfterViewInit, OnInit, OnDestroy {
   _location: Location;
 
   _subscription: Subscription;
+
+  northwind: NorthwindService;
+  events: any;
+  getNorthwindOrdersResult: any;
   parameters: any;
 
   constructor(private injector: Injector) {
@@ -68,6 +87,7 @@ export class GaugeGenerated implements AfterViewInit, OnInit, OnDestroy {
 
     this.httpClient = this.injector.get(HttpClient);
 
+    this.northwind = this.injector.get(NorthwindService);
   }
 
   ngAfterViewInit() {
@@ -77,6 +97,7 @@ export class GaugeGenerated implements AfterViewInit, OnInit, OnDestroy {
       } else {
         this.parameters = parameters;
       }
+      this.load();
       this.cd.detectChanges();
     });
   }
@@ -85,4 +106,15 @@ export class GaugeGenerated implements AfterViewInit, OnInit, OnDestroy {
     this._subscription.unsubscribe();
   }
 
+
+  load() {
+    this.events = [];
+
+    this.northwind.getNorthwindOrders(null, 5, null, `Freight`, `Customer,Employee`, null)
+    .subscribe((result: any) => {
+      this.getNorthwindOrdersResult = result.value;
+    }, (result: any) => {
+
+    });
+  }
 }
