@@ -19,7 +19,6 @@ import { HtmlComponent } from '@radzen/angular/dist/html';
 
 import { ConfigService } from '../config.service';
 
-import { NorthwindService } from '../northwind.service';
 
 export class GaugeGenerated implements AfterViewInit, OnInit, OnDestroy {
   // Components
@@ -57,10 +56,7 @@ export class GaugeGenerated implements AfterViewInit, OnInit, OnDestroy {
   _location: Location;
 
   _subscription: Subscription;
-
-  northwind: NorthwindService;
   events: any;
-  getNorthwindOrdersResult: any;
   parameters: any;
 
   constructor(private injector: Injector) {
@@ -87,7 +83,6 @@ export class GaugeGenerated implements AfterViewInit, OnInit, OnDestroy {
 
     this.httpClient = this.injector.get(HttpClient);
 
-    this.northwind = this.injector.get(NorthwindService);
   }
 
   ngAfterViewInit() {
@@ -109,12 +104,5 @@ export class GaugeGenerated implements AfterViewInit, OnInit, OnDestroy {
 
   load() {
     this.events = [];
-
-    this.northwind.getNorthwindOrders(null, 5, null, `Freight`, `Customer,Employee`, null)
-    .subscribe((result: any) => {
-      this.getNorthwindOrdersResult = result.value;
-    }, (result: any) => {
-
-    });
   }
 }

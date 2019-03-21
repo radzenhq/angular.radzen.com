@@ -132,31 +132,6 @@
         "name": "events",
         "type": "set",
         "value": "[]"
-      },
-      {
-        "name": "Northwind.getNorthwindOrders",
-        "parameters": [
-          {
-            "name": "$expand",
-            "value": "Customer,Employee"
-          },
-          {
-            "name": "$top",
-            "value": "5"
-          },
-          {
-            "name": "$orderby",
-            "value": "Freight"
-          }
-        ],
-        "then": [
-          {
-            "name": "getNorthwindOrdersResult",
-            "type": "set",
-            "value": "${result.value}"
-          }
-        ],
-        "type": "invoke"
       }
     ]
   },
