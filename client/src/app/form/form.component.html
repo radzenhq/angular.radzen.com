@@ -1,4 +1,61 @@
 <rz-content #content1 container="main">
-  <rz-heading #pageTitle size="H1" text="Form">
+  <rz-heading #pageTitle size="H1" [style]="{'display': 'inline', 'float': 'none'}" text="Form">
   </rz-heading>
+  <rz-link #link0 path="https://github.com/akorchev/angular.radzen.com/blob/master/meta/pages/form.json" text="[source code]">
+  </rz-link>
+  <rz-heading #heading0 size="H4" text="This page demonstrates Form component.">
+  </rz-heading>
+  <rz-card #card0 [style]="{'height': '100%'}">
+    <div class="row">
+      <div class="col-md-6">
+        <rz-heading #heading2 size="H3" [style]="{'display': 'inline'}" text="Form with two columns">
+        </rz-heading>
+        <rz-form #form0 columns="2" [data]="formData" (loadData)="form0LoadData($event)" (submit)="form0Submit($event)">
+          <rz-string-form-field property="stringProperty" requiredText="is required" title="String" type="string">
+          </rz-string-form-field>
+          <rz-text-form-field property="textProperty" requiredText="is required" title="Text" type="text">
+          </rz-text-form-field>
+          <rz-lookup-form-field [allowClear]="true" [allowFiltering]="true" [data]="getCategoriesResult" placeholder="Select category" property="lookupProperty" requiredText="is required" textProperty="CategoryName" title="Lookup" valueProperty="CategoryID" type="lookup">
+          </rz-lookup-form-field>
+          <rz-lookuppopup-form-field [count]="getProductsCount" [data]="getProductsResult" [pageSize]="getProductsPageSize" placeholder="Select product" property="lookupPopupProperty" requiredText="is required" textProperty="ProductName" valueProperty="ProductID" type="lookuppopup">
+          </rz-lookuppopup-form-field>
+          <rz-file-form-field property="fileProperty" title="File" requiredText="is required" type="file">
+          </rz-file-form-field>
+          <rz-boolean-form-field property="boolProperty" title="Boolean" requiredText="is required" type="boolean">
+          </rz-boolean-form-field>
+          <rz-number-form-field property="numberProperty" title="Number" requiredText="is required" minText="cannot be less than" maxText="cannot be more than" type="number">
+          </rz-number-form-field>
+          <rz-integer-form-field property="integerProperty" title="Integer" requiredText="is required" minText="cannot be less than" maxText="cannot be more than" type="integer">
+          </rz-integer-form-field>
+          <rz-date-form-field property="dateProperty" title="Date" requiredText="is required" type="date">
+          </rz-date-form-field>
+          <rz-rating-form-field property="ratingProperty" title="Rating" requiredText="is required" type="rating">
+          </rz-rating-form-field>
+          <rz-password-form-field property="passwordProperty" title="Password" requiredText="is required" type="password">
+          </rz-password-form-field>
+          <rz-selectbar-form-field property="selectBarProperty" title="SelectBar" requiredText="is required" type="selectbar">
+            <rz-selectbar-form-field-option text="Item 1" value="1">
+            </rz-selectbar-form-field-option>
+            <rz-selectbar-form-field-option text="Item 2" value="2">
+            </rz-selectbar-form-field-option>
+            <rz-selectbar-form-field-option text="Item 3" value="3">
+            </rz-selectbar-form-field-option>
+          </rz-selectbar-form-field>
+        </rz-form>
+      </div>
+      <div class="col-md-6">
+        <rz-heading #heading1 size="H3" text="Events">
+        </rz-heading>
+        <rz-card #card1 [style]="{'height': '500px'}">
+          <rz-html #html0>
+            <div style="overflow:auto;height:100%">
+              <div *ngFor="let event of events?.reverse()">
+                  {{ event }}
+              </div>
+            </div>
+          </rz-html>
+        </rz-card>
+      </div>
+    </div>
+  </rz-card>
 </rz-content>

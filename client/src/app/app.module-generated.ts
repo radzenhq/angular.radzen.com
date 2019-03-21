@@ -43,6 +43,7 @@ import { DatePickerModule } from '@radzen/angular/dist/datepicker';
 import { DropDownModule } from '@radzen/angular/dist/dropdown';
 import { DropDownDataGridModule } from '@radzen/angular/dist/dropdown-datagrid';
 import { FileInputModule } from '@radzen/angular/dist/file-input';
+import { FormModule } from '@radzen/angular/dist/form';
 import { SharedModule } from '@radzen/angular/dist/shared';
 import { NotificationModule } from '@radzen/angular/dist/notification';
 import { DialogModule } from '@radzen/angular/dist/dialog';
@@ -228,6 +229,7 @@ export const AppImports = [
   DropDownModule,
   DropDownDataGridModule,
   FileInputModule,
+  FormModule,
   SharedModule,
   NotificationModule,
   DialogModule,
