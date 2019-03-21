@@ -12,14 +12,23 @@ import { DialogService, DIALOG_PARAMETERS, DialogRef } from '@radzen/angular/dis
 import { NotificationService } from '@radzen/angular/dist/notification';
 import { ContentComponent } from '@radzen/angular/dist/content';
 import { HeadingComponent } from '@radzen/angular/dist/heading';
+import { LinkComponent } from '@radzen/angular/dist/link';
+import { CardComponent } from '@radzen/angular/dist/card';
+import { DataListComponent } from '@radzen/angular/dist/datalist';
+import { ImageComponent } from '@radzen/angular/dist/image';
 
 import { ConfigService } from '../config.service';
 
+import { NorthwindService } from '../northwind.service';
 
 export class DataListGenerated implements AfterViewInit, OnInit, OnDestroy {
   // Components
   @ViewChild('content1') content1: ContentComponent;
   @ViewChild('pageTitle') pageTitle: HeadingComponent;
+  @ViewChild('link0') link0: LinkComponent;
+  @ViewChild('heading0') heading0: HeadingComponent;
+  @ViewChild('card0') card0: CardComponent;
+  @ViewChild('datalist0') datalist0: DataListComponent;
 
   router: Router;
 
@@ -42,7 +51,12 @@ export class DataListGenerated implements AfterViewInit, OnInit, OnDestroy {
   _location: Location;
 
   _subscription: Subscription;
+
+  northwind: NorthwindService;
+  events: any;
   parameters: any;
+  getNorthwindOrdersResult: any;
+  getNorthwindOrdersCount: any;
 
   constructor(private injector: Injector) {
   }
@@ -68,6 +82,7 @@ export class DataListGenerated implements AfterViewInit, OnInit, OnDestroy {
 
     this.httpClient = this.injector.get(HttpClient);
 
+    this.northwind = this.injector.get(NorthwindService);
   }
 
   ngAfterViewInit() {
@@ -77,6 +92,7 @@ export class DataListGenerated implements AfterViewInit, OnInit, OnDestroy {
       } else {
         this.parameters = parameters;
       }
+      this.load();
       this.cd.detectChanges();
     });
   }
@@ -85,4 +101,21 @@ export class DataListGenerated implements AfterViewInit, OnInit, OnDestroy {
     this._subscription.unsubscribe();
   }
 
+
+  load() {
+    this.events = [];
+
+    this.datalist0.load();
+  }
+
+  datalist0LoadData(event: any) {
+    this.northwind.getNorthwindOrders(null, event.top, event.skip, null, `Customer,Employee`, event.top != null && event.skip != null)
+    .subscribe((result: any) => {
+      this.getNorthwindOrdersResult = result.value;
+
+      this.getNorthwindOrdersCount = event.top != null && event.skip != null ? result['@odata.count'] : result.value.length;
+    }, (result: any) => {
+
+    });
+  }
 }

@@ -12,14 +12,23 @@ import { DialogService, DIALOG_PARAMETERS, DialogRef } from '@radzen/angular/dis
 import { NotificationService } from '@radzen/angular/dist/notification';
 import { ContentComponent } from '@radzen/angular/dist/content';
 import { HeadingComponent } from '@radzen/angular/dist/heading';
+import { LinkComponent } from '@radzen/angular/dist/link';
+import { CardComponent } from '@radzen/angular/dist/card';
+import { GridComponent } from '@radzen/angular/dist/grid';
+import { ImageComponent } from '@radzen/angular/dist/image';
 
 import { ConfigService } from '../config.service';
 
+import { NorthwindService } from '../northwind.service';
 
 export class DataGridGenerated implements AfterViewInit, OnInit, OnDestroy {
   // Components
   @ViewChild('content1') content1: ContentComponent;
   @ViewChild('pageTitle') pageTitle: HeadingComponent;
+  @ViewChild('link0') link0: LinkComponent;
+  @ViewChild('heading0') heading0: HeadingComponent;
+  @ViewChild('card0') card0: CardComponent;
+  @ViewChild('grid0') grid0: GridComponent;
 
   router: Router;
 
@@ -42,7 +51,12 @@ export class DataGridGenerated implements AfterViewInit, OnInit, OnDestroy {
   _location: Location;
 
   _subscription: Subscription;
+
+  northwind: NorthwindService;
+  events: any;
   parameters: any;
+  getEmployeesResult: any;
+  getEmployeesCount: any;
 
   constructor(private injector: Injector) {
   }
@@ -68,6 +82,7 @@ export class DataGridGenerated implements AfterViewInit, OnInit, OnDestroy {
 
     this.httpClient = this.injector.get(HttpClient);
 
+    this.northwind = this.injector.get(NorthwindService);
   }
 
   ngAfterViewInit() {
@@ -77,6 +92,7 @@ export class DataGridGenerated implements AfterViewInit, OnInit, OnDestroy {
       } else {
         this.parameters = parameters;
       }
+      this.load();
       this.cd.detectChanges();
     });
   }
@@ -85,4 +101,21 @@ export class DataGridGenerated implements AfterViewInit, OnInit, OnDestroy {
     this._subscription.unsubscribe();
   }
 
+
+  load() {
+    this.events = [];
+
+    this.grid0.load();
+  }
+
+  grid0LoadData(event: any) {
+    this.northwind.getEmployees(`${event.filter}`, event.top, event.skip, `${event.orderby}`, null, event.top != null && event.skip != null)
+    .subscribe((result: any) => {
+      this.getEmployeesResult = result.value;
+
+      this.getEmployeesCount = event.top != null && event.skip != null ? result['@odata.count'] : result.value.length;
+    }, (result: any) => {
+
+    });
+  }
 }

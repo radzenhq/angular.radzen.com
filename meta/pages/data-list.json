@@ -1,19 +1,225 @@
 {
-  "name": "DataList",
-  "access": "Everybody",
-  "layout": "Main",
+  "access": [
+    "Everybody"
+  ],
   "components": [
     {
-      "type": "content",
-      "container": "main",
       "components": [
         {
-          "type": "heading",
-          "size": "H1",
           "name": "pageTitle",
-          "text": "DataList"
+          "size": "H1",
+          "style": {
+            "display": "inline",
+            "float": "none"
+          },
+          "text": "DataList",
+          "type": "heading"
+        },
+        {
+          "icon": "",
+          "name": "link0",
+          "path": "https://github.com/akorchev/angular.radzen.com/blob/master/meta/pages/data-list.json",
+          "text": "[source code]",
+          "type": "link"
+        },
+        {
+          "name": "heading0",
+          "size": "H4",
+          "text": "This page demonstrates DataList component.",
+          "type": "heading"
+        },
+        {
+          "components": [
+            {
+              "allowPaging": true,
+              "count": "${getNorthwindOrdersCount}",
+              "data": "${getNorthwindOrdersResult}",
+              "events": {
+                "loadData": [
+                  {
+                    "name": "Northwind.getNorthwindOrders",
+                    "parameters": [
+                      {
+                        "name": "$top",
+                        "value": "event.top"
+                      },
+                      {
+                        "name": "$skip",
+                        "value": "event.skip"
+                      },
+                      {
+                        "name": "$count",
+                        "value": "event.top != null && event.skip != null"
+                      },
+                      {
+                        "name": "$expand",
+                        "value": "Customer,Employee"
+                      }
+                    ],
+                    "then": [
+                      {
+                        "name": "getNorthwindOrdersResult",
+                        "type": "set",
+                        "value": "${result.value}"
+                      },
+                      {
+                        "name": "getNorthwindOrdersCount",
+                        "type": "set",
+                        "value": "event.top != null && event.skip != null ? result['@odata.count'] : ${result.value.length}"
+                      }
+                    ],
+                    "type": "invoke"
+                  }
+                ]
+              },
+              "name": "datalist0",
+              "pageSize": 6,
+              "template": [
+                {
+                  "components": [
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-6",
+                          "components": [
+                            {
+                              "name": "heading14",
+                              "size": "H6",
+                              "text": "Company:",
+                              "type": "heading"
+                            },
+                            {
+                              "name": "heading15",
+                              "size": "H4",
+                              "text": "${data.Customer.CompanyName}",
+                              "type": "heading"
+                            },
+                            {
+                              "name": "heading16",
+                              "size": "H6",
+                              "text": "Employee:",
+                              "type": "heading"
+                            },
+                            {
+                              "name": "heading17",
+                              "size": "H4",
+                              "text": "${data.Employee.FirstName + ' ' + data.Employee.LastName}",
+                              "type": "heading"
+                            },
+                            {
+                              "name": "image1",
+                              "path": "${data.Employee.Photo}",
+                              "type": "image"
+                            }
+                          ],
+                          "name": "col4",
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-6",
+                          "components": [
+                            {
+                              "name": "heading18",
+                              "size": "H6",
+                              "text": "Freight:",
+                              "type": "heading"
+                            },
+                            {
+                              "name": "heading19",
+                              "size": "H4",
+                              "text": "${data.Freight | currency}",
+                              "type": "heading"
+                            },
+                            {
+                              "name": "heading20",
+                              "size": "H6",
+                              "text": "Ship country:",
+                              "type": "heading"
+                            },
+                            {
+                              "name": "heading21",
+                              "size": "H4",
+                              "text": "${data.ShipCountry}",
+                              "type": "heading"
+                            },
+                            {
+                              "name": "heading22",
+                              "size": "H6",
+                              "text": "Ship city:",
+                              "type": "heading"
+                            },
+                            {
+                              "name": "heading23",
+                              "size": "H4",
+                              "text": "${data.ShipCity}",
+                              "type": "heading"
+                            },
+                            {
+                              "name": "heading24",
+                              "size": "H6",
+                              "text": "Ship name:",
+                              "type": "heading"
+                            },
+                            {
+                              "name": "heading25",
+                              "size": "H4",
+                              "text": "${data.ShipName}",
+                              "type": "heading"
+                            }
+                          ],
+                          "name": "col5",
+                          "type": "col"
+                        }
+                      ],
+                      "name": "row2",
+                      "type": "row"
+                    }
+                  ],
+                  "name": "card3",
+                  "style": {
+                    "height": "370px",
+                    "marginBottom": "10px",
+                    "marginLeft": "10px",
+                    "marginRight": "10px",
+                    "marginTop": "10px",
+                    "width": "450px"
+                  },
+                  "type": "card",
+                  "visible": "${data}"
+                }
+              ],
+              "type": "datalist",
+              "wrapItems": true,
+              "emptyText": "No records found.",
+              "defaultRowText": "Template for index"
+            }
+          ],
+          "name": "card0",
+          "style": {
+            "height": "100%"
+          },
+          "type": "card",
+          "visible": true
         }
-      ]
+      ],
+      "container": "main",
+      "type": "content"
     }
-  ]
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "events",
+        "type": "set",
+        "value": "[]"
+      },
+      {
+        "code": "this.datalist0.load();",
+        "error": [],
+        "type": "execute"
+      }
+    ]
+  },
+  "layout": "Main",
+  "name": "DataList"
 }
