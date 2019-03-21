@@ -1,0 +1,1 @@
+{"deploy":{"provider":"zip","server":"","user":"","password":"","siteName":"/","connectionStrings":{},"endPoints":{"Northwind":{"value":"https://services.radzen.com/odata/Northwind"}},"method":"computerName"}}

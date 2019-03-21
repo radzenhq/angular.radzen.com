@@ -1,0 +1,81 @@
+{
+  "configVersion": 1,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/favicon.ico",
+        "/index.html",
+        "/inline.0476f04fcb4a06847cc5.bundle.js",
+        "/main.09f2f9ef78ec3921342d.bundle.js",
+        "/polyfills.844e18458bb1343d54e1.bundle.js",
+        "/styles.e32879ae747a4c2a0332.bundle.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "/assets/icon-128x128.png",
+        "/assets/icon-152x152.png",
+        "/assets/icon-256x256.png",
+        "/assets/icon-512x512.png",
+        "/assets/css/default.css",
+        "/assets/fonts/MaterialIcons-Regular.woff",
+        "/assets/fonts/roboto-v15-latin-300.woff",
+        "/assets/fonts/roboto-v15-latin-700.woff",
+        "/assets/fonts/roboto-v15-latin-regular.woff",
+        "/assets/fonts/SourceSansPro-Black.woff",
+        "/assets/fonts/SourceSansPro-BlackIt.woff",
+        "/assets/fonts/SourceSansPro-Bold.woff",
+        "/assets/fonts/SourceSansPro-BoldIt.woff",
+        "/assets/fonts/SourceSansPro-ExtraLight.woff",
+        "/assets/fonts/SourceSansPro-ExtraLightIt.woff",
+        "/assets/fonts/SourceSansPro-It.woff",
+        "/assets/fonts/SourceSansPro-Light.woff",
+        "/assets/fonts/SourceSansPro-LightIt.woff",
+        "/assets/fonts/SourceSansPro-Regular.woff",
+        "/assets/fonts/SourceSansPro-Semibold.woff",
+        "/assets/fonts/SourceSansPro-SemiboldIt.woff",
+        "/assets/images/radzen.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/inline.0476f04fcb4a06847cc5.bundle.js": "d81c163336aa5014a833a60917f58f50093a753c",
+    "/assets/icon-128x128.png": "45868a9b16de3f1364f87eba8b4971481600e508",
+    "/main.09f2f9ef78ec3921342d.bundle.js": "e9d90a30a1a9895290cf4036c8d89d6631cfacb4",
+    "/assets/icon-152x152.png": "4925c0ae63746e49e8bdf0b1f33dd57e9ae3cd90",
+    "/polyfills.844e18458bb1343d54e1.bundle.js": "bf266e20754b995b3a3fb6d233cf82d1be4720d5",
+    "/assets/icon-256x256.png": "cacac2897a8933a7b35bfbde76ac7a8805755760",
+    "/styles.e32879ae747a4c2a0332.bundle.css": "1d4be1168905f033ec67e630cf8ce1ca6d587c56",
+    "/assets/icon-512x512.png": "32d4842913cbe1f47145a9e35beb1bd90b4c709c",
+    "/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
+    "/assets/css/default.css": "3051e9e0f0f40da3e3fda26cb84425e1cb9393da",
+    "/index.html": "caca87f12d116091c0e1d5a9fe8e16a926786b17",
+    "/assets/fonts/MaterialIcons-Regular.woff": "fc61fc1cc827ca98c4d59fe09b155884fd635969",
+    "/assets/fonts/roboto-v15-latin-300.woff": "27c056b9c70dcfd55c43e954a898eb5bf706f730",
+    "/assets/fonts/roboto-v15-latin-700.woff": "24f9df68c500f7bbd1cb1c632de59936aa85b2e0",
+    "/assets/fonts/roboto-v15-latin-regular.woff": "940b859e4f02bd3e7cf7b6ce245c197b5470302a",
+    "/assets/fonts/SourceSansPro-Black.woff": "aa02dc9ed0ab8c2f14080db6967bfda798a1d36e",
+    "/assets/fonts/SourceSansPro-BlackIt.woff": "090123649291f34a7f457d87e69cf3d07eade6aa",
+    "/assets/fonts/SourceSansPro-Bold.woff": "59b47397b88aaec2c6a769004468a1b7c53fb950",
+    "/assets/fonts/SourceSansPro-BoldIt.woff": "3a3063698de21aa6d092cee0c205f4f708defd33",
+    "/assets/fonts/SourceSansPro-ExtraLight.woff": "680de19d242741d7d4818af7cdcf76b12a49f313",
+    "/assets/fonts/SourceSansPro-ExtraLightIt.woff": "686711c8a11e25a7f364f629c2ab590f29963595",
+    "/assets/fonts/SourceSansPro-It.woff": "8198b854bd9f52e6e2d932435ec99aa8d8a09224",
+    "/assets/fonts/SourceSansPro-Light.woff": "3a7a464b171b14c53b21128da9b2704e5995a158",
+    "/assets/fonts/SourceSansPro-LightIt.woff": "0a9431870a34614a60ae3c4ee76c8b1be2210651",
+    "/assets/fonts/SourceSansPro-Regular.woff": "62ce99357ccaec3bb0ac703eee4458a9aaddf99a",
+    "/assets/fonts/SourceSansPro-Semibold.woff": "56169c245f04180410e67adc391c0c149ece4dc4",
+    "/assets/fonts/SourceSansPro-SemiboldIt.woff": "6295ff0e23df04f6c43e3811f9a2b9a3e3a66cd6",
+    "/assets/images/radzen.png": "3e91d4b54d6fd3fbd31c670d8a22b888477b3c52"
+  }
+}
