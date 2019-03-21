@@ -1,4 +1,43 @@
 <rz-content #content1 container="main">
-  <rz-heading #pageTitle size="H1" text="Tree">
+  <rz-heading #pageTitle size="H1" [style]="{'display': 'inline', 'float': 'none'}" text="Tree">
   </rz-heading>
+  <rz-link #link0 path="https://github.com/akorchev/angular.radzen.com/blob/master/meta/pages/tree.json" text="[source code]">
+  </rz-link>
+  <rz-heading #heading0 size="H4" text="This page demonstrates Tree component.">
+  </rz-heading>
+  <rz-card #card0 [style]="{'height': '100%'}">
+    <div class="row">
+      <div class="col-md-6">
+        <rz-heading #heading2 size="H3" text="Self-referencing Employees">
+        </rz-heading>
+        <rz-tree #tree0 [data]="employees" *ngIf="employees" (nodeExpand)="tree0NodeExpand($event)" (nodeLoaded)="tree0NodeLoaded($event)" (nodeSelect)="tree0NodeSelect($event)">
+          <rz-tree-level textProperty="LastName">
+          </rz-tree-level>
+        </rz-tree>
+        <rz-heading #heading3 size="H3" text="Customers -> Orders -> Order Details">
+        </rz-heading>
+        <rz-tree #tree1 [data]="customers" [style]="{'height': '400px'}" *ngIf="customers" (nodeExpand)="tree1NodeExpand($event)" (nodeLoaded)="tree1NodeLoaded($event)" (nodeSelect)="tree1NodeSelect($event)">
+          <rz-tree-level textProperty="CompanyName">
+          </rz-tree-level>
+          <rz-tree-level textProperty="OrderID">
+          </rz-tree-level>
+          <rz-tree-level [leaf]="true" textProperty="ProductID">
+          </rz-tree-level>
+        </rz-tree>
+      </div>
+      <div class="col-md-6">
+        <rz-heading #heading1 size="H3" text="Events">
+        </rz-heading>
+        <rz-card #card1 [style]="{'height': '500px'}">
+          <rz-html #html0>
+            <div style="overflow:auto;height:100%">
+              <div *ngFor="let event of events?.reverse()">
+                  {{ event }}
+              </div>
+            </div>
+          </rz-html>
+        </rz-card>
+      </div>
+    </div>
+  </rz-card>
 </rz-content>
