@@ -248,6 +248,10 @@
                   "text": "BarChart"
                 },
                 {
+                  "path": "column-chart",
+                  "text": "ColumnChart"
+                },
+                {
                   "path": "donut-chart",
                   "text": "DonutChart"
                 },

@@ -62,7 +62,8 @@
     "LineChart",
     "PieChart",
     "Sparkline",
-    "Gauge"
+    "Gauge",
+    "ColumnChart"
   ],
   "pages": [
     "Button",
@@ -114,7 +115,8 @@
     "PieChart",
     "Sparkline",
     "Gauge",
-    "PageWithParameter"
+    "PageWithParameter",
+    "ColumnChart"
   ],
   "port": 8000,
   "serverLang": "cs",

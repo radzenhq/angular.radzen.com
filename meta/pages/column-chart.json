@@ -12,20 +12,20 @@
             "display": "inline",
             "float": "none"
           },
-          "text": "DonutChart",
+          "text": "ColumnChart",
           "type": "heading"
         },
         {
           "icon": "",
           "name": "link0",
-          "path": "https://github.com/akorchev/angular.radzen.com/blob/master/meta/pages/donut-chart.json",
+          "path": "https://github.com/akorchev/angular.radzen.com/blob/master/meta/pages/column-chart.json",
           "text": "[source code]",
           "type": "link"
         },
         {
           "name": "heading0",
           "size": "H4",
-          "text": "This page demonstrates DonutChart component.",
+          "text": "This page demonstrates ColumnChart component.",
           "type": "heading"
         },
         {
@@ -38,12 +38,12 @@
                     {
                       "name": "heading2",
                       "size": "H3",
-                      "text": "DonutChart",
+                      "text": "ColumnChart",
                       "type": "heading"
                     },
                     {
-                      "categoryProperty": "CustomerID",
-                      "chartType": "Donut",
+                      "categoryProperty": "ShipName",
+                      "chartType": "Column",
                       "data": "${getNorthwindOrdersResult}",
                       "events": {
                         "select": [
@@ -53,9 +53,13 @@
                           }
                         ]
                       },
-                      "legend": true,
-                      "name": "pie0",
-                      "type": "pie",
+                      "legend": false,
+                      "name": "chart0",
+                      "style": {
+                        "height": "400px",
+                        "width": "100%"
+                      },
+                      "type": "chart",
                       "valueProperty": "Freight"
                     }
                   ],
@@ -123,7 +127,7 @@
           },
           {
             "name": "$top",
-            "value": "5"
+            "value": "10"
           },
           {
             "name": "$orderby",
@@ -142,5 +146,5 @@
     ]
   },
   "layout": "Main",
-  "name": "DonutChart"
+  "name": "ColumnChart"
 }

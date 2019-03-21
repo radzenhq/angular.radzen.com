@@ -59,6 +59,8 @@ import { PickListModule } from '@radzen/angular/dist/picklist';
 import { SchedulerModule } from '@radzen/angular/dist/scheduler';
 import { TreeModule } from '@radzen/angular/dist/tree';
 import { TreeGridModule } from '@radzen/angular/dist/treegrid';
+import { ChartModule } from '@radzen/angular/dist/chart';
+import { PieModule } from '@radzen/angular/dist/pie';
 import { SharedModule } from '@radzen/angular/dist/shared';
 import { NotificationModule } from '@radzen/angular/dist/notification';
 import { DialogModule } from '@radzen/angular/dist/dialog';
@@ -118,6 +120,7 @@ import { PieChartComponent } from './pie-chart/pie-chart.component';
 import { SparklineComponent } from './sparkline/sparkline.component';
 import { GaugeComponent } from './gauge/gauge.component';
 import { PageWithParameterComponent } from './page-with-parameter/page-with-parameter.component';
+import { ColumnChartComponent } from './column-chart/column-chart.component';
 import { LoginLayoutComponent } from './login-layout/login-layout.component';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
 
@@ -174,6 +177,7 @@ export const PageDeclarations = [
   SparklineComponent,
   GaugeComponent,
   PageWithParameterComponent,
+  ColumnChartComponent,
 ];
 
 export const LayoutDeclarations = [
@@ -260,6 +264,8 @@ export const AppImports = [
   SchedulerModule,
   TreeModule,
   TreeGridModule,
+  ChartModule,
+  PieModule,
   SharedModule,
   NotificationModule,
   DialogModule,
