@@ -45,12 +45,12 @@
                       "events": {
                         "click": [
                           {
-                            "code": "${events.push('SplitButton with text')}",
+                            "code": "${events.unshift('SplitButton with text')}",
                             "condition": "${!event}",
                             "type": "execute"
                           },
                           {
-                            "code": "${events.push('SplitButton with text item with value ' + event.value)}",
+                            "code": "${events.unshift('SplitButton with text item with value ' + event.value)}",
                             "condition": "${event}",
                             "type": "execute"
                           }
@@ -90,12 +90,12 @@
                       "events": {
                         "click": [
                           {
-                            "code": "${events.push('SplitButton with text and icon')}",
+                            "code": "${events.unshift('SplitButton with text and icon')}",
                             "condition": "${!event}",
                             "type": "execute"
                           },
                           {
-                            "code": "${events.push('SplitButton with text and icon item with value ' + event.value)}",
+                            "code": "${events.unshift('SplitButton with text and icon item with value ' + event.value)}",
                             "condition": "${event}",
                             "type": "execute"
                           }
@@ -136,12 +136,12 @@
                       "events": {
                         "click": [
                           {
-                            "code": "${events.push('SplitButton with icon')}",
+                            "code": "${events.unshift('SplitButton with icon')}",
                             "condition": "${!event}",
                             "type": "execute"
                           },
                           {
-                            "code": "${events.push('SplitButton with icon item with value ' + event.value)}",
+                            "code": "${events.unshift('SplitButton with icon item with value ' + event.value)}",
                             "condition": "${event}",
                             "type": "execute"
                           }
@@ -188,7 +188,7 @@
                     {
                       "components": [
                         {
-                          "content": "<div style=\"overflow:auto;height:100%\">\n  <div *ngFor=\"let event of events?.reverse()\">\n      {{ event }} clicked\n  </div>\n</div>",
+                          "content": "<div style=\"overflow:auto;height:100%\">\n  <div *ngFor=\"let event of events\">\n      {{ event }} clicked\n  </div>\n</div>",
                           "name": "html0",
                           "type": "html"
                         }

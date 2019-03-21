@@ -112,10 +112,10 @@ export class SliderGenerated implements AfterViewInit, OnInit, OnDestroy {
   }
 
   slider0Change(event: any) {
-    this.events.push('Slider from 0 to 100 Change: ' + JSON.stringify(event))
+    this.events.unshift('Slider from 0 to 100 Change: ' + JSON.stringify(event))
   }
 
   slider1Change(event: any) {
-    this.events.push('Slider with Step 10 Change: ' + JSON.stringify(event))
+    this.events.unshift('Slider with Step 10 Change: ' + JSON.stringify(event))
   }
 }

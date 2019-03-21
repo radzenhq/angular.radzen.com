@@ -124,18 +124,18 @@ export class DropDownGenerated implements AfterViewInit, OnInit, OnDestroy {
   }
 
   dropdown0Change(event: any) {
-    this.events.push('Single select DropDown Change: ' + JSON.stringify(event))
+    this.events.unshift('Single select DropDown Change: ' + JSON.stringify(event))
   }
 
   dropdown1Change(event: any) {
-    this.events.push('Multiple select DropDown Change: ' + JSON.stringify(event))
+    this.events.unshift('Multiple select DropDown Change: ' + JSON.stringify(event))
   }
 
   dropdown2Change(event: any) {
-    this.events.push('Multiple select with filtering DropDown Change: ' + JSON.stringify(event))
+    this.events.unshift('Multiple select with filtering DropDown Change: ' + JSON.stringify(event))
   }
 
   dropdown3Change(event: any) {
-    this.events.push('Single select DropDown with template Change: ' + JSON.stringify(event))
+    this.events.unshift('Single select DropDown with template Change: ' + JSON.stringify(event))
   }
 }

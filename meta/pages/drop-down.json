@@ -46,7 +46,7 @@
                       "events": {
                         "change": [
                           {
-                            "code": "${events.push('Single select DropDown Change: ' + JSON.stringify(event))}",
+                            "code": "${events.unshift('Single select DropDown Change: ' + JSON.stringify(event))}",
                             "type": "execute"
                           }
                         ]
@@ -71,7 +71,7 @@
                       "events": {
                         "change": [
                           {
-                            "code": "${events.push('Multiple select DropDown Change: ' + JSON.stringify(event))}",
+                            "code": "${events.unshift('Multiple select DropDown Change: ' + JSON.stringify(event))}",
                             "type": "execute"
                           }
                         ]
@@ -99,7 +99,7 @@
                       "events": {
                         "change": [
                           {
-                            "code": "${events.push('Multiple select with filtering DropDown Change: ' + JSON.stringify(event))}",
+                            "code": "${events.unshift('Multiple select with filtering DropDown Change: ' + JSON.stringify(event))}",
                             "type": "execute"
                           }
                         ]
@@ -125,7 +125,7 @@
                       "events": {
                         "change": [
                           {
-                            "code": "${events.push('Single select DropDown with template Change: ' + JSON.stringify(event))}",
+                            "code": "${events.unshift('Single select DropDown with template Change: ' + JSON.stringify(event))}",
                             "type": "execute"
                           }
                         ]
@@ -164,7 +164,7 @@
                     {
                       "components": [
                         {
-                          "content": "<div style=\"overflow:auto;height:100%\">\n  <div *ngFor=\"let event of events?.reverse()\">\n      {{ event }}\n  </div>\n</div>\n",
+                          "content": "<div style=\"overflow:auto;height:100%\">\n  <div *ngFor=\"let event of events\">\n      {{ event }}\n  </div>\n</div>\n",
                           "name": "html0",
                           "type": "html"
                         }

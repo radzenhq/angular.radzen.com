@@ -107,10 +107,10 @@ export class CheckBoxGenerated implements AfterViewInit, OnInit, OnDestroy {
   }
 
   checkbox0Change(event: any) {
-    this.events.push('Two-state CheckBox Change: ' + JSON.stringify(event))
+    this.events.unshift('Two-state CheckBox Change: ' + JSON.stringify(event))
   }
 
   checkbox1Change(event: any) {
-    this.events.push('Three-state CheckBox Change: ' + JSON.stringify(event))
+    this.events.unshift('Three-state CheckBox Change: ' + JSON.stringify(event))
   }
 }

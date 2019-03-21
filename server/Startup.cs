@@ -116,6 +116,15 @@ namespace RadzenAngularComponents
 
       });
 
+      if (string.IsNullOrEmpty(Environment.GetEnvironmentVariable("RADZEN")) && env.IsDevelopment())
+      {
+        app.UseSpa(spa =>
+        {
+          spa.Options.SourcePath = "../client";
+          spa.UseAngularCliServer(npmScript: "start -- --port 8000 --open");
+        });
+      }
+
       OnConfigure(app);
     }
   }

@@ -145,6 +145,6 @@ export class FormGenerated implements AfterViewInit, OnInit, OnDestroy {
   }
 
   form0Submit(event: any) {
-    this.events.push('Form Submit: ' + JSON.stringify(event))
+    this.events.unshift('Form Submit: ' + JSON.stringify(event))
   }
 }

@@ -107,10 +107,10 @@ export class FileInputGenerated implements AfterViewInit, OnInit, OnDestroy {
   }
 
   fileInput0Change(event: any) {
-    this.events.push('FileInput all file types Change: ' + JSON.stringify(event))
+    this.events.unshift('FileInput all file types Change: ' + JSON.stringify(event))
   }
 
   fileInput1Change(event: any) {
-    this.events.push('FileInput images only Change: ' + JSON.stringify(event))
+    this.events.unshift('FileInput images only Change: ' + JSON.stringify(event))
   }
 }

@@ -121,7 +121,7 @@ export class DropDownDataGridGenerated implements AfterViewInit, OnInit, OnDestr
   }
 
   dropdownDatagrid0Change(event: any) {
-    this.events.push('Single select Change: ' + JSON.stringify(event))
+    this.events.unshift('Single select Change: ' + JSON.stringify(event))
   }
 
   dropdownDatagrid0LoadData(event: any) {
@@ -136,7 +136,7 @@ export class DropDownDataGridGenerated implements AfterViewInit, OnInit, OnDestr
   }
 
   dropdownDatagrid1Change(event: any) {
-    this.events.push('Multiple select Change: ' + JSON.stringify(event))
+    this.events.unshift('Multiple select Change: ' + JSON.stringify(event))
   }
 
   dropdownDatagrid1LoadData(event: any) {

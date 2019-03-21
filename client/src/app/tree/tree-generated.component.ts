@@ -136,7 +136,7 @@ export class TreeGenerated implements AfterViewInit, OnInit, OnDestroy {
   }
 
   tree0NodeSelect(event: any) {
-    this.events.push('Self-referenced Tree SelectedNode: ' + JSON.stringify(event.data))
+    this.events.unshift('Self-referenced Tree SelectedNode: ' + JSON.stringify(event.data))
   }
 
   tree1NodeExpand(event: any) {
@@ -160,6 +160,6 @@ export class TreeGenerated implements AfterViewInit, OnInit, OnDestroy {
   }
 
   tree1NodeSelect(event: any) {
-    this.events.push('Tree SelectedNode: ' + JSON.stringify(event.data))
+    this.events.unshift('Tree SelectedNode: ' + JSON.stringify(event.data))
   }
 }

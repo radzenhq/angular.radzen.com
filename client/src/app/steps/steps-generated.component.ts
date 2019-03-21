@@ -159,7 +159,7 @@ export class StepsGenerated implements AfterViewInit, OnInit, OnDestroy {
   }
 
   steps0Change(event: any) {
-    this.events.push('Steps Changed: ' + JSON.stringify(event))
+    this.events.unshift('Steps Changed: ' + JSON.stringify(event))
 
     if (event.index == 1) {
           this.northwind.getNorthwindOrders(`OrderID eq 10249`, null, null, null, `Customer,Employee`, null)

@@ -130,6 +130,6 @@ export class TreeGridGenerated implements AfterViewInit, OnInit, OnDestroy {
   }
 
   treegrid0NodeSelect(event: any) {
-    this.events.push('TreeGrid NodeSelect: ' + JSON.stringify(event))
+    this.events.unshift('TreeGrid NodeSelect: ' + JSON.stringify(event))
   }
 }

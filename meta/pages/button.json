@@ -50,7 +50,7 @@
                               "events": {
                                 "click": [
                                   {
-                                    "code": "${events.push('Button with text')}",
+                                    "code": "${events.unshift('Button with text')}",
                                     "type": "execute"
                                   }
                                 ]
@@ -73,7 +73,7 @@
                               "events": {
                                 "click": [
                                   {
-                                    "code": "${events.push('Button with text and icon')}",
+                                    "code": "${events.unshift('Button with text and icon')}",
                                     "type": "execute"
                                   }
                                 ]
@@ -97,7 +97,7 @@
                               "events": {
                                 "click": [
                                   {
-                                    "code": "${events.push('Button with icon')}",
+                                    "code": "${events.unshift('Button with icon')}",
                                     "type": "execute"
                                   }
                                 ]
@@ -121,7 +121,7 @@
                               "events": {
                                 "click": [
                                   {
-                                    "code": "${events.push('Button with secondary style')}",
+                                    "code": "${events.unshift('Button with secondary style')}",
                                     "type": "execute"
                                   }
                                 ]
@@ -146,7 +146,7 @@
                               "events": {
                                 "click": [
                                   {
-                                    "code": "${events.push('Button with light style')}",
+                                    "code": "${events.unshift('Button with light style')}",
                                     "type": "execute"
                                   }
                                 ]
@@ -178,7 +178,7 @@
                               "events": {
                                 "click": [
                                   {
-                                    "code": "${events.push('Button with success style')}",
+                                    "code": "${events.unshift('Button with success style')}",
                                     "type": "execute"
                                   }
                                 ]
@@ -203,7 +203,7 @@
                               "events": {
                                 "click": [
                                   {
-                                    "code": "${events.push('Button with danger style')}",
+                                    "code": "${events.unshift('Button with danger style')}",
                                     "type": "execute"
                                   }
                                 ]
@@ -228,7 +228,7 @@
                               "events": {
                                 "click": [
                                   {
-                                    "code": "${events.push('Button with warning style')}",
+                                    "code": "${events.unshift('Button with warning style')}",
                                     "type": "execute"
                                   }
                                 ]
@@ -254,7 +254,7 @@
                               "events": {
                                 "click": [
                                   {
-                                    "code": "${events.push('Button with info style')}",
+                                    "code": "${events.unshift('Button with info style')}",
                                     "type": "execute"
                                   }
                                 ]
@@ -293,7 +293,7 @@
                     {
                       "components": [
                         {
-                          "content": "<div style=\"overflow:auto;height:100%\">\n  <div *ngFor=\"let event of events?.reverse()\">\n      {{ event }} clicked\n  </div>\n</div>",
+                          "content": "<div style=\"overflow:auto;height:100%\">\n  <div *ngFor=\"let event of events\">\n      {{ event }} clicked\n  </div>\n</div>",
                           "name": "html0",
                           "type": "html"
                         }

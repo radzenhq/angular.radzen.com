@@ -48,7 +48,7 @@
                       "events": {
                         "select": [
                           {
-                            "code": "${events.push('Select: ' + JSON.stringify(event))}",
+                            "code": "${events.unshift('Select: ' + JSON.stringify(event))}",
                             "type": "execute"
                           }
                         ]
@@ -74,7 +74,7 @@
                     {
                       "components": [
                         {
-                          "content": "<div style=\"overflow:auto;height:100%\">\n  <div *ngFor=\"let event of events?.reverse()\">\n      {{ event }}\n  </div>\n</div>\n",
+                          "content": "<div style=\"overflow:auto;height:100%\">\n  <div *ngFor=\"let event of events\">\n      {{ event }}\n  </div>\n</div>\n",
                           "name": "html0",
                           "type": "html"
                         }

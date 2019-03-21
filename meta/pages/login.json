@@ -48,19 +48,19 @@
                       "events": {
                         "login": [
                           {
-                            "code": "${events.push('Login with registration allowed Login button clicked: ' + JSON.stringify(event))}",
+                            "code": "${events.unshift('Login with registration allowed Login button clicked: ' + JSON.stringify(event))}",
                             "type": "execute"
                           }
                         ],
                         "register": [
                           {
-                            "code": "${events.push('Login with registration allowed Register button clicked')}",
+                            "code": "${events.unshift('Login with registration allowed Register button clicked')}",
                             "type": "execute"
                           }
                         ],
                         "resetPassword": [
                           {
-                            "code": "${events.push('Login with registration allowed Forgot Password button clicked: ' + JSON.stringify(event))}",
+                            "code": "${events.unshift('Login with registration allowed Forgot Password button clicked: ' + JSON.stringify(event))}",
                             "type": "execute"
                           }
                         ]
@@ -90,7 +90,7 @@
                       "events": {
                         "login": [
                           {
-                            "code": "${events.push('Login without registration and password reset Login button clicked' + JSON.stringify(event))}",
+                            "code": "${events.unshift('Login without registration and password reset Login button clicked' + JSON.stringify(event))}",
                             "type": "execute"
                           }
                         ]
@@ -121,7 +121,7 @@
                     {
                       "components": [
                         {
-                          "content": "<div style=\"overflow:auto;height:100%\">\n  <div *ngFor=\"let event of events?.reverse()\">\n      {{ event }}\n  </div>\n</div>",
+                          "content": "<div style=\"overflow:auto;height:100%\">\n  <div *ngFor=\"let event of events\">\n      {{ event }}\n  </div>\n</div>",
                           "name": "html0",
                           "type": "html"
                         }

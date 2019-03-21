@@ -65,7 +65,7 @@
                         "nodeLoaded": [],
                         "nodeSelect": [
                           {
-                            "code": "${events.push('Self-referenced Tree SelectedNode: ' + JSON.stringify(event.data))}",
+                            "code": "${events.unshift('Self-referenced Tree SelectedNode: ' + JSON.stringify(event.data))}",
                             "type": "execute"
                           }
                         ]
@@ -132,7 +132,7 @@
                         "nodeLoaded": [],
                         "nodeSelect": [
                           {
-                            "code": "${events.push('Tree SelectedNode: ' + JSON.stringify(event.data))}",
+                            "code": "${events.unshift('Tree SelectedNode: ' + JSON.stringify(event.data))}",
                             "type": "execute"
                           }
                         ]
@@ -177,7 +177,7 @@
                     {
                       "components": [
                         {
-                          "content": "<div style=\"overflow:auto;height:100%\">\n  <div *ngFor=\"let event of events?.reverse()\">\n      {{ event }}\n  </div>\n</div>",
+                          "content": "<div style=\"overflow:auto;height:100%\">\n  <div *ngFor=\"let event of events\">\n      {{ event }}\n  </div>\n</div>",
                           "name": "html0",
                           "type": "html"
                         }

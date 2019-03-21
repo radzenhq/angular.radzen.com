@@ -107,18 +107,18 @@ export class UploadGenerated implements AfterViewInit, OnInit, OnDestroy {
   }
 
   upload0Clear(event: any) {
-    this.events.push('Single file upload Clear')
+    this.events.unshift('Single file upload Clear')
   }
 
   upload0Upload(event: any) {
-    this.events.push('Single file upload Upload: ' + JSON.stringify(event))
+    this.events.unshift('Single file upload Upload: ' + JSON.stringify(event))
   }
 
   upload1Clear(event: any) {
-    this.events.push('Multiple file upload Clear')
+    this.events.unshift('Multiple file upload Clear')
   }
 
   upload1Upload(event: any) {
-    this.events.push('Multiple file upload Upload: ' + JSON.stringify(event))
+    this.events.unshift('Multiple file upload Upload: ' + JSON.stringify(event))
   }
 }

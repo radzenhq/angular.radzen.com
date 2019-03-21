@@ -107,10 +107,10 @@ export class NumericGenerated implements AfterViewInit, OnInit, OnDestroy {
   }
 
   numeric0Change(event: any) {
-    this.events.push('Numeric with Step 2 Change: ' + JSON.stringify(event))
+    this.events.unshift('Numeric with Step 2 Change: ' + JSON.stringify(event))
   }
 
   numeric1Change(event: any) {
-    this.events.push('Numeric with Min and Max Change: ' + JSON.stringify(event))
+    this.events.unshift('Numeric with Min and Max Change: ' + JSON.stringify(event))
   }
 }

@@ -49,7 +49,7 @@
                       "events": {
                         "change": [
                           {
-                            "code": "${events.push('Single select Change: ' + JSON.stringify(event))}",
+                            "code": "${events.unshift('Single select Change: ' + JSON.stringify(event))}",
                             "type": "execute"
                           }
                         ],
@@ -119,7 +119,7 @@
                       "events": {
                         "change": [
                           {
-                            "code": "${events.push('Multiple select Change: ' + JSON.stringify(event))}",
+                            "code": "${events.unshift('Multiple select Change: ' + JSON.stringify(event))}",
                             "type": "execute"
                           }
                         ],
@@ -193,7 +193,7 @@
                     {
                       "components": [
                         {
-                          "content": "<div style=\"overflow:auto;height:100%\">\n  <div *ngFor=\"let event of events?.reverse()\">\n      {{ event }}\n  </div>\n</div>\n",
+                          "content": "<div style=\"overflow:auto;height:100%\">\n  <div *ngFor=\"let event of events\">\n      {{ event }}\n  </div>\n</div>\n",
                           "name": "html0",
                           "type": "html"
                         }

@@ -107,10 +107,10 @@ export class SelectBarGenerated implements AfterViewInit, OnInit, OnDestroy {
   }
 
   selectbar0Change(event: any) {
-    this.events.push('Single select SelectBar Change: ' + JSON.stringify(event))
+    this.events.unshift('Single select SelectBar Change: ' + JSON.stringify(event))
   }
 
   selectbar1Change(event: any) {
-    this.events.push('Multiple select SelectBar Change: ' + JSON.stringify(event))
+    this.events.unshift('Multiple select SelectBar Change: ' + JSON.stringify(event))
   }
 }

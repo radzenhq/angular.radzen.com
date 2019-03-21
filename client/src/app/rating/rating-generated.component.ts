@@ -107,10 +107,10 @@ export class RatingGenerated implements AfterViewInit, OnInit, OnDestroy {
   }
 
   rating0Change(event: any) {
-    this.events.push('Rating with 5 stars Change: ' + JSON.stringify(event))
+    this.events.unshift('Rating with 5 stars Change: ' + JSON.stringify(event))
   }
 
   rating1Change(event: any) {
-    this.events.push('Rating with 10 stars Change: ' + JSON.stringify(event))
+    this.events.unshift('Rating with 10 stars Change: ' + JSON.stringify(event))
   }
 }

@@ -46,7 +46,7 @@
                       "events": {
                         "change": [
                           {
-                            "code": "${events.push('Single selection ListBox Change EmployeeID: ' + event.EmployeeID)}",
+                            "code": "${events.unshift('Single selection ListBox Change EmployeeID: ' + event.EmployeeID)}",
                             "type": "execute"
                           }
                         ]
@@ -75,7 +75,7 @@
                       "events": {
                         "change": [
                           {
-                            "code": "${events.push('Multiple selection ListBox Change EmployeeID: ' + event.EmployeeID)}",
+                            "code": "${events.unshift('Multiple selection ListBox Change EmployeeID: ' + event.EmployeeID)}",
                             "type": "execute"
                           }
                         ]
@@ -105,7 +105,7 @@
                       "events": {
                         "change": [
                           {
-                            "code": "${events.push('Single selection ListBox with template Change EmployeeID: ' + event.EmployeeID)}",
+                            "code": "${events.unshift('Single selection ListBox with template Change EmployeeID: ' + event.EmployeeID)}",
                             "type": "execute"
                           }
                         ]
@@ -146,7 +146,7 @@
                     {
                       "components": [
                         {
-                          "content": "<div style=\"overflow:auto;height:100%\">\n  <div *ngFor=\"let event of events?.reverse()\">\n      {{ event }}\n  </div>\n</div>\n",
+                          "content": "<div style=\"overflow:auto;height:100%\">\n  <div *ngFor=\"let event of events\">\n      {{ event }}\n  </div>\n</div>\n",
                           "name": "html0",
                           "type": "html"
                         }

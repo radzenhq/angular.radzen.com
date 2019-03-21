@@ -105,6 +105,6 @@ export class TextAreaGenerated implements AfterViewInit, OnInit, OnDestroy {
   }
 
   textarea0Change(event: any) {
-    this.events.push('TextArea Change: ' + JSON.stringify(event))
+    this.events.unshift('TextArea Change: ' + JSON.stringify(event))
   }
 }

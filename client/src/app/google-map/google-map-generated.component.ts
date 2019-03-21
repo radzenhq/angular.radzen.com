@@ -104,11 +104,11 @@ export class GoogleMapGenerated implements AfterViewInit, OnInit, OnDestroy {
   }
 
   googlemap0MapClick(event: any) {
-    this.events.push('Map clicked at point: ' + JSON.stringify(event))
+    this.events.unshift('Map clicked at point: ' + JSON.stringify(event))
   }
 
   googlemap0MarkerClick(event: any) {
-    this.events.push('Map marker clicked: ' + JSON.stringify({
+    this.events.unshift('Map marker clicked: ' + JSON.stringify({
     title: event.marker.title,
     position: event.marker.position
 }))

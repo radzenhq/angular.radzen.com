@@ -48,13 +48,13 @@
                       "events": {
                         "collapse": [
                           {
-                            "code": "${events.push('Single Accordion collapsed: ' + JSON.stringify(event))}",
+                            "code": "${events.unshift('Single Accordion collapsed: ' + JSON.stringify(event))}",
                             "type": "execute"
                           }
                         ],
                         "expand": [
                           {
-                            "code": "${events.push('Single Accordion expanded: ' + JSON.stringify(event))}",
+                            "code": "${events.unshift('Single Accordion expanded: ' + JSON.stringify(event))}",
                             "type": "execute"
                           }
                         ]
@@ -88,13 +88,13 @@
                       "events": {
                         "collapse": [
                           {
-                            "code": "${events.push('Multiple Accordion collapsed: ' + JSON.stringify(event))}",
+                            "code": "${events.unshift('Multiple Accordion collapsed: ' + JSON.stringify(event))}",
                             "type": "execute"
                           }
                         ],
                         "expand": [
                           {
-                            "code": "${events.push('Multiple Accordion expanded: ' + JSON.stringify(event))}",
+                            "code": "${events.unshift('Multiple Accordion expanded: ' + JSON.stringify(event))}",
                             "type": "execute"
                           }
                         ]
@@ -130,7 +130,7 @@
                     {
                       "components": [
                         {
-                          "content": "<div style=\"overflow:auto;height:100%\">\n  <div *ngFor=\"let event of events?.reverse()\">\n      {{ event }}\n  </div>\n</div>",
+                          "content": "<div style=\"overflow:auto;height:100%\">\n  <div *ngFor=\"let event of events\">\n      {{ event }}\n  </div>\n</div>",
                           "name": "html0",
                           "type": "html"
                         }

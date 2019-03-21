@@ -105,6 +105,6 @@ export class TextBoxGenerated implements AfterViewInit, OnInit, OnDestroy {
   }
 
   textbox0Change(event: any) {
-    this.events.push('TextBox Change: ' + JSON.stringify(event))
+    this.events.unshift('TextBox Change: ' + JSON.stringify(event))
   }
 }

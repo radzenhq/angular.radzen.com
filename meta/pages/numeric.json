@@ -45,7 +45,7 @@
                       "events": {
                         "change": [
                           {
-                            "code": "${events.push('Numeric with Step 2 Change: ' + JSON.stringify(event))}",
+                            "code": "${events.unshift('Numeric with Step 2 Change: ' + JSON.stringify(event))}",
                             "type": "execute"
                           }
                         ]
@@ -68,7 +68,7 @@
                       "events": {
                         "change": [
                           {
-                            "code": "${events.push('Numeric with Min and Max Change: ' + JSON.stringify(event))}",
+                            "code": "${events.unshift('Numeric with Min and Max Change: ' + JSON.stringify(event))}",
                             "type": "execute"
                           }
                         ]
@@ -97,7 +97,7 @@
                     {
                       "components": [
                         {
-                          "content": "<div style=\"overflow:auto;height:100%\">\n  <div *ngFor=\"let event of events?.reverse()\">\n      {{ event }}\n  </div>\n</div>",
+                          "content": "<div style=\"overflow:auto;height:100%\">\n  <div *ngFor=\"let event of events\">\n      {{ event }}\n  </div>\n</div>",
                           "name": "html0",
                           "type": "html"
                         }

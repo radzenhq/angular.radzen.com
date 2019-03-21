@@ -107,10 +107,10 @@ export class ImageGenerated implements AfterViewInit, OnInit, OnDestroy {
   }
 
   image0Click(event: any) {
-    this.events.push('Image from assets')
+    this.events.unshift('Image from assets')
   }
 
   image1Click(event: any) {
-    this.events.push('Image from url')
+    this.events.unshift('Image from url')
   }
 }

@@ -44,13 +44,13 @@
                       "events": {
                         "mapClick": [
                           {
-                            "code": "${events.push('Map clicked at point: ' + JSON.stringify(event))}",
+                            "code": "${events.unshift('Map clicked at point: ' + JSON.stringify(event))}",
                             "type": "execute"
                           }
                         ],
                         "markerClick": [
                           {
-                            "code": "${events.push('Map marker clicked: ' + JSON.stringify({title: event.marker.title, position: event.marker.position}))}",
+                            "code": "${events.unshift('Map marker clicked: ' + JSON.stringify({title: event.marker.title, position: event.marker.position}))}",
                             "type": "execute"
                           }
                         ]
@@ -96,7 +96,7 @@
                     {
                       "components": [
                         {
-                          "content": "<div style=\"overflow:auto;height:100%\">\n  <div *ngFor=\"let event of events?.reverse()\">\n      {{ event }}\n  </div>\n</div>",
+                          "content": "<div style=\"overflow:auto;height:100%\">\n  <div *ngFor=\"let event of events\">\n      {{ event }}\n  </div>\n</div>",
                           "name": "html0",
                           "type": "html"
                         }

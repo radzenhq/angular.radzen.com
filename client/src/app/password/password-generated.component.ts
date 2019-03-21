@@ -105,6 +105,6 @@ export class PasswordGenerated implements AfterViewInit, OnInit, OnDestroy {
   }
 
   password0Change(event: any) {
-    this.events.push('Password Change: ' + JSON.stringify(event))
+    this.events.unshift('Password Change: ' + JSON.stringify(event))
   }
 }

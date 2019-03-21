@@ -107,18 +107,18 @@ export class LoginGenerated implements AfterViewInit, OnInit, OnDestroy {
   }
 
   login0Login(event: any) {
-    this.events.push('Login with registration allowed Login button clicked: ' + JSON.stringify(event))
+    this.events.unshift('Login with registration allowed Login button clicked: ' + JSON.stringify(event))
   }
 
   login0Register(event: any) {
-    this.events.push('Login with registration allowed Register button clicked')
+    this.events.unshift('Login with registration allowed Register button clicked')
   }
 
   login0ResetPassword(event: any) {
-    this.events.push('Login with registration allowed Forgot Password button clicked: ' + JSON.stringify(event))
+    this.events.unshift('Login with registration allowed Forgot Password button clicked: ' + JSON.stringify(event))
   }
 
   login1Login(event: any) {
-    this.events.push('Login without registration and password reset Login button clicked' + JSON.stringify(event))
+    this.events.unshift('Login without registration and password reset Login button clicked' + JSON.stringify(event))
   }
 }

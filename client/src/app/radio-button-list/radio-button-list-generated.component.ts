@@ -107,10 +107,10 @@ export class RadioButtonListGenerated implements AfterViewInit, OnInit, OnDestro
   }
 
   radiobuttonlist0Change(event: any) {
-    this.events.push('Horizontal RadioButtonList Change: ' + JSON.stringify(event))
+    this.events.unshift('Horizontal RadioButtonList Change: ' + JSON.stringify(event))
   }
 
   radiobuttonlist1Change(event: any) {
-    this.events.push('Vertical RadioButtonList Change: ' + JSON.stringify(event))
+    this.events.unshift('Vertical RadioButtonList Change: ' + JSON.stringify(event))
   }
 }

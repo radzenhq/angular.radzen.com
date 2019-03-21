@@ -113,7 +113,7 @@ export class AutoCompleteGenerated implements AfterViewInit, OnInit, OnDestroy {
   }
 
   autocomplete0Search(event: any) {
-    this.events.push('AutoComplete Search: ' + event.text)
+    this.events.unshift('AutoComplete Search: ' + event.text)
 
     this.northwind.getCustomers(`contains(CustomerID,'${event.text}') and contains(CompanyName,'${event.text}')`, null, null, null, null, null)
     .subscribe((result: any) => {

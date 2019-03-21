@@ -107,10 +107,10 @@ export class CheckBoxListGenerated implements AfterViewInit, OnInit, OnDestroy {
   }
 
   checkboxlist0Change(event: any) {
-    this.events.push('Horizontal CheckBoxList Change: ' + JSON.stringify(event))
+    this.events.unshift('Horizontal CheckBoxList Change: ' + JSON.stringify(event))
   }
 
   checkboxlist1Change(event: any) {
-    this.events.push('Vertical CheckBoxList Change: ' + JSON.stringify(event))
+    this.events.unshift('Vertical CheckBoxList Change: ' + JSON.stringify(event))
   }
 }

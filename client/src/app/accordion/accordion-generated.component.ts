@@ -107,18 +107,18 @@ export class AccordionGenerated implements AfterViewInit, OnInit, OnDestroy {
   }
 
   accordion0Collapse(event: any) {
-    this.events.push('Single Accordion collapsed: ' + JSON.stringify(event))
+    this.events.unshift('Single Accordion collapsed: ' + JSON.stringify(event))
   }
 
   accordion0Expand(event: any) {
-    this.events.push('Single Accordion expanded: ' + JSON.stringify(event))
+    this.events.unshift('Single Accordion expanded: ' + JSON.stringify(event))
   }
 
   accordion1Collapse(event: any) {
-    this.events.push('Multiple Accordion collapsed: ' + JSON.stringify(event))
+    this.events.unshift('Multiple Accordion collapsed: ' + JSON.stringify(event))
   }
 
   accordion1Expand(event: any) {
-    this.events.push('Multiple Accordion expanded: ' + JSON.stringify(event))
+    this.events.unshift('Multiple Accordion expanded: ' + JSON.stringify(event))
   }
 }

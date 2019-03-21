@@ -121,38 +121,38 @@ export class ButtonGenerated implements AfterViewInit, OnInit, OnDestroy {
   }
 
   button0Click(event: any) {
-    this.events.push('Button with text')
+    this.events.unshift('Button with text')
   }
 
   button1Click(event: any) {
-    this.events.push('Button with text and icon')
+    this.events.unshift('Button with text and icon')
   }
 
   button2Click(event: any) {
-    this.events.push('Button with icon')
+    this.events.unshift('Button with icon')
   }
 
   button3Click(event: any) {
-    this.events.push('Button with secondary style')
+    this.events.unshift('Button with secondary style')
   }
 
   button4Click(event: any) {
-    this.events.push('Button with light style')
+    this.events.unshift('Button with light style')
   }
 
   button5Click(event: any) {
-    this.events.push('Button with success style')
+    this.events.unshift('Button with success style')
   }
 
   button6Click(event: any) {
-    this.events.push('Button with danger style')
+    this.events.unshift('Button with danger style')
   }
 
   button7Click(event: any) {
-    this.events.push('Button with warning style')
+    this.events.unshift('Button with warning style')
   }
 
   button8Click(event: any) {
-    this.events.push('Button with info style')
+    this.events.unshift('Button with info style')
   }
 }

@@ -117,6 +117,6 @@ export class DonutChartGenerated implements AfterViewInit, OnInit, OnDestroy {
   }
 
   pie0Select(event: any) {
-    this.events.push('Select: ' + JSON.stringify(event))
+    this.events.unshift('Select: ' + JSON.stringify(event))
   }
 }

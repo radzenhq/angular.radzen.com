@@ -122,14 +122,14 @@ export class ListBoxGenerated implements AfterViewInit, OnInit, OnDestroy {
   }
 
   listbox0Change(event: any) {
-    this.events.push('Single selection ListBox Change EmployeeID: ' + event.EmployeeID)
+    this.events.unshift('Single selection ListBox Change EmployeeID: ' + event.EmployeeID)
   }
 
   listbox1Change(event: any) {
-    this.events.push('Multiple selection ListBox Change EmployeeID: ' + event.EmployeeID)
+    this.events.unshift('Multiple selection ListBox Change EmployeeID: ' + event.EmployeeID)
   }
 
   listbox2Change(event: any) {
-    this.events.push('Single selection ListBox with template Change EmployeeID: ' + event.EmployeeID)
+    this.events.unshift('Single selection ListBox with template Change EmployeeID: ' + event.EmployeeID)
   }
 }

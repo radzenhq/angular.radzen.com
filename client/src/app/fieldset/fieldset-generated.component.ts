@@ -115,11 +115,11 @@ export class FieldsetGenerated implements AfterViewInit, OnInit, OnDestroy {
   }
 
   fieldset0Collapse(event: any) {
-    this.events.push('Fieldset collapsed')
+    this.events.unshift('Fieldset collapsed')
   }
 
   fieldset0Expand(event: any) {
-    this.events.push('Fieldset expanded')
+    this.events.unshift('Fieldset expanded')
   }
 
   datalist0LoadData(event: any) {

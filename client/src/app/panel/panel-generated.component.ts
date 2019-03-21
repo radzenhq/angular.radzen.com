@@ -115,11 +115,11 @@ export class PanelGenerated implements AfterViewInit, OnInit, OnDestroy {
   }
 
   panel0Collapse(event: any) {
-    this.events.push('Panel collapsed')
+    this.events.unshift('Panel collapsed')
   }
 
   panel0Expand(event: any) {
-    this.events.push('Panel expanded')
+    this.events.unshift('Panel expanded')
   }
 
   datalist0LoadData(event: any) {

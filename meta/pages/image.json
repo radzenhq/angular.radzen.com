@@ -45,7 +45,7 @@
                       "events": {
                         "click": [
                           {
-                            "code": "${events.push('Image from assets')}",
+                            "code": "${events.unshift('Image from assets')}",
                             "type": "execute"
                           }
                         ]
@@ -67,7 +67,7 @@
                       "events": {
                         "click": [
                           {
-                            "code": "${events.push('Image from url')}",
+                            "code": "${events.unshift('Image from url')}",
                             "type": "execute"
                           }
                         ]
@@ -95,7 +95,7 @@
                     {
                       "components": [
                         {
-                          "content": "<div style=\"overflow:auto;height:100%\">\n  <div *ngFor=\"let event of events?.reverse()\">\n      {{ event }} clicked\n  </div>\n</div>",
+                          "content": "<div style=\"overflow:auto;height:100%\">\n  <div *ngFor=\"let event of events\">\n      {{ event }} clicked\n  </div>\n</div>",
                           "name": "html0",
                           "type": "html"
                         }

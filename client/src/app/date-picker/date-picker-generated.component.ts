@@ -113,22 +113,22 @@ export class DatePickerGenerated implements AfterViewInit, OnInit, OnDestroy {
   }
 
   datepicker0Change(event: any) {
-    this.events.push('Single date DatePicker Change: ' + JSON.stringify(event))
+    this.events.unshift('Single date DatePicker Change: ' + JSON.stringify(event))
   }
 
   datepicker1Change(event: any) {
-    this.events.push('Multimple dates DatePicker Change: ' + JSON.stringify(event))
+    this.events.unshift('Multimple dates DatePicker Change: ' + JSON.stringify(event))
   }
 
   datepicker2Change(event: any) {
-    this.events.push('Range DatePicker Change: ' + JSON.stringify(event))
+    this.events.unshift('Range DatePicker Change: ' + JSON.stringify(event))
   }
 
   datepicker3Change(event: any) {
-    this.events.push('DatePicker with time Change: ' + JSON.stringify(event))
+    this.events.unshift('DatePicker with time Change: ' + JSON.stringify(event))
   }
 
   datepicker4Change(event: any) {
-    this.events.push('DatePicker with year range Change: ' + JSON.stringify(event))
+    this.events.unshift('DatePicker with year range Change: ' + JSON.stringify(event))
   }
 }
