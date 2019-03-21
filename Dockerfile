@@ -1,7 +1,7 @@
 FROM microsoft/dotnet:2.1-sdk
 COPY deploy /app
-WORKDIR /app/
+WORKDIR /app
 
 ENV ASPNETCORE_URLS http://*:5000
  
-ENTRYPOINT ["dotnet", "run"]
+ENTRYPOINT ["dotnet", "server.dll"]
