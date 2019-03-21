@@ -135,10 +135,6 @@ export class TreeGenerated implements AfterViewInit, OnInit, OnDestroy {
     });
   }
 
-  tree0NodeLoaded(event: any) {
-    event.leaf = !event.children
-  }
-
   tree0NodeSelect(event: any) {
     this.events.push('Self-referenced Tree SelectedNode: ' + JSON.stringify(event.data))
   }
@@ -161,10 +157,6 @@ export class TreeGenerated implements AfterViewInit, OnInit, OnDestroy {
     
       });
     }
-  }
-
-  tree1NodeLoaded(event: any) {
-    event.leaf = !event.children
   }
 
   tree1NodeSelect(event: any) {

@@ -10,13 +10,13 @@
       <div class="col-md-6">
         <rz-heading #heading2 size="H3" text="Self-referencing Employees">
         </rz-heading>
-        <rz-tree #tree0 [data]="employees" *ngIf="employees" (nodeExpand)="tree0NodeExpand($event)" (nodeLoaded)="tree0NodeLoaded($event)" (nodeSelect)="tree0NodeSelect($event)">
+        <rz-tree #tree0 [data]="employees" *ngIf="employees" (nodeExpand)="tree0NodeExpand($event)" (nodeSelect)="tree0NodeSelect($event)">
           <rz-tree-level textProperty="LastName">
           </rz-tree-level>
         </rz-tree>
         <rz-heading #heading3 size="H3" text="Customers -> Orders -> Order Details">
         </rz-heading>
-        <rz-tree #tree1 [data]="customers" [style]="{'height': '400px'}" *ngIf="customers" (nodeExpand)="tree1NodeExpand($event)" (nodeLoaded)="tree1NodeLoaded($event)" (nodeSelect)="tree1NodeSelect($event)">
+        <rz-tree #tree1 [data]="customers" [style]="{'height': '400px'}" *ngIf="customers" (nodeExpand)="tree1NodeExpand($event)" (nodeSelect)="tree1NodeSelect($event)">
           <rz-tree-level textProperty="CompanyName">
           </rz-tree-level>
           <rz-tree-level textProperty="OrderID">

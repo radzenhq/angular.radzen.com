@@ -62,12 +62,7 @@
                             "type": "invoke"
                           }
                         ],
-                        "nodeLoaded": [
-                          {
-                            "code": "${event.leaf = !event.children}",
-                            "type": "execute"
-                          }
-                        ],
+                        "nodeLoaded": [],
                         "nodeSelect": [
                           {
                             "code": "${events.push('Self-referenced Tree SelectedNode: ' + JSON.stringify(event.data))}",
@@ -134,12 +129,7 @@
                             "type": "invoke"
                           }
                         ],
-                        "nodeLoaded": [
-                          {
-                            "code": "${event.leaf = !event.children}",
-                            "type": "execute"
-                          }
-                        ],
+                        "nodeLoaded": [],
                         "nodeSelect": [
                           {
                             "code": "${events.push('Tree SelectedNode: ' + JSON.stringify(event.data))}",

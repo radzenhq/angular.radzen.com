@@ -12,14 +12,27 @@ import { DialogService, DIALOG_PARAMETERS, DialogRef } from '@radzen/angular/dis
 import { NotificationService } from '@radzen/angular/dist/notification';
 import { ContentComponent } from '@radzen/angular/dist/content';
 import { HeadingComponent } from '@radzen/angular/dist/heading';
+import { LinkComponent } from '@radzen/angular/dist/link';
+import { CardComponent } from '@radzen/angular/dist/card';
+import { TreeGridComponent } from '@radzen/angular/dist/treegrid';
+import { HtmlComponent } from '@radzen/angular/dist/html';
 
 import { ConfigService } from '../config.service';
 
+import { NorthwindService } from '../northwind.service';
 
 export class TreeGridGenerated implements AfterViewInit, OnInit, OnDestroy {
   // Components
   @ViewChild('content1') content1: ContentComponent;
   @ViewChild('pageTitle') pageTitle: HeadingComponent;
+  @ViewChild('link0') link0: LinkComponent;
+  @ViewChild('heading0') heading0: HeadingComponent;
+  @ViewChild('card0') card0: CardComponent;
+  @ViewChild('heading2') heading2: HeadingComponent;
+  @ViewChild('treegrid0') treegrid0: TreeGridComponent;
+  @ViewChild('heading1') heading1: HeadingComponent;
+  @ViewChild('card1') card1: CardComponent;
+  @ViewChild('html0') html0: HtmlComponent;
 
   router: Router;
 
@@ -42,6 +55,10 @@ export class TreeGridGenerated implements AfterViewInit, OnInit, OnDestroy {
   _location: Location;
 
   _subscription: Subscription;
+
+  northwind: NorthwindService;
+  events: any;
+  employees: any;
   parameters: any;
 
   constructor(private injector: Injector) {
@@ -68,6 +85,7 @@ export class TreeGridGenerated implements AfterViewInit, OnInit, OnDestroy {
 
     this.httpClient = this.injector.get(HttpClient);
 
+    this.northwind = this.injector.get(NorthwindService);
   }
 
   ngAfterViewInit() {
@@ -77,6 +95,7 @@ export class TreeGridGenerated implements AfterViewInit, OnInit, OnDestroy {
       } else {
         this.parameters = parameters;
       }
+      this.load();
       this.cd.detectChanges();
     });
   }
@@ -85,4 +104,32 @@ export class TreeGridGenerated implements AfterViewInit, OnInit, OnDestroy {
     this._subscription.unsubscribe();
   }
 
+
+  load() {
+    this.events = [];
+
+    this.northwind.getEmployees(null, null, null, null, null, null)
+    .subscribe((result: any) => {
+      this.employees = result.value;
+    }, (result: any) => {
+
+    });
+  }
+
+  treegrid0NodeExpand(event: any) {
+    this.northwind.getEmployees(`EmployeeID eq ${event.data.ReportsTo}`, null, null, null, null, null)
+    .subscribe((result: any) => {
+      event.children = result.value
+    }, (result: any) => {
+
+    });
+  }
+
+  treegrid0NodeLoaded(event: any) {
+    event.leaf = event.data.ReportsTo == null
+  }
+
+  treegrid0NodeSelect(event: any) {
+    this.events.push('TreeGrid NodeSelect: ' + JSON.stringify(event))
+  }
 }
