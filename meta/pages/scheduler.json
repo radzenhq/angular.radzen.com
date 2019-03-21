@@ -1,19 +1,83 @@
 {
-  "name": "Scheduler",
-  "access": "Everybody",
-  "layout": "Main",
+  "access": [
+    "Everybody"
+  ],
   "components": [
     {
-      "type": "content",
-      "container": "main",
       "components": [
         {
-          "type": "heading",
-          "size": "H1",
           "name": "pageTitle",
-          "text": "Scheduler"
+          "size": "H1",
+          "style": {
+            "display": "inline",
+            "float": "none"
+          },
+          "text": "Scheduler",
+          "type": "heading"
+        },
+        {
+          "icon": "",
+          "name": "link0",
+          "path": "https://github.com/akorchev/angular.radzen.com/blob/master/meta/pages/scheduler.json",
+          "text": "[source code]",
+          "type": "link"
+        },
+        {
+          "name": "heading0",
+          "size": "H4",
+          "text": "This page demonstrates Scheduler component.",
+          "type": "heading"
+        },
+        {
+          "components": [
+            {
+              "data": "${getNorthwindOrdersResult}",
+              "endProperty": "ShippedDate",
+              "idProperty": "OrderID",
+              "name": "scheduler0",
+              "startProperty": "OrderDate",
+              "titleProperty": "Customer.CompanyName",
+              "type": "scheduler"
+            }
+          ],
+          "name": "card0",
+          "style": {
+            "height": "100%"
+          },
+          "type": "card",
+          "visible": true
         }
-      ]
+      ],
+      "container": "main",
+      "type": "content"
     }
-  ]
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "events",
+        "type": "set",
+        "value": "[]"
+      },
+      {
+        "name": "Northwind.getNorthwindOrders",
+        "parameters": [
+          {
+            "name": "$expand",
+            "value": "Customer"
+          }
+        ],
+        "then": [
+          {
+            "name": "getNorthwindOrdersResult",
+            "type": "set",
+            "value": "${result.value}"
+          }
+        ],
+        "type": "invoke"
+      }
+    ]
+  },
+  "layout": "Main",
+  "name": "Scheduler"
 }

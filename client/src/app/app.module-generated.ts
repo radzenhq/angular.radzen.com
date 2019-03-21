@@ -56,6 +56,7 @@ import { SliderModule } from '@radzen/angular/dist/slider';
 import { TemplateFormModule } from '@radzen/angular/dist/template-form';
 import { TextAreaModule } from '@radzen/angular/dist/textarea';
 import { PickListModule } from '@radzen/angular/dist/picklist';
+import { SchedulerModule } from '@radzen/angular/dist/scheduler';
 import { SharedModule } from '@radzen/angular/dist/shared';
 import { NotificationModule } from '@radzen/angular/dist/notification';
 import { DialogModule } from '@radzen/angular/dist/dialog';
@@ -254,6 +255,7 @@ export const AppImports = [
   TemplateFormModule,
   TextAreaModule,
   PickListModule,
+  SchedulerModule,
   SharedModule,
   NotificationModule,
   DialogModule,
