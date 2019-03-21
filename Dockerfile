@@ -1,4 +1,7 @@
-FROM kyma/docker-nginx
-COPY server/wwwroot /var/www
-CMD 'nginx'
-EXPOSE 80
+FROM microsoft/dotnet:2.1-sdk
+COPY deploy /app
+WORKDIR /app/
+
+ENV ASPNETCORE_URLS http://*:5000
+ 
+ENTRYPOINT ["dotnet", "run"]

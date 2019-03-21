@@ -1,5 +1,5 @@
 export const environment = {
-  serverMethodsUrl: 'http://localhost:5000/',
+  serverMethodsUrl: '/',
   northwind: 'https://services.radzen.com/odata/Northwind',
   production: true
 };

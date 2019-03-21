@@ -9,7 +9,6 @@ import { IconComponent } from './icon/icon.component';
 import { ImageComponent } from './image/image.component';
 import { LinkComponent } from './link/link.component';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
-import { LoginComponent } from './login/login.component';
 import { UploadComponent } from './upload/upload.component';
 import { GravatarComponent } from './gravatar/gravatar.component';
 import { GoogleMapComponent } from './google-map/google-map.component';
@@ -84,10 +83,6 @@ export const routes: Routes = [
       {
         path: 'progress-bar',
         component: ProgressBarComponent
-      },
-      {
-        path: 'login',
-        component: LoginComponent
       },
       {
         path: 'upload',

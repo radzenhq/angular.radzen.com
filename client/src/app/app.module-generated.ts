@@ -25,7 +25,6 @@ import { SplitButtonModule } from '@radzen/angular/dist/splitbutton';
 import { IconModule } from '@radzen/angular/dist/icon';
 import { ImageModule } from '@radzen/angular/dist/image';
 import { ProgressBarModule } from '@radzen/angular/dist/progressbar';
-import { LoginModule } from '@radzen/angular/dist/login';
 import { UploadModule } from '@radzen/angular/dist/upload';
 import { GravatarModule } from '@radzen/angular/dist/gravatar';
 import { GoogleMapModule } from '@radzen/angular/dist/googlemap';
@@ -78,7 +77,6 @@ import { IconComponent } from './icon/icon.component';
 import { ImageComponent } from './image/image.component';
 import { LinkComponent } from './link/link.component';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
-import { LoginComponent } from './login/login.component';
 import { UploadComponent } from './upload/upload.component';
 import { GravatarComponent } from './gravatar/gravatar.component';
 import { GoogleMapComponent } from './google-map/google-map.component';
@@ -135,7 +133,6 @@ export const PageDeclarations = [
   ImageComponent,
   LinkComponent,
   ProgressBarComponent,
-  LoginComponent,
   UploadComponent,
   GravatarComponent,
   GoogleMapComponent,
@@ -232,7 +229,6 @@ export const AppImports = [
   IconModule,
   ImageModule,
   ProgressBarModule,
-  LoginModule,
   UploadModule,
   GravatarModule,
   GoogleMapModule,
