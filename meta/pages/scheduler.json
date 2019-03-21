@@ -32,6 +32,7 @@
           "components": [
             {
               "data": "${getNorthwindOrdersResult}",
+              "defaultDate": "2016-07-01",
               "endProperty": "ShippedDate",
               "idProperty": "OrderID",
               "name": "scheduler0",
