@@ -51,6 +51,7 @@ import { NumericModule } from '@radzen/angular/dist/numeric';
 import { PasswordModule } from '@radzen/angular/dist/password';
 import { RadioButtonListModule } from '@radzen/angular/dist/radiobuttonlist';
 import { RatingModule } from '@radzen/angular/dist/rating';
+import { SelectBarModule } from '@radzen/angular/dist/selectbar';
 import { SharedModule } from '@radzen/angular/dist/shared';
 import { NotificationModule } from '@radzen/angular/dist/notification';
 import { DialogModule } from '@radzen/angular/dist/dialog';
@@ -244,6 +245,7 @@ export const AppImports = [
   PasswordModule,
   RadioButtonListModule,
   RatingModule,
+  SelectBarModule,
   SharedModule,
   NotificationModule,
   DialogModule,
